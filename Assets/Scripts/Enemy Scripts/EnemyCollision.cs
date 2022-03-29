@@ -14,7 +14,6 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
     private Transform _player;
     const string PLAYER = "Player";
     const string BULLET = "Bullet";
-    private ParticleSystem _playerDeathParticle;
     private EnemyCollision _instance;
 
     private void Awake()
@@ -22,7 +21,6 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
         _instance = GetComponent<EnemyCollision>();
         _transform = transform;
         _player = GameObject.FindGameObjectWithTag(PLAYER)?.GetComponent<Transform>();
-        _playerDeathParticle = GetComponent<ParticleSystem>();
     }
 
     private void Update()
@@ -30,7 +28,6 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
         if (_player == null) return;
         if (Vector2.Distance(_player.position, _transform.position) <= _collisionDistance)
         {
-            _playerDeathParticle.Play();
             Destroy(_player.gameObject);
             Timer.StopTimer();
         }
