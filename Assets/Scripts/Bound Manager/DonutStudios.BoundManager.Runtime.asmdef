@@ -1,0 +1,16 @@
+{
+    "name": "DonutStudios.BoundManager.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:392bb61b63520954d9cf09aa7efd14c1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
