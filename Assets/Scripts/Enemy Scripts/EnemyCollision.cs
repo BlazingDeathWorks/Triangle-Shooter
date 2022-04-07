@@ -8,6 +8,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
     public EnemyDeathParticle Prefab => _deathParticle;
     public Queue<EnemyDeathParticle> Pool { get; } = new Queue<EnemyDeathParticle>();
 
+    [SerializeField] private ActionChannel _OnPlayerCollisionEventHandler;
     [SerializeField] private EnemyDeathParticle _deathParticle = null;
     [SerializeField] private float _collisionDistance = 0.1f;
     private Transform _transform;
@@ -28,8 +29,8 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
         if (_player == null) return;
         if (Vector2.Distance(_player.position, _transform.position) <= _collisionDistance)
         {
-            Destroy(_player.gameObject);
-            Timer.StopTimer();
+            _OnPlayerCollisionEventHandler.CallAction();
+            ObjectPool.Return(this);
         }
     }
 

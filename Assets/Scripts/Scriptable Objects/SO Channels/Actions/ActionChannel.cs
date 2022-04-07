@@ -19,7 +19,7 @@ public class ActionChannel : ScriptableObject
     }
     public void CallAction()
     {
-        func();
+        func?.Invoke();
     }
 }
 

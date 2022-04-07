@@ -144,7 +144,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &4529711847346978974
 MonoBehaviour:
@@ -158,5 +158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b726a0d08907ae64d87dfaefec44bfb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _OnPlayerCollisionEventHandler: {fileID: 11400000, guid: da9dc42c988b3a94b9749bcb3e25c8aa, type: 2}
   _deathParticle: {fileID: -8337701026882291611, guid: 386f50f83878c2749973ce1b571dcd31, type: 3}
   _collisionDistance: 0.7

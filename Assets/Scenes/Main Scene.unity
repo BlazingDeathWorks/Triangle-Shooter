@@ -1210,7 +1210,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1147764913}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.294
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1228,7 +1228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18867922, g: 0.1219295, b: 0.1219295, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1610,7 +1610,7 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9054457309449730264, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
-      propertyPath: _buildBlockContainer
+      propertyPath: _buildBlockBaseContainer
       value: 
       objectReference: {fileID: 1356371626}
     m_RemovedComponents: []

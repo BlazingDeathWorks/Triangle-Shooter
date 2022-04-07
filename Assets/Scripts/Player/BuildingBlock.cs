@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class BuildingBlock : MonoBehaviour, IObjectPoolable<BuildingBlock>
+public class BuildingBlock : MonoBehaviour, IObjectPoolable<BuildingBlock>
 {
     public IObjectPooler<BuildingBlock> ParentObjectPooler { get; set; }
     private BuildingBlock _instance;
