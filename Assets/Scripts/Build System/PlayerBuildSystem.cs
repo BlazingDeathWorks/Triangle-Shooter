@@ -47,6 +47,7 @@ internal class PlayerBuildSystem : MonoBehaviour, IObjectPooler<BuildingBlockBas
     public void OnPooled(BuildingBlock instance)
     {
         instance.gameObject.SetActive(true);
+        instance.transform.parent = _buildBlockBaseContainer;
         float distance = Vector2.Distance(_previousBlockPos.position, _transform.position);
         instance.transform.localScale = new Vector2(distance, instance.transform.localScale.y);
         instance.transform.position = (_previousBlockPos.position + _transform.position) / 2;

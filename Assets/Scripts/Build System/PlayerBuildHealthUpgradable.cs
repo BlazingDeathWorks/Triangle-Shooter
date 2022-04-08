@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBuildHealthUpgradable : MonoBehaviour
+public class PlayerBuildHealthUpgradable : MonoBehaviour, IUpgradable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static int MaxHealth { get; private set; } = 1;
+    [SerializeField] private ActionChannel _blockMaxHealthUpgradedEventHandler;
 
-    // Update is called once per frame
-    void Update()
+    public void OnUpgrade()
     {
-        
+        MaxHealth++;
+        _blockMaxHealthUpgradedEventHandler.CallAction();
     }
 }
