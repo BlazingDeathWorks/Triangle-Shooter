@@ -4,6 +4,5 @@ using UnityEngine;
 
 public interface IUpgradable
 {
-    public PowerData Data { get; }
     public void OnUpgrade();
 }
