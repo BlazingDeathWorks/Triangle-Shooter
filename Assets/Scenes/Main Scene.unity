@@ -851,6 +851,11 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &948483560 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4513796913559361334, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
+  m_PrefabInstance: {fileID: 4513796914729437309}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1117712697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1570,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: _upgradable
+      value: 
+      objectReference: {fileID: 948483560}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
 --- !u!224 &1698189675 stripped

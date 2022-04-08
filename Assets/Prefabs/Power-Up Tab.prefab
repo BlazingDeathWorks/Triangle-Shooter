@@ -50,6 +50,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 995629714a68f4845a280464180411ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _powerData: {fileID: 11400000, guid: 025dc85d6396f8a4791067e9967a895c, type: 2}
+  _upgradable: {fileID: 0}
+  _button: {fileID: 6581313753978139072}
+  _image: {fileID: 6581313753793194872}
+  _nameText: {fileID: 6581313753838532668}
+  _costText: {fileID: 6581313753758480948}
 --- !u!1 &6581313753758480946
 GameObject:
   m_ObjectHideFlags: 0
