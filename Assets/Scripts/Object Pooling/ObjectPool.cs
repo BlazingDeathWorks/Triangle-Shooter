@@ -11,18 +11,18 @@ public static class ObjectPool
     ///Call this method when you want to instantiate the prefab
     ///</summary>
     ///
-    ///<param name="objectPoolable">
-    ///Reference to the pooler implementing IObjectPoolable<T>
+    ///<param name="objectPooler">
+    ///Reference to the pooler implementing IObjectPooler<T>
     /// </param>
-    public static void Pool<T>(IObjectPooler<T> objectPoolable) where T : MonoBehaviour, IObjectPoolable<T>
+    public static void Pool<T>(IObjectPooler<T> objectPooler) where T : MonoBehaviour, IObjectPoolable<T>
     {
-        if (objectPoolable.Pool.Count <= 0)
+        if (objectPooler.Pool.Count <= 0)
         {
-            objectPoolable.Pool.Enqueue(Object.Instantiate(objectPoolable.Prefab, new Vector3(0, 0, 0), Quaternion.identity));
+            objectPooler.Pool.Enqueue(Object.Instantiate(objectPooler.Prefab, new Vector3(0, 0, 0), Quaternion.identity));
         }
-        T instance = objectPoolable.Pool.Dequeue();
-        instance.GetComponent<IObjectPoolable<T>>().ParentObjectPooler = objectPoolable;
-        objectPoolable.OnPooled(instance);
+        T instance = objectPooler.Pool.Dequeue();
+        instance.GetComponent<IObjectPoolable<T>>().ParentObjectPooler = objectPooler;
+        objectPooler.OnPooled(instance);
     }
 
     ///<summary>
@@ -31,12 +31,12 @@ public static class ObjectPool
     ///Call this method when you want to disable the instance and return it back into its parent queue
     /// </summary>
     /// 
-    ///<param name="objectPooled">
-    ///Reference to the pooled object implementing IObjectPooled<T>
+    ///<param name="objectPoolable">
+    ///Reference to the pooled object implementing IObjectPoolable<T>
     /// </param>
-    public static void Return<T>(IObjectPoolable<T> objectPooled) where T : MonoBehaviour, IObjectPoolable<T>
+    public static void Return<T>(IObjectPoolable<T> objectPoolable) where T : MonoBehaviour, IObjectPoolable<T>
     {
-        objectPooled.ParentObjectPooler.Pool.Enqueue(objectPooled.ReturnComponent());
-        objectPooled.OnReturn();
+        objectPoolable.ParentObjectPooler.Pool.Enqueue(objectPoolable.ReturnComponent());
+        objectPoolable.OnReturn();
     }
 }
