@@ -11,6 +11,11 @@ public class UIController : MonoBehaviour
     {
         if (_shopInput.Clicked)
         {
+            if (gameObject.activeSelf)
+            {
+                gameObject.SetActive(false);
+                return;
+            }
             _shopTab.Enable();
         }
     }

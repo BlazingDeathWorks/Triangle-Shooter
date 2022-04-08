@@ -4,13 +4,13 @@ using UnityEngine;
 
 internal class Tab : MonoBehaviour
 {
-    [SerializeField] [Tooltip("Define GameObjects that will be disabled if this tab is enabled")] 
+    [SerializeField]
+    [Tooltip("Define GameObjects that will be disabled if this tab is enabled")]
     private GameObject[] _tabsToDisable;
 
     public void Enable()
     {
-        if (gameObject.activeSelf) return;
-        foreach(GameObject tab in _tabsToDisable)
+        foreach (GameObject tab in _tabsToDisable)
         {
             tab.SetActive(false);
         }
