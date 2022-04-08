@@ -4,15 +4,21 @@ using UnityEngine;
 
 internal class ShopManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject[] _powerTabs;
+    [SerializeField] private GameObject[] _shopItems;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if (_powerTabs.Length != _shopItems.Length)
+        {
+            return;
+        }
+        foreach (GameObject item in _shopItems)
+        {
+            if (item.TryGetComponent<IUpgradable>(out IUpgradable upgradable))
+            {
+                upgradable.OnUpgrade();
+            }
+        }
     }
 }
