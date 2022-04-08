@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6581313752657833887}
   m_Layer: 5
-  m_Name: Item Tab
+  m_Name: Power-Up Tab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 6581313753758480951}
   - component: {fileID: 6581313753758480948}
   m_Layer: 5
-  m_Name: Price Tag
+  m_Name: Cost Tag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 50 G
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 6581313753838532671}
   - component: {fileID: 6581313753838532668}
   m_Layer: 5
-  m_Name: Item Name
+  m_Name: Power-Up Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 6581313753978139075}
   - component: {fileID: 6581313753978139072}
   m_Layer: 5
-  m_Name: Item Button
+  m_Name: Power-Up Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
