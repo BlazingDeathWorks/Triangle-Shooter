@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1105255241}
   - component: {fileID: 2770363780056903077}
   - component: {fileID: 948483561}
+  - component: {fileID: 1568367174266904555}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -228,6 +229,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blockMaxHealthUpgradedEventHandler: {fileID: 11400000, guid: cf106e40f5f76774bbd4d7f5b4e93352, type: 2}
+--- !u!114 &1568367174266904555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4513796913559361334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c238a3ed851e14aa92b10fb490413a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4513796914210741535
 GameObject:
   m_ObjectHideFlags: 0

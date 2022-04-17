@@ -4,6 +4,7 @@ using UnityEngine;
 
 internal class PlayerMovementController : MonoBehaviour
 {
+    public bool IsMoving => Mathf.Abs(_x) > 0 || Mathf.Abs(_y) > 0;
     [SerializeField] private InputButton[] _inputs = null;
     [SerializeField] private float _speed = 1;
     private int _x, _y;
