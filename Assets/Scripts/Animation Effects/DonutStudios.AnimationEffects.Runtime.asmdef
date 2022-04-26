@@ -1,0 +1,16 @@
+{
+    "name": "DonutStudios.AnimationEffects.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:786b329e4e559cf478c03ea9f5d9f197"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
