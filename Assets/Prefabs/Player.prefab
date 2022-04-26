@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74da32fb67d64214ebf49efd52290a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: {fileID: -7280880252195394740, guid: 354ae2f38cc9ca24f854309159fac530, type: 3}
+  ps: {fileID: 1340193511944950594, guid: 354ae2f38cc9ca24f854309159fac530, type: 3}
 --- !u!58 &1105255241
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c238a3ed851e14aa92b10fb490413a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeBetweenGhost: 1
 --- !u!1 &4513796914210741535
 GameObject:
   m_ObjectHideFlags: 0
