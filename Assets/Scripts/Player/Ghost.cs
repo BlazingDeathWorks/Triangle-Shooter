@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class PlayerGhost : MonoBehaviour
+internal class Ghost : MonoBehaviour
 {
     [SerializeField] private float _ghostDuration = 1.5f;
     [SerializeField] private NormalPoolableObject _normalPoolableObject;
