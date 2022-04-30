@@ -622,6 +622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shopTab: {fileID: 1617682651}
+  _timeScaleInShop: 0.204
   _shopInput:
     Disabled: 0
     KeyCode: 101
