@@ -261,4 +261,4 @@ MonoBehaviour:
   _ghostRunnerBoolEventHandler: {fileID: 0}
   _ghostContainer: {fileID: 0}
   _useEventHandler: 0
-  _timeBetweenGhost: 0.075
+  _timeBetweenGhost: 0.035
