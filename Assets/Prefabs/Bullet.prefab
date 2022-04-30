@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5120740162561190102}
   - component: {fileID: -5383436340559776890}
   - component: {fileID: -8287623367067778482}
+  - component: {fileID: -5768487373065331090}
   m_Layer: 10
   m_Name: Bullet
   m_TagString: Bullet
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 983572559
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 50
   m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
-  lifetime: 1.2
+  _lifetime: 3
 --- !u!58 &5120740162561190102
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -176,7 +177,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 983572559
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Time: 1.2
   m_Parameters:
@@ -244,3 +245,20 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &-5768487373065331090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986617788901961449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c238a3ed851e14aa92b10fb490413a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 1046285189245072974, guid: f829191bf2802914faafb08e278037e2, type: 3}
+  _ghostRunnerBoolEventHandler: {fileID: 0}
+  _ghostContainer: {fileID: 0}
+  _useEventHandler: 0
+  _timeBetweenGhost: 0.075

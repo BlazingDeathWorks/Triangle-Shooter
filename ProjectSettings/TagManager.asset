@@ -63,6 +63,9 @@ TagManager:
   - name: Bullet
     uniqueID: 983572559
     locked: 0
+  - name: Bullet Ghost
+    uniqueID: 3252740479
+    locked: 0
   - name: Canvas
     uniqueID: 819908747
     locked: 0
