@@ -9,8 +9,8 @@ internal class GhostRunner : MonoBehaviour, IObjectPooler<NormalPoolableObject>
 
     [SerializeField] private NormalPoolableObject _prefab;
     [SerializeField] private FuncChannel_Bool _ghostRunnerBoolEventHandler;
-    [SerializeField] private Transform _ghostContainer;
     [SerializeField] private bool _useEventHandler = true;
+    [SerializeField] private string _ghostContainerKey;
     [SerializeField] private float _timeBetweenGhost = 1;
     private float _timeSinceLastGhost = 0;
     private Transform _transform;
@@ -36,7 +36,7 @@ internal class GhostRunner : MonoBehaviour, IObjectPooler<NormalPoolableObject>
     public void OnPooled(NormalPoolableObject instance)
     {
         instance.gameObject.SetActive(true);
-        instance.transform.parent = _ghostContainer;
+        instance.transform.parent = GhostContainerManager.GetValue(_ghostContainerKey);
         instance.transform.localEulerAngles = _transform.localEulerAngles;
         instance.transform.position = _transform.position;
     }

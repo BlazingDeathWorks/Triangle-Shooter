@@ -244,7 +244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 1046285189245072974, guid: 9d4ffcd704035cc43bea9a4b62a903be, type: 3}
   _ghostRunnerBoolEventHandler: {fileID: 11400000, guid: 80e52b114d3d3e84a9d6ade4af9e49a0, type: 2}
-  _ghostContainer: {fileID: 0}
+  _useEventHandler: 1
+  _ghostContainerKey: Player Ghost Container
   _timeBetweenGhost: 0.1
 --- !u!1 &4513796914210741535
 GameObject:

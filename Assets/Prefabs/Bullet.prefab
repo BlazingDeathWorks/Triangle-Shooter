@@ -259,6 +259,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 1046285189245072974, guid: f829191bf2802914faafb08e278037e2, type: 3}
   _ghostRunnerBoolEventHandler: {fileID: 0}
-  _ghostContainer: {fileID: 0}
   _useEventHandler: 0
+  _ghostContainerKey: Bullet Ghost Container
   _timeBetweenGhost: 0.035
