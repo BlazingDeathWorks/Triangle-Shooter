@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealthSystem : MonoBehaviour
 {
     public static PlayerHealthSystem Instance { get; private set; }
 
-    [SerializeField] ActionChannel _playerDiedEventHandler;
-    [SerializeField] ActionChannel _playerCollidedEventHandler;
+    [SerializeField] private ActionChannel _playerDiedEventHandler;
+    [SerializeField] private ActionChannel _playerCollidedEventHandler;
+    [SerializeField] private Image _slider;
 
     private void Awake()
     {
