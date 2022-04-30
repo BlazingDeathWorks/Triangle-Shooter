@@ -24,6 +24,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
         _player = GameObject.FindGameObjectWithTag(PLAYER)?.GetComponent<Transform>();
     }
 
+    //Destroying Player
     private void Update()
     {
         if (_player == null) return;
@@ -34,6 +35,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
         }
     }
 
+    //Destroying Enemy by Bullet Collision
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(BULLET))
