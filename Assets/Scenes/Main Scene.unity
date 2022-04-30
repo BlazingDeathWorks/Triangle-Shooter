@@ -686,6 +686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c885b0363b793429df5099a4b61fab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerDiedEventHandler: {fileID: 11400000, guid: 98571fc48e700994f9dfe376d09dafbe, type: 2}
   _text: {fileID: 11950328}
 --- !u!4 &843782658
 Transform:

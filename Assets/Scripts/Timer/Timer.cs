@@ -5,13 +5,15 @@ using System;
 public class Timer : MonoBehaviour
 {
     public static event Action TimeFinishedEventHandler;
+    [SerializeField] private ActionChannel _playerDiedEventHandler;
     [SerializeField] Text _text;
-    private static bool _canInrement = true;
+    private bool _canInrement = true;
     private float _boundsIncreaseRate = 60, _originalBoundsIncreaseRate;
     private int count = 0;
 
     private void Awake()
     {
+        _playerDiedEventHandler?.AddAction(StopTimer);
         _originalBoundsIncreaseRate = _boundsIncreaseRate;
     }
 
@@ -24,7 +26,7 @@ public class Timer : MonoBehaviour
         _boundsIncreaseRate = Mathf.Pow(2, ++count) * _originalBoundsIncreaseRate;
     }
 
-    public static void StopTimer()
+    private void StopTimer()
     {
         _canInrement = false;
     }

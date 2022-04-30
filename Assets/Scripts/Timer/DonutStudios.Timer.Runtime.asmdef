@@ -1,7 +1,9 @@
 {
     "name": "DonutStudios.Timer.Runtime",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:45f7af7fe51beed478d312184a92a334"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -1,18 +1,35 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealthSystem : MonoBehaviour
 {
-    [SerializeField] ActionChannel _OnPlayerCollisionEventHandler;
+    public static PlayerHealthSystem Instance { get; private set; }
+
+    [SerializeField] ActionChannel _playerDiedEventHandler;
+    [SerializeField] ActionChannel _playerCollidedEventHandler;
 
     private void Awake()
     {
-        _OnPlayerCollisionEventHandler.AddAction(() => Destroy(gameObject));
+        #region Singleton
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        #endregion
+
+        _playerDiedEventHandler?.AddAction(() => Destroy(gameObject));
     }
 
-    /*
-     * Destroy(_player.gameObject);
-     * Timer.StopTimer();
-     */
+    public void CheckHealth()
+    {
+        _playerCollidedEventHandler.CallAction();
+        if (true)
+        {
+            _playerDiedEventHandler.CallAction();
+        }
+    }
 }
