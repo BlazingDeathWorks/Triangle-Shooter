@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4513796913559361325}
   - component: {fileID: 4513796913559361324}
   - component: {fileID: 9054457309449730264}
-  - component: {fileID: 1697430025}
   - component: {fileID: 1105255241}
   - component: {fileID: 2770363780056903077}
   - component: {fileID: 948483561}
@@ -175,19 +174,6 @@ MonoBehaviour:
   _buildBlockBaseContainer: {fileID: 0}
   _buildingBlockBase: {fileID: 2899079937156316405, guid: 92823daa301e54045b0d75b106ef9dac, type: 3}
   _buildingBlock: {fileID: 5246968550721278828, guid: d8e6f805af211cc4abded0a899b263aa, type: 3}
---- !u!114 &1697430025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4513796913559361334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74da32fb67d64214ebf49efd52290a34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ps: {fileID: 1340193511944950594, guid: 354ae2f38cc9ca24f854309159fac530, type: 3}
 --- !u!58 &1105255241
 CircleCollider2D:
   m_ObjectHideFlags: 0
