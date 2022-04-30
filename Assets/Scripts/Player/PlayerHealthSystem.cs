@@ -10,6 +10,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
     [SerializeField] private ActionChannel _playerDiedEventHandler;
     [SerializeField] private ActionChannel _playerCollidedEventHandler;
+    [SerializeField] private GameObject _particleSystem;
     [SerializeField] private Image _slider;
 
     private void Awake()
@@ -24,6 +25,7 @@ public class PlayerHealthSystem : MonoBehaviour
         #endregion
 
         _playerDiedEventHandler?.AddAction(() => Destroy(gameObject));
+        _playerDiedEventHandler?.AddAction(() => Instantiate(_particleSystem, transform.position, Quaternion.identity));
     }
 
     public void CheckHealth()
