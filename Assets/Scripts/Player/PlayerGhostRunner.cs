@@ -8,6 +8,7 @@ internal class PlayerGhostRunner : MonoBehaviour, IObjectPooler<NormalPoolableOb
     public Queue<NormalPoolableObject> Pool { get; } = new Queue<NormalPoolableObject>();
 
     [SerializeField] private NormalPoolableObject _prefab;
+    [SerializeField] private Transform _playerGhostContainer;
     [SerializeField] private float _timeBetweenGhost = 1;
     private float _timeSinceLastGhost = 0;
     private PlayerMovementController _playerMovementController;
@@ -35,6 +36,7 @@ internal class PlayerGhostRunner : MonoBehaviour, IObjectPooler<NormalPoolableOb
     public void OnPooled(NormalPoolableObject instance)
     {
         instance.gameObject.SetActive(true);
+        instance.transform.parent = _playerGhostContainer;
         instance.transform.localEulerAngles = _transform.localEulerAngles;
         instance.transform.position = _transform.position;
     }

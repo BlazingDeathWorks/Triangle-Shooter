@@ -9,6 +9,14 @@ public class NormalPoolableObject : MonoBehaviour, IObjectPoolable<NormalPoolabl
 
     private void Awake() => _instance = this;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            ObjectPool.Return(this);
+        }
+    }
+
     public void OnReturn() => gameObject.SetActive(false);
 
     public NormalPoolableObject ReturnComponent() => _instance;

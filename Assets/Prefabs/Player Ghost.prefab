@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1207834206910088149}
   - component: {fileID: 1046285189245072974}
   - component: {fileID: -6671893574598744608}
+  - component: {fileID: 8410619498526931514}
   m_Layer: 0
   m_Name: Player Ghost
   m_TagString: Untagged
@@ -52,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 358142f17988f5246b6fff79e3d400b2, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0c3d328889504e74586edb25c67aefaa, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.9960785, b: 0.6039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -108,5 +109,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1cb7a21149d5cf44be3393cf5f75d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fadeTime: 1
-  _alphaTo: 1
+  _fadeTime: 0.45
+--- !u!114 &8410619498526931514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092065963606499317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d13b6f2ada167a479716e7ac338a2cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ghostDuration: 0.6
