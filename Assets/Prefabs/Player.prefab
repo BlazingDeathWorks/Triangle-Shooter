@@ -204,6 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerDiedEventHandler: {fileID: 11400000, guid: 98571fc48e700994f9dfe376d09dafbe, type: 2}
   _playerCollidedEventHandler: {fileID: 11400000, guid: da9dc42c988b3a94b9749bcb3e25c8aa, type: 2}
+  _particleSystem: {fileID: 2067202230378623515, guid: 354ae2f38cc9ca24f854309159fac530, type: 3}
+  _slider: {fileID: 0}
 --- !u!114 &948483561
 MonoBehaviour:
   m_ObjectHideFlags: 0
