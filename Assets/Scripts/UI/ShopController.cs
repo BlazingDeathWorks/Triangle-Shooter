@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIController : MonoBehaviour
+public class ShopController : MonoBehaviour
 {
     [SerializeField] private Tab _shopTab;
     [SerializeField] private InputButton _shopInput;
