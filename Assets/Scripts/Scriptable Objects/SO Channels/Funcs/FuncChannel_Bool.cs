@@ -1,18 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FuncChannel_Bool : MonoBehaviour
+[CreateAssetMenu(fileName = "NewFuncChannelResult_Bool", menuName = "SO Channels/Func Channel Result (Bool)")]
+public class FuncChannel_Bool : ScriptableObject, IFuncChannelGenericsResult<Boolean>
 {
-    // Start is called before the first frame update
-    void Start()
+    private Func<bool> func;
+
+    public void AddAction(Func<bool> func)
     {
-        
+        this.func += func;
+    }
+    public void RemoveAction(Func<bool> func)
+    {
+        this.func -= func;
+    }
+    public bool CallAction()
+    {
+        return func.Invoke();
+    }
+    public int GetSize()
+    {
+        return func.GetInvocationList().Length;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
