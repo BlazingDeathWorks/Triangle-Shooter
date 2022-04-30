@@ -5,13 +5,8 @@ using UnityEngine;
 internal class PlayerGhost : MonoBehaviour
 {
     [SerializeField] private float _ghostDuration = 1.5f;
-    private NormalPoolableObject _normalPoolableObject;
+    [SerializeField] private NormalPoolableObject _normalPoolableObject;
     private float _timeSinceEnabled = 0;
-
-    private void Awake()
-    {
-        _normalPoolableObject = GetComponent<NormalPoolableObject>();
-    }
 
     private void Update()
     {

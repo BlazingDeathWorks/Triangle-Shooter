@@ -123,3 +123,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ghostDuration: 0.6
+  _normalPoolableObject: {fileID: 1046285189245072974}
