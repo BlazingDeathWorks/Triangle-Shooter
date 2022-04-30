@@ -4,7 +4,7 @@ using UnityEngine;
 
 internal class PlayerMovementController : MonoBehaviour
 {
-    public bool IsMoving => Mathf.Abs(_x) > 0 || Mathf.Abs(_y) > 0;
+    [SerializeField] private FuncChannel_Bool _playerGhostRunnerBoolEventHandler;
     [SerializeField] private InputButton[] _inputs = null;
     [SerializeField] private float _speed = 1;
     private int _x, _y;
@@ -14,6 +14,7 @@ internal class PlayerMovementController : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _playerGhostRunnerBoolEventHandler.AddAction(() => Mathf.Abs(_x) > 0 || Mathf.Abs(_y) > 0);
     }
 
     private void Update()
