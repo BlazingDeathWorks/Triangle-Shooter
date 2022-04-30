@@ -22,4 +22,9 @@ public class ActionChannel_Bool : ScriptableObject, IActionChannelGenerics1<Bool
     {
         this.func -= func;
     }
+
+    public int GetSize()
+    {
+        return func.GetInvocationList().Length;
+    }
 }

@@ -21,5 +21,9 @@ public class ActionChannel : ScriptableObject
     {
         func?.Invoke();
     }
+    public int GetSize()
+    {
+        return func.GetInvocationList().Length;
+    }
 }
 
