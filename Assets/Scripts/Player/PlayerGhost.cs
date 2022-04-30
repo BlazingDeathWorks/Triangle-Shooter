@@ -13,15 +13,15 @@ public class PlayerGhost : MonoBehaviour
         _normalPoolableObject = GetComponent<NormalPoolableObject>();
     }
 
-    private void OnEnable()
+    private void Update()
     {
-        _timeSinceEnabled = 0;
         if (_normalPoolableObject == null) return;
-        while (_timeSinceEnabled < _ghostDuration)
+        if (_timeSinceEnabled < _ghostDuration)
         {
             _timeSinceEnabled += Time.deltaTime;
+            return;
         }
-        Debug.Log(_normalPoolableObject.ParentObjectPooler);
+        _timeSinceEnabled = 0;
         ObjectPool.Return(_normalPoolableObject);
     }
 }
