@@ -15,9 +15,11 @@ public class Power : MonoBehaviour
     private void Awake()
     {
         if (_powerData == null || _upgradable == null || _image == null || _nameText == null || _costText == null || _button == null) return;
+
         _image.sprite = _powerData.Icon;
         _nameText.text = _powerData.Name;
         _costText.text = $"{_powerData.Cost.ToString()} G";
+
         IUpgradable upgradable;
         if (!_upgradable.TryGetComponent<IUpgradable>(out upgradable)) return;
         _button.onClick.AddListener(upgradable.OnUpgrade);
