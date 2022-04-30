@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4513796913559361324}
   - component: {fileID: 9054457309449730264}
   - component: {fileID: 1105255241}
-  - component: {fileID: 2770363780056903077}
   - component: {fileID: 948483561}
   - component: {fileID: 1568367174266904555}
   m_Layer: 6
@@ -37,6 +36,8 @@ Transform:
   m_LocalScale: {x: 0.7797, y: 0.7797, z: 0.7797}
   m_Children:
   - {fileID: 4513796914210741534}
+  - {fileID: 6240236926411888931}
+  - {fileID: 5550103835597410265}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -190,22 +191,6 @@ CircleCollider2D:
   m_Offset: {x: -0.007459563, y: -0.13426748}
   serializedVersion: 2
   m_Radius: 0.62504053
---- !u!114 &2770363780056903077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4513796913559361334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8636bf0bfd39b614581532d9f26677e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerDiedEventHandler: {fileID: 11400000, guid: 98571fc48e700994f9dfe376d09dafbe, type: 2}
-  _playerCollidedEventHandler: {fileID: 11400000, guid: da9dc42c988b3a94b9749bcb3e25c8aa, type: 2}
-  _particleSystem: {fileID: 2067202230378623515, guid: 354ae2f38cc9ca24f854309159fac530, type: 3}
-  _slider: {fileID: 0}
 --- !u!114 &948483561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,3 +251,95 @@ Transform:
   m_Father: {fileID: 4513796913559361331}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5177017298611215888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6240236926411888931}
+  - component: {fileID: 2737122950215731939}
+  m_Layer: 6
+  m_Name: Player Max Health Upgradable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6240236926411888931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5177017298611215888}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4513796913559361331}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2737122950215731939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5177017298611215888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e83ca42769b364ebf970160f74d609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6530094579369837405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5550103835597410265}
+  - component: {fileID: 4979575125442290468}
+  m_Layer: 6
+  m_Name: Player Health Upgradable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5550103835597410265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6530094579369837405}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4513796913559361331}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4979575125442290468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6530094579369837405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8636bf0bfd39b614581532d9f26677e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 4513796913559361334}
+  _playerMaxHealthUpgradable: {fileID: 2737122950215731939}
+  _playerDiedEventHandler: {fileID: 11400000, guid: 98571fc48e700994f9dfe376d09dafbe, type: 2}
+  _playerCollidedEventHandler: {fileID: 11400000, guid: da9dc42c988b3a94b9749bcb3e25c8aa, type: 2}
+  _particleSystem: {fileID: 2067202230378623515, guid: 354ae2f38cc9ca24f854309159fac530, type: 3}
+  _slider: {fileID: 0}
