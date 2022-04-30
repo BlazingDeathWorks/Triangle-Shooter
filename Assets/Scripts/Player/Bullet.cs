@@ -11,14 +11,13 @@ internal class Bullet : MonoBehaviour, IObjectPoolable<Bullet>
     [SerializeField] private float _lifetime = 3;
     private float _time = 0;
     private Rigidbody2D _rb = null;
-    private TrailRenderer _trailRenderer = null;
     private Bullet _instance;
 
     private void Awake()
     {
         _instance = GetComponent<Bullet>();
         _rb = GetComponent<Rigidbody2D>();
-        _trailRenderer = GetComponent<TrailRenderer>();
+
     }
 
     private void Update()
@@ -37,7 +36,6 @@ internal class Bullet : MonoBehaviour, IObjectPoolable<Bullet>
     public void OnReturn()
     {
         gameObject.SetActive(false);
-        _trailRenderer.Clear();
     }
 
     public Bullet ReturnComponent()
