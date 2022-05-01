@@ -20,8 +20,8 @@ public class Timer : MonoBehaviour
     private void Update()
     {
         if (!_canInrement) return;
-        _text.text = (int)Time.time / 60 + ":" + ((int)Time.time % 60) / 10 + ((int)Time.time % 60) % 10;
-        if (Time.time < _boundsIncreaseRate) return;
+        _text.text = (int)Time.timeSinceLevelLoad / 60 + ":" + ((int)Time.timeSinceLevelLoad % 60) / 10 + ((int)Time.timeSinceLevelLoad % 60) % 10;
+        if (Time.timeSinceLevelLoad < _boundsIncreaseRate) return;
         TimeFinishedEventHandler?.Invoke();
         _boundsIncreaseRate = Mathf.Pow(2, ++count) * _originalBoundsIncreaseRate;
     }

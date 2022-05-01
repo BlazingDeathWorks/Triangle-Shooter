@@ -17,24 +17,9 @@ internal class Spawner : MonoBehaviour, IObjectPooler<EnemySpawner>
     private float _decrementBy = 0.1f;
     private int _spawnRateDecrementRate = 20;
 
-    // IEnumerator Start()
-    // {
-    //     while (true)
-    //     {
-    //         if (Time.time >= _spawnRateDecrementRate)
-    //         {
-    //             _spawnRateDecrementRate += FREQUENCY;
-    //             _spawnRate -= _decrementBy;
-    //             _spawnRate = MathUtil.WrapFloat(_spawnRate, SPAWN_RATE_MIN, SPAWN_RATE_MAX);
-    //         }
-    //         yield return new WaitForSeconds(_spawnRate);
-    //         ObjectPool.Pool(this);
-    //     }
-    // }
-
     private void Update()
     {
-        if (Time.time >= _spawnRateDecrementRate)
+        if (Time.timeSinceLevelLoad >= _spawnRateDecrementRate)
         {
             _spawnRateDecrementRate += FREQUENCY;
             _spawnRate -= _decrementBy;
