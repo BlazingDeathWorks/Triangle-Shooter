@@ -1697,7 +1697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 637.5, y: -144.59998}
+  m_AnchoredPosition: {x: 637.5, y: -144.59961}
   m_SizeDelta: {x: 1039.8, y: 91.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1725200582
@@ -2200,6 +2200,18 @@ PrefabInstance:
     - target: {fileID: 4513796913559361334, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513796914729437312, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
+      propertyPath: _to
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513796914729437312, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
+      propertyPath: _volume
+      value: 
+      objectReference: {fileID: 1991928079}
+    - target: {fileID: 4513796914729437312, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
+      propertyPath: _distortTime
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4979575125442290468, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
       propertyPath: _slider
