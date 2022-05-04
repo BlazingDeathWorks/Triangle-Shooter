@@ -11,8 +11,6 @@ public class LensTween : MonoBehaviour
     [SerializeField] private float _distortTime;
     private LensDistortion _lensDistortion;
 
-    private const int LOOPS = 1;
-
     private void Awake()
     {
         if (_volume == null) return;
