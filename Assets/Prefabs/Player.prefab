@@ -304,7 +304,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5550103835597410265}
   - component: {fileID: 4979575125442290468}
-  - component: {fileID: 4513796914729437312}
   m_Layer: 6
   m_Name: Player Health Upgradable
   m_TagString: Untagged
@@ -344,19 +343,4 @@ MonoBehaviour:
   _playerCollidedEventHandler: {fileID: 11400000, guid: da9dc42c988b3a94b9749bcb3e25c8aa, type: 2}
   _particleSystem: {fileID: 2067202230378623515, guid: 354ae2f38cc9ca24f854309159fac530, type: 3}
   _slider: {fileID: 0}
---- !u!114 &4513796914729437312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6530094579369837405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae4824cb1507e2f408beec8fd41bf36d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _volume: {fileID: 0}
-  _from: 0
-  _to: 0.2
-  _distortTime: 0.8
+  _lensTween: {fileID: 0}

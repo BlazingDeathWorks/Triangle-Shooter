@@ -15,7 +15,7 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable
     [SerializeField] private ActionChannel _playerCollidedEventHandler;
     [SerializeField] private GameObject _particleSystem;
     [SerializeField] private Slider _slider;
-    private LensTween _lensTween;
+    [SerializeField] private LensTween _lensTween;
 
     private float _currentHealth = 3;
 
@@ -30,11 +30,9 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable
         Instance = this;
         #endregion
 
-        if (_playerMaxHealthUpgradable == null || _player == null) return;
+        if (_playerMaxHealthUpgradable == null || _player == null || _lensTween == null) return;
 
         OnUpgrade();
-
-        _lensTween = GetComponent<LensTween>();
 
         _playerCollidedEventHandler?.AddAction(() => _lensTween.DistortLens());
         _playerDiedEventHandler?.AddAction(() => Destroy(_player.gameObject));
