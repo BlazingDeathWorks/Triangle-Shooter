@@ -36,6 +36,7 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable
 
         _lensTween = GetComponent<LensTween>();
 
+        _playerCollidedEventHandler?.AddAction(() => _lensTween.DistortLens());
         _playerDiedEventHandler?.AddAction(() => Destroy(_player.gameObject));
         _playerDiedEventHandler?.AddAction(() => Instantiate(_particleSystem, transform.position, Quaternion.identity));
     }
@@ -51,13 +52,12 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable
         if (_lensTween == null) return;
 
         _currentHealth--;
-        _lensTween.DistortLens();
         UpdateHealth();
-        _playerCollidedEventHandler.CallAction();
+        _playerCollidedEventHandler?.CallAction();
 
         if (_currentHealth <= 0)
         {
-            _playerDiedEventHandler.CallAction();
+            _playerDiedEventHandler?.CallAction();
         }
     }
 
