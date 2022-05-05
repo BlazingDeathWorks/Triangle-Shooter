@@ -10,13 +10,17 @@ public class FadeTween : MonoBehaviour
 
     private void Awake()
     {
-        _sr = GetComponent<SpriteRenderer>();
-        _beginColor = new Color(_sr.color.r, _sr.color.g, _sr.color.b, _sr.color.a);
-        _endColor = new Color(_sr.color.r, _sr.color.g, _sr.color.b, 0);
+        if (TryGetComponent(out _sr))
+        {
+            _beginColor = new Color(_sr.color.r, _sr.color.g, _sr.color.b, _sr.color.a);
+            _endColor = new Color(_sr.color.r, _sr.color.g, _sr.color.b, 0);
+        }
     }
 
     private void OnEnable()
     {
+        if (_sr == null) return;
+
         LeanTween.value(gameObject, 0, 1, _fadeTime)
         .setOnUpdate((value) =>
         {

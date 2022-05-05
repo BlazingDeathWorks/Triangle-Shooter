@@ -10,6 +10,7 @@ internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>
     [SerializeField] Transform _bulletSpawnPoint = null;
     [SerializeField] Bullet _bullet = null;
     [SerializeField] Camera _camera = null;
+    [SerializeField] ShakeTween _shakeTween = null;
     [SerializeField] float _timeBetweenBullets = 1;
 
     Transform _transform = null;
@@ -47,6 +48,7 @@ internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>
             {
                 _time = 0;
                 ObjectPool.Pool(this);
+                _shakeTween?.Shake();
             }
         }
     }

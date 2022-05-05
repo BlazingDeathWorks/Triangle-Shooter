@@ -6,13 +6,14 @@ using UnityEngine.Rendering.Universal;
 
 public class LensTween : MonoBehaviour
 {
-    [SerializeField] private Volume _volume;
     [SerializeField] private float _from, _to;
     [SerializeField] private float _distortTime;
+    private Volume _volume;
     private LensDistortion _lensDistortion;
 
     private void Awake()
     {
+        _volume = GetComponent<Volume>();
         if (_volume == null) return;
         _volume.profile.TryGet(out _lensDistortion);
     }

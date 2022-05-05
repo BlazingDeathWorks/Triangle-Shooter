@@ -155,6 +155,7 @@ MonoBehaviour:
   _bulletSpawnPoint: {fileID: 4513796914210741534}
   _bullet: {fileID: 563188043, guid: ff863539800e2cb4aacc55723737e725, type: 3}
   _camera: {fileID: 0}
+  _shakeTween: {fileID: 0}
   _timeBetweenBullets: 0.2
 --- !u!114 &9054457309449730264
 MonoBehaviour:
