@@ -25,7 +25,6 @@ internal class PlayerMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         _rb.velocity = (new Vector2(_x, _y)).normalized * _speed;
-        Debug.Log(Mathf.Abs(_x * _y));
     }
 
     private void SetXY()
