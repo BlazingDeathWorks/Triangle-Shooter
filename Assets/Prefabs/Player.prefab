@@ -208,7 +208,7 @@ MonoBehaviour:
   _ghostRunnerBoolEventHandler: {fileID: 11400000, guid: 80e52b114d3d3e84a9d6ade4af9e49a0, type: 2}
   _useEventHandler: 1
   _ghostContainerKey: Player Ghost Container
-  _timeBetweenGhost: 0.1
+  _timeBetweenGhost: 0.05
 --- !u!1 &4513796914210741535
 GameObject:
   m_ObjectHideFlags: 0

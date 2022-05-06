@@ -153,4 +153,4 @@ MonoBehaviour:
   _ghostRunnerBoolEventHandler: {fileID: 0}
   _useEventHandler: 0
   _ghostContainerKey: Bullet Ghost Container
-  _timeBetweenGhost: 0.035
+  _timeBetweenGhost: 0.015
