@@ -104,5 +104,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _from: 0
-  _to: 1
-  _distortTime: 0.6
+  _to: 0.4
+  _distortTime: 0.2
