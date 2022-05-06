@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FrameRateManager : MonoBehaviour
+internal class FrameRateManager : MonoBehaviour
 {
     public static FrameRateManager Instance { get; private set; }
     [SerializeField] private int _startingTargetFrameRate = 60;
