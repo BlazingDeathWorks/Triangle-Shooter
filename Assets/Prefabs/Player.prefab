@@ -105,20 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerGhostRunnerBoolEventHandler: {fileID: 11400000, guid: 80e52b114d3d3e84a9d6ade4af9e49a0, type: 2}
-  _inputs:
-  - Disabled: 0
-    KeyCode: 119
-    KeyType: 2
-  - Disabled: 0
-    KeyCode: 115
-    KeyType: 2
-  - Disabled: 0
-    KeyCode: 97
-    KeyType: 2
-  - Disabled: 0
-    KeyCode: 100
-    KeyType: 2
-  _speed: 10
+  _speed: 16.3
 --- !u!50 &4513796913559361325
 Rigidbody2D:
   serializedVersion: 4

@@ -1922,7 +1922,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1938414856
 GameObject:
@@ -2241,6 +2241,63 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5177017298611215888, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
   m_PrefabInstance: {fileID: 4513796914729437309}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5688105627815723278
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1974639592236995468, guid: 3aab2afce92e7054fb5116c7595180bf, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974639592236995468, guid: 3aab2afce92e7054fb5116c7595180bf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974639592236995468, guid: 3aab2afce92e7054fb5116c7595180bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974639592236995468, guid: 3aab2afce92e7054fb5116c7595180bf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974639592236995468, guid: 3aab2afce92e7054fb5116c7595180bf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974639592236995468, guid: 3aab2afce92e7054fb5116c7595180bf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974639592236995468, guid: 3aab2afce92e7054fb5116c7595180bf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974639592236995468, guid: 3aab2afce92e7054fb5116c7595180bf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974639592236995468, guid: 3aab2afce92e7054fb5116c7595180bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974639592236995468, guid: 3aab2afce92e7054fb5116c7595180bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974639592236995468, guid: 3aab2afce92e7054fb5116c7595180bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727621403000915807, guid: 3aab2afce92e7054fb5116c7595180bf, type: 3}
+      propertyPath: m_Name
+      value: Framerate Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3aab2afce92e7054fb5116c7595180bf, type: 3}
 --- !u!1001 &6826776540338740980
 PrefabInstance:
   m_ObjectHideFlags: 0
