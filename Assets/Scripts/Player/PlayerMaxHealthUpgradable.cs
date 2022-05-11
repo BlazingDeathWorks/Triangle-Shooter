@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMaxHealthUpgradable : MonoBehaviour, IUpgradable
 {
     public float MaxHealth { get; private set; } = 3;
+    [SerializeField] private PlayerHealthSystem _playerHealthSystem;
 
     public void OnUpgrade()
     {
@@ -17,6 +18,6 @@ public class PlayerMaxHealthUpgradable : MonoBehaviour, IUpgradable
         {
             MaxHealth += 2;
         }
-        PlayerHealthSystem.Instance.UpdateHealth();
+        _playerHealthSystem?.UpdateHealth();
     }
 }

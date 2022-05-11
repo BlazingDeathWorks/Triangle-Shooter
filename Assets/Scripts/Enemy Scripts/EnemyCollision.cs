@@ -10,6 +10,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
 
     [SerializeField] private EnemyDeathParticle _deathParticle = null;
     [SerializeField] private float _collisionDistance = 0.1f;
+    private PlayerHealthSystem _playerHealthSystem;
     private Transform _transform;
     private Transform _player;
     const string PLAYER = "Player";
@@ -20,7 +21,14 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
     {
         _instance = GetComponent<EnemyCollision>();
         _transform = transform;
-        _player = GameObject.FindGameObjectWithTag(PLAYER)?.GetComponent<Transform>();
+    }
+
+    private void Start()
+    {
+        GameObject player = SceneReferenceManager.GetReference(PLAYER);
+        if (player == null) return;
+        _player = player.GetComponent<Transform>();
+        _playerHealthSystem = player.GetComponentInChildren<PlayerHealthSystem>();
     }
 
     //Destroying Player
@@ -29,7 +37,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
         if (_player == null) return;
         if (Vector2.Distance(_player.position, _transform.position) <= _collisionDistance)
         {
-            PlayerHealthSystem.Instance?.CheckHealth();
+            _playerHealthSystem?.CheckHealth();
             ObjectPool.Return(this);
         }
     }

@@ -7,8 +7,6 @@ using UnityEngine.UI;
 //Upgrade to fully heal player health
 public class PlayerHealthSystem : MonoBehaviour, IUpgradable
 {
-    public static PlayerHealthSystem Instance { get; private set; }
-
     [SerializeField] private GameObject _player;
     [SerializeField] private PlayerMaxHealthUpgradable _playerMaxHealthUpgradable;
     [SerializeField] private ActionChannel _playerDiedEventHandler;
@@ -21,15 +19,6 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable
 
     private void Awake()
     {
-        #region Singleton
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        #endregion
-
         if (_playerMaxHealthUpgradable == null || _player == null || _lensTween == null) return;
 
         OnUpgrade();
