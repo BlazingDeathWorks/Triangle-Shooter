@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c444fd6a43ee8154a8c2ad1e81db896c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildBlockGhost: {fileID: -2614195982466219079, guid: 0793dd3a976865346b059640cd5a2330, type: 3}
+  _rightMouseUpEventHandler: {fileID: 11400000, guid: 8986d6b9fae123042bf6fbaee5f86d71, type: 2}
 --- !u!61 &4141241302578764262
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -46,6 +46,10 @@ MonoBehaviour:
   _keys:
   - Player
   - Enemy Variants Manager
+  - Build Block Ghost Container
+  - Grid Container
   _values:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
