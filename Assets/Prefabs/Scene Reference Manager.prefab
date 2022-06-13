@@ -47,9 +47,7 @@ MonoBehaviour:
   - Player
   - Enemy Variants Manager
   - Build Grid Box Manager
-  - Grid Container
   _values:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

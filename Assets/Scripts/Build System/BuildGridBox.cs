@@ -20,7 +20,6 @@ internal class BuildGridBox : MonoBehaviour, IObjectPooler<NormalPoolableObject>
     //References
     public IObjectPoolable<NormalPoolableObject> CurrentBuildBlockGhost { private get; set; }
     private BuildGridBoxManager _buildGridBoxManager;
-    private Transform _gridContainer;
     private Transform _transform;
     private SpriteRenderer _sr;
 
@@ -32,7 +31,6 @@ internal class BuildGridBox : MonoBehaviour, IObjectPooler<NormalPoolableObject>
 
     private void Start()
     {
-        _gridContainer = SceneReferenceManager.GetReference("Grid Container").transform;
         _buildGridBoxManager = SceneReferenceManager.GetReference("Build Grid Box Manager").GetComponent<BuildGridBoxManager>();
     }
 
@@ -41,6 +39,15 @@ internal class BuildGridBox : MonoBehaviour, IObjectPooler<NormalPoolableObject>
         _rightMouseHeld = Input.GetKey(KeyCode.Mouse1);
         if (!Input.GetKeyUp(KeyCode.Mouse1) || _rightMouseUpEventHandler == null) return;
         _rightMouseUpEventHandler.CallAction();
+    }
+
+    private void OnDisable()
+    {
+        if (CurrentBuildBlockGhost == null) return;
+        ObjectPool.Return(CurrentBuildBlockGhost);
+        CurrentBuildBlockGhost = null;
+        _canSpawnBlock = false;
+        _rightMouseUpEventHandler.RemoveAction(OnRightMouseUp);
     }
 
     private void OnMouseOver()
@@ -74,7 +81,7 @@ internal class BuildGridBox : MonoBehaviour, IObjectPooler<NormalPoolableObject>
     public void OnPooled(NormalPoolableObject instance)
     {
         instance.gameObject.SetActive(true);
-        instance.transform.parent = _gridContainer;
+        instance.transform.parent = _buildGridBoxManager.transform;
         instance.transform.position = _transform.position;
     }
 }
