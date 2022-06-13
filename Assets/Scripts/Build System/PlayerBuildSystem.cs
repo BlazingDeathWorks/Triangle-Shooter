@@ -2,55 +2,64 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class PlayerBuildSystem : MonoBehaviour, IObjectPooler<BuildingBlockBase>, IObjectPooler<BuildingBlock>
+internal class PlayerBuildSystem : MonoBehaviour, IUpgradable
 {
-    public BuildingBlockBase Prefab => _buildingBlockBase;
-    public Queue<BuildingBlockBase> Pool { get; } = new Queue<BuildingBlockBase>();
-
-    BuildingBlock IObjectPooler<BuildingBlock>.Prefab => _buildingBlock;
-    Queue<BuildingBlock> IObjectPooler<BuildingBlock>.Pool { get; } = new Queue<BuildingBlock>();
-
     [SerializeField] private InputButton _buildInput;
-    [SerializeField] private Transform _buildBlockBaseContainer;
-    [SerializeField] private BuildingBlockBase _buildingBlockBase;
-    [SerializeField] private BuildingBlock _buildingBlock;
-    private Transform _previousBlockPos;
+    [SerializeField] private BuildGridBox _gridBoxPrefab;
+    [SerializeField] private Transform _gridContainer;
+    private int _dimension = 3;
+    private int _absPreviousDimension = 3;
     private Transform _transform;
 
     private void Awake()
     {
         _transform = transform;
+        _gridContainer.gameObject.SetActive(false);
+        CreateGrid();
     }
 
     private void Update()
     {
         if (_buildInput.Clicked)
         {
-            ObjectPool.Pool<BuildingBlockBase>(this);
+            _gridContainer.position = _transform.position;
+            _gridContainer.gameObject.SetActive(!_gridContainer.gameObject.activeSelf);
+            Time.timeScale = _gridContainer.gameObject.activeSelf ? 0 : 1;
         }
     }
 
-    public void OnPooled(BuildingBlockBase instance)
+    //Creates Build Grid Boxes
+    private void CreateGrid()
     {
-        instance.gameObject.SetActive(true);
-        instance.transform.parent = _buildBlockBaseContainer;
-        instance.transform.position = _transform.position;
-        if (_previousBlockPos == null)
+        int x = -_dimension / 2;
+        int y = -_dimension / 2;
+        for (int i = 0; i < _dimension; i++)
         {
-            _previousBlockPos = instance.transform;
-            return;
+            if (Mathf.Abs(x) > _absPreviousDimension)
+            {
+                x++;
+                continue;
+            }
+            for (int j = 0; j < _dimension; j++)
+            {
+                if (i == _dimension / 2 && j == _dimension / 2)
+                {
+                    y++;
+                    continue;
+                }
+                BuildGridBox instance = Instantiate(_gridBoxPrefab, new Vector3(x, y, 0), Quaternion.identity);
+                instance.transform.parent = _gridContainer;
+                y++;
+            }
+            x++;
+            y = -_dimension / 2;
         }
-        ObjectPool.Pool<BuildingBlock>(this);
-        _previousBlockPos = instance.transform;
     }
 
-    public void OnPooled(BuildingBlock instance)
+    public void OnUpgrade()
     {
-        instance.gameObject.SetActive(true);
-        instance.transform.parent = _buildBlockBaseContainer;
-        float distance = Vector2.Distance(_previousBlockPos.position, _transform.position);
-        instance.transform.localScale = new Vector2(distance, instance.transform.localScale.y);
-        instance.transform.position = (_previousBlockPos.position + _transform.position) / 2;
-        instance.transform.localEulerAngles = new Vector3(0, 0, Mathf.Rad2Deg * Mathf.Atan2(_transform.position.y - _previousBlockPos.position.y, _transform.position.x - _previousBlockPos.position.x));
+        _dimension += 2;
+        CreateGrid();
+        _absPreviousDimension = _dimension;
     }
 }

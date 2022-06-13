@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class BuildingBlock : MonoBehaviour, IObjectPoolable<BuildingBlock>
+internal class BuildingBlock : MonoBehaviour
 {
-    public IObjectPooler<BuildingBlock> ParentObjectPooler { get; set; }
     [SerializeField] private ActionChannel _blockMaxHealthUpgradedEventHandler;
-    private BuildingBlock _instance;
+    private NormalPoolableObject _normalPoolableObject;
     private int _health = 1;
 
     private void Awake()
     {
-        _instance = GetComponent<BuildingBlock>();
+        _normalPoolableObject = GetComponent<NormalPoolableObject>();
         _blockMaxHealthUpgradedEventHandler.AddAction(UpdateHealth);
     }
 
@@ -24,22 +23,12 @@ internal class BuildingBlock : MonoBehaviour, IObjectPoolable<BuildingBlock>
     {
         if (--_health <= 0) 
         {
-            ObjectPool.Return(this);
+            ObjectPool.Return(_normalPoolableObject);
         }
     }
 
     private void UpdateHealth()
     {
         _health = PlayerBuildHealthUpgradable.MaxHealth;
-    }
-
-    public void OnReturn()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public BuildingBlock ReturnComponent()
-    {
-        return _instance;
     }
 }

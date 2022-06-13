@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5944070508261106054}
   - component: {fileID: 5944070508261106049}
-  - component: {fileID: 2899079937156316405}
-  m_Layer: 11
-  m_Name: Build Block Base
-  m_TagString: Building Base
+  - component: {fileID: -2614195982466219079}
+  m_Layer: 8
+  m_Name: Build Block Ghost
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5944070508261106054
 Transform:
   m_ObjectHideFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5944070508261106048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.43343067, y: 0.43343067, z: 0.43343067}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,10 +70,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 676449575
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 50
-  m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  m_Color: {r: 1, g: 0.4667281, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: dcdc43f7a0ad67b4ab3e3db38233dfae, type: 3}
+  m_Color: {r: 0, g: 0.13725491, b: 1, a: 0.19607843}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2899079937156316405
+--- !u!114 &-2614195982466219079
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,6 +92,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5944070508261106048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94c63197ff8f1e94a94fd895f6d58004, type: 3}
+  m_Script: {fileID: 11500000, guid: 01930047ddfb5024090639d7e7586d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

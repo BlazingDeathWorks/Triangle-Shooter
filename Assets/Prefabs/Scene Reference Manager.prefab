@@ -46,6 +46,8 @@ MonoBehaviour:
   _keys:
   - Player
   - Enemy Variants Manager
+  - Build Grid Box Manager
   _values:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
