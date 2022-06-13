@@ -2,13 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildGridBox : MonoBehaviour, IObjectPooler<NormalPoolableObject>
+public class BuildGridBox : MonoBehaviour
 {
-    //Object Pooler Params
-    public NormalPoolableObject Prefab => _buildBlockGhost;
-    public Queue<NormalPoolableObject> Pool { get; } = new Queue<NormalPoolableObject>();
-    [SerializeField] private NormalPoolableObject _buildBlockGhost;
-
     //Variables
     public Color GridColor => _sr.color;
     private bool _rightMouseHeld = false;
@@ -18,11 +13,11 @@ public class BuildGridBox : MonoBehaviour, IObjectPooler<NormalPoolableObject>
     [SerializeField] private ActionChannel _rightMouseUpEventHandler;
 
     //References
-    public IObjectPoolable<NormalPoolableObject> CurrentBuildBlockGhost { get; set; }
+    public IObjectPoolable<NormalPoolableObject> CurrentBuildBlockGhost { private get; set; }
+    private BuildGridBoxManager _buildGridBoxManager;
     private Transform _gridContainer;
-    private Transform _buildBlockGhostContainer;
-    private SpriteRenderer _sr;
     private Transform _transform;
+    private SpriteRenderer _sr;
 
     private void Awake()
     {
@@ -33,7 +28,7 @@ public class BuildGridBox : MonoBehaviour, IObjectPooler<NormalPoolableObject>
     private void Start()
     {
         _gridContainer = SceneReferenceManager.GetReference("Grid Container").transform;
-        _buildBlockGhostContainer = SceneReferenceManager.GetReference("Build Block Ghost Container").transform;
+        _buildGridBoxManager = SceneReferenceManager.GetReference("Build Grid Box Manager").GetComponent<BuildGridBoxManager>();
     }
 
     private void Update()
@@ -45,7 +40,7 @@ public class BuildGridBox : MonoBehaviour, IObjectPooler<NormalPoolableObject>
 
     private void OnMouseOver()
     {
-        if (CurrentBuildBlockGhost == null) ObjectPool.Pool(this);
+        if (CurrentBuildBlockGhost == null) _buildGridBoxManager.PoolBlockGhost(this, _transform.position);
         if (_rightMouseHeld && _canSpawnBlock == false)
         {
             _canSpawnBlock = true;
@@ -68,14 +63,5 @@ public class BuildGridBox : MonoBehaviour, IObjectPooler<NormalPoolableObject>
         CurrentBuildBlockGhost = null;
         _canSpawnBlock = false;
         _rightMouseUpEventHandler.RemoveAction(OnRightMouseUp);
-    }
-
-    public void OnPooled(NormalPoolableObject instance)
-    {
-        if (!_buildBlockGhostContainer) return;
-        instance.gameObject.SetActive(true);
-        CurrentBuildBlockGhost = instance;
-        instance.transform.parent = _buildBlockGhostContainer;
-        instance.transform.position = _transform.position;
     }
 }

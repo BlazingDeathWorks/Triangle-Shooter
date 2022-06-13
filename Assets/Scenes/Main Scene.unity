@@ -2991,7 +2991,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6826776538982434909, guid: 606a783ee1385904284d359fc5f3efdc, type: 3}
       propertyPath: m_Name
-      value: Build Block Ghost Container
+      value: Build Grid Box Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6826776538982434910, guid: 606a783ee1385904284d359fc5f3efdc, type: 3}
       propertyPath: m_RootOrder
