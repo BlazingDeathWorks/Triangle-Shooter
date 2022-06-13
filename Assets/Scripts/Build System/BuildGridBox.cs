@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildGridBox : MonoBehaviour
+internal class BuildGridBox : MonoBehaviour, IObjectPooler<NormalPoolableObject>
 {
+    //Object Pooling Parameters
+    public NormalPoolableObject Prefab => _buildingBlock;
+    public Queue<NormalPoolableObject> Pool { get; } = new Queue<NormalPoolableObject>();
+    [SerializeField] private NormalPoolableObject _buildingBlock;
+
     //Variables
     public Color GridColor => _sr.color;
     private bool _rightMouseHeld = false;
@@ -59,9 +64,17 @@ public class BuildGridBox : MonoBehaviour
 
     private void OnRightMouseUp()
     {
+        ObjectPool.Pool(this);
         ObjectPool.Return(CurrentBuildBlockGhost);
         CurrentBuildBlockGhost = null;
         _canSpawnBlock = false;
         _rightMouseUpEventHandler.RemoveAction(OnRightMouseUp);
+    }
+
+    public void OnPooled(NormalPoolableObject instance)
+    {
+        instance.gameObject.SetActive(true);
+        instance.transform.parent = _gridContainer;
+        instance.transform.position = _transform.position;
     }
 }
