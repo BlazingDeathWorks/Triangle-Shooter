@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class PlayerBuildSystem : MonoBehaviour, IUpgradable
+public class PlayerBuildSystem : MonoBehaviour, IUpgradable
 {
+    [SerializeField] private ActionChannel_Bool _buildActivatedEventHandler;
     [SerializeField] private InputButton _buildInput;
     [SerializeField] private BuildGridBox _gridBoxPrefab;
     [SerializeField] private Transform _gridContainer;
@@ -20,10 +21,12 @@ internal class PlayerBuildSystem : MonoBehaviour, IUpgradable
 
     private void Update()
     {
+        if (_buildActivatedEventHandler == null) return;
         if (_buildInput.Clicked)
         {
             _gridContainer.position = _transform.position;
             _gridContainer.gameObject.SetActive(!_gridContainer.gameObject.activeSelf);
+            _buildActivatedEventHandler.CallAction(_gridContainer.gameObject.activeSelf);
             Time.timeScale = _gridContainer.gameObject.activeSelf ? 0 : 1;
         }
     }
