@@ -11,7 +11,7 @@ public class LevelSystem : MonoBehaviour
     [SerializeField] ActionChannel giveXp;
     private void Awake()
     {
-        expText.text = "EXP: ";
+        expText.text = "EXP:" + xp + "/" + limit;
         giveXp.AddAction(UpdateXp);
     }
     void UpdateXp() {

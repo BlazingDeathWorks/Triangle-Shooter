@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1568367174266904555}
   - component: {fileID: 3782616740718345330}
   - component: {fileID: 2035821277090183562}
+  - component: {fileID: 1082159833228721572}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -190,6 +191,22 @@ MonoBehaviour:
   _camera: {fileID: 0}
   _shakeTween: {fileID: 0}
   _timeBetweenBullets: 0.2
+--- !u!114 &1082159833228721572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4513796913559361334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8dee874d676b2b4dade30221c205ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expText: {fileID: 0}
+  xp: 0
+  limit: 100
+  giveXp: {fileID: 11400000, guid: 9f78a2a1a5df80e4e86b710798b42869, type: 2}
 --- !u!1 &4513796914210741535
 GameObject:
   m_ObjectHideFlags: 0
