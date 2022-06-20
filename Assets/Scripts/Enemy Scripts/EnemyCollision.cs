@@ -10,6 +10,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
 
     [SerializeField] private EnemyDeathParticle _deathParticle = null;
     [SerializeField] private float _collisionDistance = 0.1f;
+    [SerializeField] private ActionChannel _enemieDeath;
     private PlayerHealthSystem _playerHealthSystem;
     private Transform _transform;
     private Transform _player;
@@ -49,6 +50,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
         {
             ObjectPool.Pool(this);
             ObjectPool.Return(this);
+            _enemieDeath.CallAction();
         }
     }
 

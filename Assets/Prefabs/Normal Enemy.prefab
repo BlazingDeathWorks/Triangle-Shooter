@@ -160,3 +160,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deathParticle: {fileID: -8337701026882291611, guid: 386f50f83878c2749973ce1b571dcd31, type: 3}
   _collisionDistance: 0.7
+  _enemieDeath: {fileID: 11400000, guid: 9f78a2a1a5df80e4e86b710798b42869, type: 2}
