@@ -5,9 +5,10 @@ using UnityEngine;
 internal abstract class GridMovementDirection
 {
     protected Vector2 Destination { get; set; }
+    protected bool ReachedDestination { get; set; }
 
     public abstract Vector2 ToVector();
-    public abstract bool ReachedDestinationi(Transform trans);
+    public abstract bool ReachedDestinationByTransform(Transform trans);
 
     public void SetDestination(Transform trans)
     {
