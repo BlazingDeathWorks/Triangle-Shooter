@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1568367174266904555}
   - component: {fileID: 3782616740718345330}
   - component: {fileID: 2035821277090183562}
-  - component: {fileID: 1082159833228721572}
+  - component: {fileID: 948483568}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -56,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buildActivatedEventHandler: {fileID: 11400000, guid: cd4f1ce1d524fab49877b15daf9d13ba, type: 2}
   _playerGhostRunnerBoolEventHandler: {fileID: 11400000, guid: 80e52b114d3d3e84a9d6ade4af9e49a0, type: 2}
-  _speed: 16
+  _speed: 10
 --- !u!50 &4513796913559361325
 Rigidbody2D:
   serializedVersion: 4
@@ -192,7 +192,7 @@ MonoBehaviour:
   _camera: {fileID: 0}
   _shakeTween: {fileID: 0}
   _timeBetweenBullets: 0.2
---- !u!114 &1082159833228721572
+--- !u!114 &948483568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

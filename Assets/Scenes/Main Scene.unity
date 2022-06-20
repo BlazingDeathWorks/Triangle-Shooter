@@ -1105,22 +1105,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4513796913559361334, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
   m_PrefabInstance: {fileID: 4513796914729437309}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &948483568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 948483560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8dee874d676b2b4dade30221c205ee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  expText: {fileID: 1546037774}
-  xp: 0
-  limit: 100
-  giveXp: {fileID: 11400000, guid: 9f78a2a1a5df80e4e86b710798b42869, type: 2}
 --- !u!1 &1117712697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,6 +2255,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 948483568, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
+      propertyPath: expText
+      value: 
+      objectReference: {fileID: 1546037774}
     - target: {fileID: 2035821277090183562, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
       propertyPath: _camera
       value: 
