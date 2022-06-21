@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerBuildSystem : MonoBehaviour, IUpgradable
 {
+    [SerializeField] private ActionChannel_Bool _shopActivatedEventHandler;
     [SerializeField] private ActionChannel_Bool _buildActivatedEventHandler;
     [SerializeField] private InputButton _buildInput;
     [SerializeField] private BuildGridBox _gridBoxPrefab;
@@ -15,6 +16,7 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
 
     private void Awake()
     {
+        _shopActivatedEventHandler?.AddAction(OnShopActivated);
         _transform = transform;
         _gridContainer.gameObject.SetActive(false);
         CreateGrid();
@@ -30,6 +32,18 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
             _buildActivatedEventHandler.CallAction(_gridContainer.gameObject.activeSelf);
             Time.timeScale = _gridContainer.gameObject.activeSelf ? _slowTime : 1;
         }
+    }
+
+    private void OnShopActivated(bool gonnaBeActive)
+    {
+        if (gonnaBeActive)
+        {
+            _gridContainer.gameObject.SetActive(false);
+            enabled = false;
+            return;
+        }
+        _buildActivatedEventHandler.CallAction(_gridContainer.gameObject.activeSelf);
+        enabled = true;
     }
 
     //Creates Build Grid Boxes
