@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class LevelSystem : MonoBehaviour
 {
-    [SerializeField] Text expText = null;
-    [SerializeField] int xp = 0;
-    [SerializeField] int limit = 100;
+    [SerializeField] Slider expText = null;
+    [SerializeField] float xp = 0;
+    [SerializeField] float limit = 100;
     [SerializeField] ActionChannel giveXp;
     private void Awake()
     {
-        expText.text = "EXP:" + xp + "/" + limit;
+        expText.value = xp/limit;
         giveXp.AddAction(UpdateXp);
     }
     void UpdateXp() {
-        expText.text = "EXP:" + xp + "/" + limit;
+        expText.value = xp/limit;
         if (xp < limit) xp++;
     }
 
