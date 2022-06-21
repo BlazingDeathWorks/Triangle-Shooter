@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65fcb82a0950c5f4483fa10eacfa5fe7, type: 3}
   m_Name: Player Health Upgrade Data
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: c4c548a339b4d41a590928c0c98934a7, type: 3}
+  _icon: {fileID: 21300000, guid: 8abc3aa8a42fd874c8193a842229d09a, type: 3}
   _name: Player Health
   _cost: 100
