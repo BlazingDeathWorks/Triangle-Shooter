@@ -8,6 +8,7 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
     [SerializeField] private InputButton _buildInput;
     [SerializeField] private BuildGridBox _gridBoxPrefab;
     [SerializeField] private Transform _gridContainer;
+    [SerializeField] private float _slowTime = 0.3f;
     private int _dimension = 3;
     private int _absPreviousDimension = 3;
     private Transform _transform;
@@ -27,7 +28,7 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
             _gridContainer.position = _transform.position;
             _gridContainer.gameObject.SetActive(!_gridContainer.gameObject.activeSelf);
             _buildActivatedEventHandler.CallAction(_gridContainer.gameObject.activeSelf);
-            Time.timeScale = _gridContainer.gameObject.activeSelf ? 0 : 1;
+            Time.timeScale = _gridContainer.gameObject.activeSelf ? _slowTime : 1;
         }
     }
 
