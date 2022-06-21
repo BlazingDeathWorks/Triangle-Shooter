@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class GridMovementDirection
 {
     public Vector2 Destination { get; internal set; }
+    public GridMovementDirection ReverseMovementDirection { get; set; }
 
     public abstract Vector2 ToVector();
     public abstract bool ReachedDestinationByTransform(Transform trans);

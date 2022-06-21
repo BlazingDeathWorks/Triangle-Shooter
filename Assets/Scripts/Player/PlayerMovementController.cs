@@ -7,17 +7,32 @@ internal class PlayerMovementController : MonoBehaviour
     [SerializeField] private ActionChannel_Bool _buildActivatedEventHandler;
     [SerializeField] private FuncChannel_Bool _playerGhostRunnerBoolEventHandler;
     [SerializeField] private float _speed = 1;
+    [SerializeField] private float _destinationWaitTime = 0.4f;
+    private float _timeSinceReachedLastDestination;
     private PlayerBuildSystem _buildSystem;
     private Transform _transform;
     private Rigidbody2D _rb;
     
     //Grid Movement State Machine
     private GridMovementDirectionStateMachine _stateMachine;
-    private GridMovementDirection[] _directions = new GridMovementDirection[] { new GridMovementUp(), new GridMovementDown(), new GridMovementLeft(), new GridMovementRight() };
+    private GridMovementDirection[] _directions;
 
     private void Awake()
     {
+        //State Machine Config
+        GridMovementUp up = new GridMovementUp();
+        GridMovementDown down = new GridMovementDown();
+        GridMovementLeft left = new GridMovementLeft();
+        GridMovementRight right = new GridMovementRight();
+
+        up.ReverseMovementDirection = down;
+        down.ReverseMovementDirection = up;
+        left.ReverseMovementDirection = right;
+        right.ReverseMovementDirection = left;
+
+        _directions = new GridMovementDirection[] { up, down, left, right };
         _stateMachine = new GridMovementDirectionStateMachine();
+
         _transform = transform;
         _rb = GetComponent<Rigidbody2D>();
         _buildSystem = GetComponentInChildren<PlayerBuildSystem>();
@@ -31,17 +46,25 @@ internal class PlayerMovementController : MonoBehaviour
         if (_stateMachine.CurrentGridMoveDir == null)
         {
             _buildSystem.enabled = true;
-            _stateMachine.SetNextDirectionState(_transform);
+            _stateMachine.SetNextDirectionState(_transform.position);
             return;
         }
         if (!_stateMachine.CurrentGridMoveDir.ReachedDestinationByTransform(_transform))
         {
             _buildSystem.enabled = false;
+            _timeSinceReachedLastDestination += Time.deltaTime;
+            if (_timeSinceReachedLastDestination >= _destinationWaitTime)
+            {
+                _timeSinceReachedLastDestination = 0;
+                _stateMachine.QueueNextState(_stateMachine.CurrentGridMoveDir.ReverseMovementDirection);
+                _stateMachine.SetNextDirectionState(_stateMachine.CurrentGridMoveDir.Destination);
+            }
             return;
         }
+        _timeSinceReachedLastDestination = 0;
         _buildSystem.enabled = true;
         _transform.position = _stateMachine.CurrentGridMoveDir.Destination;
-        _stateMachine.SetNextDirectionState(_transform);
+        _stateMachine.SetNextDirectionState(_transform.position);
     }
 
     private void FixedUpdate()

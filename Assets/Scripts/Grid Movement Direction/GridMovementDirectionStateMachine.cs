@@ -13,10 +13,10 @@ public class GridMovementDirectionStateMachine
         _nextDirection = null;
     }
 
-    private void SetDestination(Transform trans)
+    private void SetDestination(Vector2 position)
     {
         if (CurrentGridMoveDir == null) return;
-        CurrentGridMoveDir.Destination = (Vector2)trans.position + CurrentGridMoveDir.ToVector();
+        CurrentGridMoveDir.Destination = position + CurrentGridMoveDir.ToVector();
     }
 
     public void QueueNextState(GridMovementDirection nextDirection)
@@ -24,10 +24,10 @@ public class GridMovementDirectionStateMachine
         _nextDirection = nextDirection;
     }
 
-    public void SetNextDirectionState(Transform trans)
+    public void SetNextDirectionState(Vector2 position)
     {
         CurrentGridMoveDir = _nextDirection;
-        SetDestination(trans);
+        SetDestination(position);
         _nextDirection = null;
     }
 }
