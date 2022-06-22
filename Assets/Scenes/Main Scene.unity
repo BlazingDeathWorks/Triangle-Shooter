@@ -2545,10 +2545,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1585098625}
     - target: {fileID: 2035821277090183562, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
-      propertyPath: _camera
-      value: 
-      objectReference: {fileID: 859296082}
-    - target: {fileID: 2035821277090183562, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
       propertyPath: _shakeTween
       value: 
       objectReference: {fileID: 318572138}
@@ -2608,6 +2604,10 @@ PrefabInstance:
       propertyPath: _lensTween
       value: 
       objectReference: {fileID: 1801412418390671412}
+    - target: {fileID: 6833509286256497244, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 859296082}
     - target: {fileID: 7262262804654258595, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
       propertyPath: _gridContainer
       value: 

@@ -24,12 +24,11 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
 
     private void Update()
     {
-        if (_buildActivatedEventHandler == null) return;
         if (_buildInput.Clicked)
         {
             _gridContainer.position = _transform.position;
             _gridContainer.gameObject.SetActive(!_gridContainer.gameObject.activeSelf);
-            _buildActivatedEventHandler.CallAction(_gridContainer.gameObject.activeSelf);
+            _buildActivatedEventHandler?.CallAction(_gridContainer.gameObject.activeSelf);
             Time.timeScale = _gridContainer.gameObject.activeSelf ? _slowTime : 1;
         }
     }
@@ -40,10 +39,10 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
         {
             _gridContainer.gameObject.SetActive(false);
             _buildActivatedEventHandler.CallAction(_gridContainer.gameObject.activeSelf);
-            enabled = false;
+            gameObject.SetActive(false);
             return;
         }
-        enabled = true;
+        gameObject.SetActive(true);
     }
 
     //Creates Build Grid Boxes

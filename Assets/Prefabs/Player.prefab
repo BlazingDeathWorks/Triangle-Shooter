@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3782616740718345330}
   - component: {fileID: 2035821277090183562}
   - component: {fileID: 948483568}
+  - component: {fileID: 6833509286256497244}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -188,9 +189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40cdaa82a5437004ca5c70fcc7cc5d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildActivatedEventHandler: {fileID: 11400000, guid: cd4f1ce1d524fab49877b15daf9d13ba, type: 2}
   _bulletSpawnPoint: {fileID: 4513796914210741534}
   _bullet: {fileID: 563188043, guid: ff863539800e2cb4aacc55723737e725, type: 3}
-  _camera: {fileID: 0}
   _shakeTween: {fileID: 0}
   _timeBetweenBullets: 0.2
 --- !u!114 &948483568
@@ -209,6 +210,19 @@ MonoBehaviour:
   xp: 0
   limit: 100
   giveXp: {fileID: 11400000, guid: 9f78a2a1a5df80e4e86b710798b42869, type: 2}
+--- !u!114 &6833509286256497244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4513796913559361334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446c8466525d4604286df664531fd171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
 --- !u!1 &4513796914210741535
 GameObject:
   m_ObjectHideFlags: 0
