@@ -340,7 +340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83804a8f67544c4a8f3d07ddf81387b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shopActivatedEventHandler: {fileID: 11400000, guid: 71e82fd862a9a1b498351f3cabdf38c8, type: 2}
   _buildActivatedEventHandler: {fileID: 11400000, guid: cd4f1ce1d524fab49877b15daf9d13ba, type: 2}
   _buildInput:
     Disabled: 0
