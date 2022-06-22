@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerBuildSystem : MonoBehaviour, IUpgradable
 {
+    [SerializeField] private ActionChannel_Bool _shopActivatedEventHandler;
     [SerializeField] private ActionChannel_Bool _buildActivatedEventHandler;
     [SerializeField] private InputButton _buildInput;
     [SerializeField] private BuildGridBox _gridBoxPrefab;
@@ -15,6 +16,7 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
 
     private void Awake()
     {
+        _shopActivatedEventHandler?.AddAction(OnShopActivated);
         _transform = transform;
         _gridContainer.gameObject.SetActive(false);
         CreateGrid();
@@ -30,6 +32,18 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
             _buildActivatedEventHandler.CallAction(_gridContainer.gameObject.activeSelf);
             Time.timeScale = _gridContainer.gameObject.activeSelf ? _slowTime : 1;
         }
+    }
+
+    private void OnShopActivated(bool gonnaBeActive)
+    {
+        if (gonnaBeActive)
+        {
+            _gridContainer.gameObject.SetActive(false);
+            _buildActivatedEventHandler.CallAction(_gridContainer.gameObject.activeSelf);
+            enabled = false;
+            return;
+        }
+        enabled = true;
     }
 
     //Creates Build Grid Boxes
@@ -51,7 +65,7 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
                     y++;
                     continue;
                 }
-                BuildGridBox instance = Instantiate(_gridBoxPrefab, new Vector3(x, y, 0), Quaternion.identity);
+                BuildGridBox instance = Instantiate(_gridBoxPrefab, new Vector3(x + _transform.position.x, y + _transform.position.y, 0), Quaternion.identity);
                 instance.transform.parent = _gridContainer;
                 y++;
             }
@@ -63,7 +77,7 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
     public void OnUpgrade()
     {
         _dimension += 2;
-        CreateGrid();
         _absPreviousDimension = _dimension;
+        CreateGrid();
     }
 }
