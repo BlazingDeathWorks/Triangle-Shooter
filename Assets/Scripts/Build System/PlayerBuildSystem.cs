@@ -75,6 +75,7 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
 
     public void OnUpgrade()
     {
+        _gridContainer.position = _transform.position;
         _dimension += 2;
         _absPreviousDimension = _dimension;
         CreateGrid();
