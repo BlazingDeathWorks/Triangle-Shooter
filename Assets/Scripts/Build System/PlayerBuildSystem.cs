@@ -39,10 +39,10 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
         if (gonnaBeActive)
         {
             _gridContainer.gameObject.SetActive(false);
+            _buildActivatedEventHandler.CallAction(_gridContainer.gameObject.activeSelf);
             enabled = false;
             return;
         }
-        _buildActivatedEventHandler.CallAction(_gridContainer.gameObject.activeSelf);
         enabled = true;
     }
 
@@ -65,7 +65,7 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
                     y++;
                     continue;
                 }
-                BuildGridBox instance = Instantiate(_gridBoxPrefab, new Vector3(x, y, 0), Quaternion.identity);
+                BuildGridBox instance = Instantiate(_gridBoxPrefab, new Vector3(x + _transform.position.x, y + _transform.position.y, 0), Quaternion.identity);
                 instance.transform.parent = _gridContainer;
                 y++;
             }
@@ -77,7 +77,7 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
     public void OnUpgrade()
     {
         _dimension += 2;
-        CreateGrid();
         _absPreviousDimension = _dimension;
+        CreateGrid();
     }
 }
