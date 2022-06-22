@@ -2420,13 +2420,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1585098625}
     - target: {fileID: 2035821277090183562, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
-      propertyPath: _shakeTween
-      value: 
-      objectReference: {fileID: 318572138}
-    - target: {fileID: 2806949166238578766, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
       propertyPath: _camera
       value: 
       objectReference: {fileID: 859296082}
+    - target: {fileID: 2035821277090183562, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
+      propertyPath: _shakeTween
+      value: 
+      objectReference: {fileID: 318572138}
     - target: {fileID: 4513796913559361331, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
       propertyPath: m_RootOrder
       value: 3
