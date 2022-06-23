@@ -930,7 +930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.99607843, b: 0.6039216, a: 1}
+  m_Color: {r: 0.18039216, g: 0.76862746, b: 0.7137255, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1067,8 +1067,8 @@ Camera:
   m_GameObject: {fileID: 859296080}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.003921569, g: 0.08627451, b: 0.15294118, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2378,34 +2378,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1172144955962890607, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
-      propertyPath: _variantDatas.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172144955962890607, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
-      propertyPath: _variantDatas.Array.data[0].Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172144955962890607, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
-      propertyPath: _variantDatas.Array.data[1].Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172144955962890607, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
-      propertyPath: _variantDatas.Array.data[1].Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172144955962890607, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
-      propertyPath: _variantDatas.Array.data[1].Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172144955962890607, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
-      propertyPath: _variantDatas.Array.data[1].Color.r
-      value: 0.7192284
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172144955962890607, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
-      propertyPath: _variantDatas.Array.data[1].EnemyCollision
-      value: 
-      objectReference: {fileID: 4529711847346978974, guid: 5735ff1918cdd2146ba6ad8b36c916ed, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
 --- !u!1001 &1801412418390671411
