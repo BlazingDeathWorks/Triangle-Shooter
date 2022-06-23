@@ -447,7 +447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0
+  m_AmplitudeGain: 1.8
   m_FrequencyGain: 25
   mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &205380523
@@ -2516,6 +2516,10 @@ PrefabInstance:
       propertyPath: expText
       value: 
       objectReference: {fileID: 1585098625}
+    - target: {fileID: 948483568, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
+      propertyPath: _shopTab
+      value: 
+      objectReference: {fileID: 1617682649}
     - target: {fileID: 2035821277090183562, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
       propertyPath: _shakeTween
       value: 

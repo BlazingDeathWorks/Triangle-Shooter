@@ -210,6 +210,12 @@ MonoBehaviour:
   xp: 0
   limit: 100
   giveXp: {fileID: 11400000, guid: 9f78a2a1a5df80e4e86b710798b42869, type: 2}
+  _shopActivatedEventHandler: {fileID: 11400000, guid: 71e82fd862a9a1b498351f3cabdf38c8, type: 2}
+  _shopTab: {fileID: 0}
+  _shopInput:
+    Disabled: 0
+    KeyCode: 0
+    KeyType: 0
 --- !u!114 &6833509286256497244
 MonoBehaviour:
   m_ObjectHideFlags: 0
