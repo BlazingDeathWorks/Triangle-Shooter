@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Power : MonoBehaviour
+internal class Power : MonoBehaviour
 {
     [SerializeField] private PowerData _powerData;
     [SerializeField] private GameObject _upgradable;
@@ -21,5 +21,10 @@ public class Power : MonoBehaviour
         IUpgradable upgradable;
         if (!_upgradable.TryGetComponent<IUpgradable>(out upgradable)) return;
         _button.onClick.AddListener(upgradable.OnUpgrade);
+    }
+
+    private void OnEnable()
+    {
+        
     }
 }
