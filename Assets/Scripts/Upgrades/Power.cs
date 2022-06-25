@@ -10,6 +10,7 @@ internal class Power : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private Image _image;
     [SerializeField] private Text _nameText;
+    private IUpgradableVariants _upgradableVariants;
 
     private void Awake()
     {
@@ -18,6 +19,8 @@ internal class Power : MonoBehaviour
         _image.sprite = _powerData.Icon;
         _nameText.text = _powerData.Name;
 
+        _upgradableVariants = _upgradable.gameObject.GetComponent<IUpgradableVariants>();
+
         IUpgradable upgradable;
         if (!_upgradable.TryGetComponent<IUpgradable>(out upgradable)) return;
         _button.onClick.AddListener(upgradable.OnUpgrade);
@@ -25,6 +28,7 @@ internal class Power : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        if (_upgradableVariants == null) return;
+        _upgradableVariants.Init(_powerData);
     }
 }
