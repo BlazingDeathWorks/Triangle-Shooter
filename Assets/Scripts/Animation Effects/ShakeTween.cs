@@ -11,6 +11,7 @@ public class ShakeTween : MonoBehaviour
     private void Awake()
     {
         _multiPerlin = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        _multiPerlin.m_AmplitudeGain = _from;
     }
 
     public void Shake()
