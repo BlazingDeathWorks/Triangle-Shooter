@@ -7,10 +7,16 @@ public class ShopController : MonoBehaviour
     [SerializeField] private ActionChannel_Bool _shopActivatedEventHandler;
     [SerializeField] private Tab _shopTab;
     [SerializeField] private InputButton _shopInput;
+    [SerializeField] private bool _developerControls = true;
+
+    //Leave this as a shop controller for developers
+    private void Awake()
+    {
+        if (!_developerControls) enabled = false;
+    }
 
     void Update()
     {
-        //You can just delete this if statement when you need it
         if (_shopInput.Clicked)
         {
             _shopActivatedEventHandler?.CallAction(!_shopTab.gameObject.activeSelf);

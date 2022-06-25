@@ -876,6 +876,7 @@ MonoBehaviour:
     Disabled: 0
     KeyCode: 101
     KeyType: 1
+  _developerControls: 1
 --- !u!222 &673243600
 CanvasRenderer:
   m_ObjectHideFlags: 0
