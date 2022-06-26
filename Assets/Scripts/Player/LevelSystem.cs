@@ -23,13 +23,7 @@ public class LevelSystem : MonoBehaviour
         else {
             limit += 20;
             xp = 0;
-            _shopActivatedEventHandler?.CallAction(!_shopTab.gameObject.activeSelf);
-            if (_shopTab.gameObject.activeSelf)
-            {
-                _shopTab.gameObject.SetActive(false);
-                Time.timeScale = 1;
-                return;
-            }
+            _shopActivatedEventHandler?.CallAction(!_shopTab.activeSelf);
             Time.timeScale = 0;
             _shopTab.SetActive(true); 
         }
