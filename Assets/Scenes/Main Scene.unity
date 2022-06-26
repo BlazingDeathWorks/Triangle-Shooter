@@ -712,7 +712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6581313752657833887, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1280
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 6581313752657833887, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2247,7 +2247,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0ff75e05e4112a848aa29d7ea58cc93e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 494959e0a22789b4c92eb025c92c13c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
