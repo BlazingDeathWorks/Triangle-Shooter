@@ -17,7 +17,6 @@ internal class ShopController : MonoBehaviour
             do
             {
                 randomNum = Random.Range(0, _powers.Length);
-                Debug.Log(randomNum);
             } while (usedNumbers.Contains(randomNum));
 
             usedNumbers.Add(randomNum);
