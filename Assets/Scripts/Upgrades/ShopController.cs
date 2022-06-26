@@ -7,6 +7,14 @@ internal class ShopController : MonoBehaviour
     [SerializeField] private Power[] _powers;
     [SerializeField] private int _availableSlots = 3;
 
+    private void Awake()
+    {
+        foreach (Power power in _powers)
+        {
+            power.gameObject.SetActive(false);
+        }
+    }
+
     private void OnEnable()
     {
         List<int> usedNumbers = new List<int>(_availableSlots);
