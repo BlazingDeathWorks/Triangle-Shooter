@@ -57,6 +57,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buildActivatedEventHandler: {fileID: 11400000, guid: cd4f1ce1d524fab49877b15daf9d13ba, type: 2}
   _playerGhostRunnerBoolEventHandler: {fileID: 11400000, guid: 80e52b114d3d3e84a9d6ade4af9e49a0, type: 2}
+  _maxSpeed: 20
   _speed: 10
   _destinationWaitTime: 0.2
 --- !u!50 &4513796913559361325
@@ -208,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expText: {fileID: 0}
   xp: 0
-  limit: 100
+  limit: 10
   giveXp: {fileID: 11400000, guid: 9f78a2a1a5df80e4e86b710798b42869, type: 2}
   _shopActivatedEventHandler: {fileID: 11400000, guid: 71e82fd862a9a1b498351f3cabdf38c8, type: 2}
   _shopTab: {fileID: 0}

@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class PlayerMovementController : MonoBehaviour
+internal class PlayerMovementController : MonoBehaviour, IUpgradable, IUpgradableVariants
 {
     [SerializeField] private ActionChannel_Bool _buildActivatedEventHandler;
     [SerializeField] private FuncChannel_Bool _playerGhostRunnerBoolEventHandler;
+    [SerializeField] private float _maxSpeed = 10;
     [SerializeField] private float _speed = 1;
     [SerializeField] private float _destinationWaitTime = 0.4f;
+    private float _percentFactor = 0;
     private float _timeSinceReachedLastDestination;
     private PlayerBuildSystem _buildSystem;
     private Transform _transform;
@@ -90,5 +92,16 @@ internal class PlayerMovementController : MonoBehaviour
             return;
         }
         enabled = true;
+    }
+
+    public void OnUpgrade()
+    {
+        _speed += Mathf.Clamp(_percentFactor * _speed, 1, _maxSpeed);
+    }
+
+    public void Init(PowerData data)
+    {
+        _percentFactor = Random.Range(1, 11) / 10.0f;
+        data.Description = $"{_percentFactor}";
     }
 }
