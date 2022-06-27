@@ -9,11 +9,11 @@ internal class PlayerMovementController : MonoBehaviour, IUpgradable, IUpgradabl
     [SerializeField] private float _maxSpeed = 10;
     [SerializeField] private float _speed = 1;
     [SerializeField] private float _destinationWaitTime = 0.4f;
+    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private PlayerBuildSystem _buildSystem;
     private float _percentFactor = 0;
     private float _timeSinceReachedLastDestination;
-    private PlayerBuildSystem _buildSystem;
     private Transform _transform;
-    private Rigidbody2D _rb;
     
     //Grid Movement State Machine
     private GridMovementDirectionStateMachine _stateMachine;
@@ -36,8 +36,6 @@ internal class PlayerMovementController : MonoBehaviour, IUpgradable, IUpgradabl
         _stateMachine = new GridMovementDirectionStateMachine();
 
         _transform = transform;
-        _rb = GetComponent<Rigidbody2D>();
-        _buildSystem = GetComponentInChildren<PlayerBuildSystem>();
         _playerGhostRunnerBoolEventHandler.AddAction(() => Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0);
         _buildActivatedEventHandler.AddAction(OnBuildActivated);
     }

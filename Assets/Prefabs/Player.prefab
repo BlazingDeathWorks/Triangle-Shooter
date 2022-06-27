@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4513796913559361331}
-  - component: {fileID: 4513796913559361330}
   - component: {fileID: 4513796913559361325}
   - component: {fileID: 1105255241}
   - component: {fileID: 948483561}
@@ -40,26 +39,10 @@ Transform:
   - {fileID: 6240236926411888931}
   - {fileID: 5550103835597410265}
   - {fileID: 1114651852845183836}
+  - {fileID: 1659103999315597230}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4513796913559361330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4513796913559361334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c7b4dc43b4e0d14fac23961bb13938f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _buildActivatedEventHandler: {fileID: 11400000, guid: cd4f1ce1d524fab49877b15daf9d13ba, type: 2}
-  _playerGhostRunnerBoolEventHandler: {fileID: 11400000, guid: 80e52b114d3d3e84a9d6ade4af9e49a0, type: 2}
-  _maxSpeed: 20
-  _speed: 10
-  _destinationWaitTime: 0.2
 --- !u!50 &4513796913559361325
 Rigidbody2D:
   serializedVersion: 4
@@ -406,3 +389,53 @@ MonoBehaviour:
   _particleSystem: {fileID: 2067202230378623515, guid: 354ae2f38cc9ca24f854309159fac530, type: 3}
   _slider: {fileID: 0}
   _lensTween: {fileID: 0}
+--- !u!1 &7024161969472896297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1659103999315597230}
+  - component: {fileID: 4314178187230444627}
+  m_Layer: 6
+  m_Name: Player Movement Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1659103999315597230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024161969472896297}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4513796913559361331}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4314178187230444627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024161969472896297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7b4dc43b4e0d14fac23961bb13938f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buildActivatedEventHandler: {fileID: 11400000, guid: cd4f1ce1d524fab49877b15daf9d13ba, type: 2}
+  _playerGhostRunnerBoolEventHandler: {fileID: 11400000, guid: 80e52b114d3d3e84a9d6ade4af9e49a0, type: 2}
+  _maxSpeed: 20
+  _speed: 10
+  _destinationWaitTime: 0.2
+  _rb: {fileID: 4513796913559361325}
+  _buildSystem: {fileID: 7262262804654258595}
