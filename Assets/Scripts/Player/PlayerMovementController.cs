@@ -94,7 +94,8 @@ internal class PlayerMovementController : MonoBehaviour, IUpgradable, IUpgradabl
 
     public void OnUpgrade()
     {
-        _speed += Mathf.Clamp(_percentFactor * _speed, 1, _maxSpeed);
+        _speed += _percentFactor * _speed;
+        _speed = Mathf.Clamp(_speed, 1, _maxSpeed);
     }
 
     public void Init(PowerData data)
