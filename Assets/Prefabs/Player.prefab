@@ -520,6 +520,7 @@ MonoBehaviour:
   _destinationWaitTime: 0.2
   _rb: {fileID: 4513796913559361325}
   _buildSystem: {fileID: 7262262804654258595}
+  _transform: {fileID: 4513796913559361331}
 --- !u!1 &8079891775097421816
 GameObject:
   m_ObjectHideFlags: 0
