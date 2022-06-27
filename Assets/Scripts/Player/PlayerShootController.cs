@@ -11,7 +11,7 @@ internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>
     [SerializeField] private Transform _bulletSpawnPoint = null;
     [SerializeField] private Bullet _bullet = null;
     [SerializeField] private ShakeTween _shakeTween = null;
-    [SerializeField] private float _timeBetweenBullets = 1;
+    [SerializeField] private PlayerFireRateUpgradable _fireRateUpgradable;
     private float _time;
     private PlayerRotation _playerRotation;
 
@@ -19,7 +19,7 @@ internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>
     {
         _playerRotation = GetComponent<PlayerRotation>();
         _buildActivatedEventHandler?.AddAction(OnBuildActivated);
-        _time = _timeBetweenBullets;
+        _time = _fireRateUpgradable.TimeBetweenBullets;
     }
 
     private void Update()
@@ -28,7 +28,7 @@ internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>
         _time += Time.deltaTime;
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            if (_time >= _timeBetweenBullets)
+            if (_time >= _fireRateUpgradable.TimeBetweenBullets)
             {
                 _time = 0;
                 ObjectPool.Pool(this);
@@ -42,7 +42,7 @@ internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>
         if (isActive)
         {
             enabled = false;
-            _time = _timeBetweenBullets;
+            _time = _fireRateUpgradable.TimeBetweenBullets;
             return;
         }
         enabled = true;
