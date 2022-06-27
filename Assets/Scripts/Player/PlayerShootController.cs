@@ -29,7 +29,7 @@ internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>, IUp
         //Shooting
         _fireRateUpgradable.Tick();
 
-        if (_currentAmmoCount <= 0)
+        if (_currentAmmoCount != _ammoPerRound)
         {
             _reloadUpgradable.Tick();
             if (_reloadUpgradable.TimeSinceReloadStart >= _reloadUpgradable.ReloadSpeed)
@@ -38,14 +38,14 @@ internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>, IUp
                 _currentAmmoCount = _ammoPerRound;
                 _fireRateUpgradable.RefreshFireRate();
             }
-            return;
         }
 
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            if (_fireRateUpgradable.TimeSinceLastShot >= _fireRateUpgradable.TimeBetweenBullets)
+            if (_fireRateUpgradable.TimeSinceLastShot >= _fireRateUpgradable.TimeBetweenBullets && _currentAmmoCount > 0)
             {
                 _fireRateUpgradable.ResetLastShotTime();
+                _reloadUpgradable.ResetReloadTime();
                 _currentAmmoCount--;
                 ObjectPool.Pool(this);
                 _shakeTween?.Shake();
