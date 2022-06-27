@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class PlayerMovementController : MonoBehaviour
+internal class PlayerMovementController : MonoBehaviour, IUpgradable, IUpgradableVariants
 {
     [SerializeField] private ActionChannel_Bool _buildActivatedEventHandler;
     [SerializeField] private FuncChannel_Bool _playerGhostRunnerBoolEventHandler;
+    [SerializeField] private float _maxSpeed = 10;
     [SerializeField] private float _speed = 1;
     [SerializeField] private float _destinationWaitTime = 0.4f;
+    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private PlayerBuildSystem _buildSystem;
+    private float _percentFactor = 0;
     private float _timeSinceReachedLastDestination;
-    private PlayerBuildSystem _buildSystem;
     private Transform _transform;
-    private Rigidbody2D _rb;
     
     //Grid Movement State Machine
     private GridMovementDirectionStateMachine _stateMachine;
@@ -34,8 +36,6 @@ internal class PlayerMovementController : MonoBehaviour
         _stateMachine = new GridMovementDirectionStateMachine();
 
         _transform = transform;
-        _rb = GetComponent<Rigidbody2D>();
-        _buildSystem = GetComponentInChildren<PlayerBuildSystem>();
         _playerGhostRunnerBoolEventHandler.AddAction(() => Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0);
         _buildActivatedEventHandler.AddAction(OnBuildActivated);
     }
@@ -90,5 +90,17 @@ internal class PlayerMovementController : MonoBehaviour
             return;
         }
         enabled = true;
+    }
+
+    public void OnUpgrade()
+    {
+        _speed += _percentFactor * _speed;
+        _speed = Mathf.Clamp(_speed, 1, _maxSpeed);
+    }
+
+    public void Init(PowerData data)
+    {
+        _percentFactor = Random.Range(1, 11) / 10.0f;
+        data.Description = $"{_percentFactor}";
     }
 }
