@@ -1,11 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 //Upgrade to fully heal player health
-public class PlayerHealthSystem : MonoBehaviour, IUpgradable
+public class PlayerHealthSystem : MonoBehaviour, IUpgradable, IUpgradableVariants
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private PlayerMaxHealthUpgradable _playerMaxHealthUpgradable;
@@ -16,6 +15,7 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable
     [SerializeField] private LensTween _lensTween;
 
     private float _currentHealth = 3;
+    private float _percentFactor;
 
     private void Awake()
     {
@@ -50,7 +50,13 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable
 
     public void OnUpgrade()
     {
-        _currentHealth = _playerMaxHealthUpgradable.MaxHealth;
+        _currentHealth += Mathf.Round(_percentFactor * _currentHealth);
         UpdateHealth();
+    }
+
+    public void Init(PowerData data)
+    {
+        _percentFactor = Random.Range(1, 11) / 10.0f;
+        data.Description = $"{_percentFactor}";
     }
 }
