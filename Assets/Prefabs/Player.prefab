@@ -223,7 +223,7 @@ MonoBehaviour:
   _bulletSpawnPoint: {fileID: 4513796914210741534}
   _bullet: {fileID: 563188043, guid: ff863539800e2cb4aacc55723737e725, type: 3}
   _shakeTween: {fileID: 0}
-  _fireRateUpgradable: {fileID: 0}
+  _fireRateUpgradable: {fileID: 1207827200}
 --- !u!114 &948483568
 MonoBehaviour:
   m_ObjectHideFlags: 0
