@@ -5,14 +5,17 @@ using UnityEngine;
 internal class PlayerFireRateUpgradable : MonoBehaviour, IUpgradable, IUpgradableVariants
 {
     public float TimeBetweenBullets => _timeBetweenBullets;
+    public float TimeSinceLastShot => _timeSinceLastShot;
     [SerializeField] private float _timeBetweenBulletsMinimum = 0.1f;
     [SerializeField] private float _timeBetweenBullets = 0.2f;
+    private float _timeSinceLastShot;
     private float _originalTimeBetweenBullets = 0.2f;
     private float _percentFactor = 0;
 
     private void Awake()
     {
         _originalTimeBetweenBullets = _timeBetweenBullets;
+        RefreshFireRate();
     }
 
     public void Init(PowerData data)
@@ -25,5 +28,20 @@ internal class PlayerFireRateUpgradable : MonoBehaviour, IUpgradable, IUpgradabl
     {
         _timeBetweenBullets -= _percentFactor * _timeBetweenBullets;
         _timeBetweenBullets = Mathf.Clamp(_timeBetweenBullets, _timeBetweenBulletsMinimum, _originalTimeBetweenBullets);
+    }
+
+    public void Tick()
+    {
+        _timeSinceLastShot += Time.deltaTime;
+    }
+
+    public void ResetLastShotTime()
+    {
+        _timeSinceLastShot = 0;
+    }
+
+    public void RefreshFireRate()
+    {
+        _timeSinceLastShot = _timeBetweenBullets;
     }
 }
