@@ -6,11 +6,14 @@ internal class EquipmentModelManager : MonoBehaviour
 {
     public EquipmentModel _currentModel { get; private set; }
     [SerializeField] private SpriteRenderer _equipmentSprite;
-    private int _index = 0;
+    private SpriteRenderer _sr;
     private List<EquipmentModel> _equipmentModels = new List<EquipmentModel>();
+    private int _index = 0;
 
     private void Awake()
     {
+        _sr = GetComponent<SpriteRenderer>();
+
         //Disables everything except for the first children
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -24,17 +27,17 @@ internal class EquipmentModelManager : MonoBehaviour
     {
         _index = MathUtil.WrapInt(++_index, 0, _equipmentModels.Count - 1);
 
-        EquipmentModel model = _equipmentModels[_index];
-        _equipmentSprite.sprite = model.ModelDisplay;
-        _currentModel = model;
+        _currentModel = _equipmentModels[_index];
+        _equipmentSprite.sprite = _currentModel.ModelDisplay;
+        _sr.sprite = _currentModel.ModelDisplay;
     }
 
     public void MoveBackwards()
     {
         _index = MathUtil.WrapInt(--_index, 0, _equipmentModels.Count - 1);
 
-        EquipmentModel model = _equipmentModels[_index];
-        _equipmentSprite.sprite = model.ModelDisplay;
-        _currentModel = model;
+        _currentModel = _equipmentModels[_index];
+        _equipmentSprite.sprite = _currentModel.ModelDisplay;
+        _sr.sprite = _currentModel.ModelDisplay;
     }
 }
