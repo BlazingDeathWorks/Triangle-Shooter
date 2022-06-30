@@ -1354,7 +1354,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1010405736}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2094198944}
+        m_TargetAssemblyTypeName: SceneController, DonutStudios.UI.Runtime
+        m_MethodName: NextScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1010405736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2743,6 +2755,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8481b112053fefd438a408e55b586815, type: 3}
+--- !u!114 &2094198944 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1211211891491159178, guid: 8481b112053fefd438a408e55b586815, type: 3}
+  m_PrefabInstance: {fileID: 2094198943}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8b21f32605fdb47be4c9137f979a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2123166123
 GameObject:
   m_ObjectHideFlags: 0

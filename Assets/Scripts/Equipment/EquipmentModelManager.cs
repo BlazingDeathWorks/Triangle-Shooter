@@ -4,7 +4,7 @@ using UnityEngine;
 
 internal class EquipmentModelManager : MonoBehaviour
 {
-    public EquipmentModel _currentModel { get; private set; }
+    public EquipmentModel CurrentModel { get; private set; }
     [SerializeField] private SpriteRenderer _equipmentSprite;
     private SpriteRenderer _sr;
     private List<EquipmentModel> _equipmentModels = new List<EquipmentModel>();
@@ -20,24 +20,24 @@ internal class EquipmentModelManager : MonoBehaviour
             _equipmentModels.Add(transform.GetChild(i).GetComponent<EquipmentModel>());
         }
 
-        _currentModel = _equipmentModels[_index];
+        CurrentModel = _equipmentModels[_index];
     }
 
     public void MoveForward()
     {
         _index = MathUtil.WrapInt(++_index, 0, _equipmentModels.Count - 1);
 
-        _currentModel = _equipmentModels[_index];
-        _equipmentSprite.sprite = _currentModel.ModelDisplay;
-        _sr.sprite = _currentModel.ModelDisplay;
+        CurrentModel = _equipmentModels[_index];
+        _equipmentSprite.sprite = CurrentModel.ModelDisplay;
+        _sr.sprite = CurrentModel.ModelDisplay;
     }
 
     public void MoveBackwards()
     {
         _index = MathUtil.WrapInt(--_index, 0, _equipmentModels.Count - 1);
 
-        _currentModel = _equipmentModels[_index];
-        _equipmentSprite.sprite = _currentModel.ModelDisplay;
-        _sr.sprite = _currentModel.ModelDisplay;
+        CurrentModel = _equipmentModels[_index];
+        _equipmentSprite.sprite = CurrentModel.ModelDisplay;
+        _sr.sprite = CurrentModel.ModelDisplay;
     }
 }
