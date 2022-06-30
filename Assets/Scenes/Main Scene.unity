@@ -1954,6 +1954,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: _powerData
+      value: 
+      objectReference: {fileID: 11400000, guid: 025dc85d6396f8a4791067e9967a895c, type: 2}
+    - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: _upgradable
       value: 
       objectReference: {fileID: 948483560}
