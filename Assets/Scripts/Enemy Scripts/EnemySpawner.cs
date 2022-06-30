@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class EnemySpawner : MonoBehaviour, IObjectPooler<EnemyCollision>, IObjectPoolable<EnemySpawner>
+internal class EnemySpawner : MonoBehaviour, IObjectPoolable<EnemySpawner>
 {
     public IObjectPooler<EnemySpawner> ParentObjectPooler { get; set; }
-    public EnemyCollision Prefab => _enemy;
-    public Queue<EnemyCollision> Pool { get; } = new Queue<EnemyCollision>();
 
     private ParticleSystem.MainModule _particleSettings;
     private EnemyVariantsManager _enemyVariantsManager;
     private EnemyVariantData _variantData;
     private ParticleSystem _particle;
-    private EnemyCollision _enemy;
     private EnemySpawner _instance;
+    Transform _transform;
     private float _timeToSpawn;
 
     private void Awake()
     {
+        _transform = transform;
         _instance = GetComponent<EnemySpawner>();
         _particle = GetComponent<ParticleSystem>();
         _particleSettings = _particle.main;
@@ -30,7 +29,6 @@ internal class EnemySpawner : MonoBehaviour, IObjectPooler<EnemyCollision>, IObj
         if (_particle == null) return;
         _variantData = _enemyVariantsManager.GetRandomVariant();
         _particleSettings.startColor = _variantData.Color;
-        _enemy = _variantData.EnemyCollision;
     }
 
     // Update is called once per frame
@@ -43,7 +41,7 @@ internal class EnemySpawner : MonoBehaviour, IObjectPooler<EnemyCollision>, IObj
         else
         {
             _timeToSpawn = 1;
-            ObjectPool.Pool(this);
+            _variantData.EnemyPoolManager.PoolMyEnemy(_transform.position);
             ObjectPool.Return(this);
         }
     }
@@ -51,12 +49,6 @@ internal class EnemySpawner : MonoBehaviour, IObjectPooler<EnemyCollision>, IObj
     public void OnReturn()
     {
         gameObject.SetActive(false);
-    }
-
-    public void OnPooled(EnemyCollision instance)
-    {
-        instance.gameObject.SetActive(true);
-        instance.transform.position = transform.position;
     }
 
     public EnemySpawner ReturnComponent()

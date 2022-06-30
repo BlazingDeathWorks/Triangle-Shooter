@@ -45,6 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _variantDatas:
   - Color: {r: 0.90588236, g: 0.11372549, b: 0.21176471, a: 1}
-    EnemyCollision: {fileID: 4529711847346978974, guid: 3e270fbfd38b4e64ab039ef5c2f6a1eb, type: 3}
+    EnemyPoolManager: {fileID: 0}
   - Color: {r: 1, g: 0.8941177, b: 0, a: 1}
-    EnemyCollision: {fileID: 4529711847346978974, guid: 7997cb75e12e01e428f5e818fe26c218, type: 3}
+    EnemyPoolManager: {fileID: 0}
