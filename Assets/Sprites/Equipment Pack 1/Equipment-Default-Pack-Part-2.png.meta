@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 6b4a82e0f1776fd4fabc9c317de1a6a4
+guid: 5f805a96ce1efbb4e98ab13e8be457a1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7171673305405127471
-    second: Equipment-Default-Pack_2
+      213: -845401965588035227
+    second: Equipment-Default-Pack-Part-2_0
   - first:
-      213: -6327731438608590241
-    second: Equipment-Default-Pack_3
+      213: 2194981012359078592
+    second: Equipment-Default-Pack-Part-2_1
+  - first:
+      213: 5882371313262521173
+    second: Equipment-Default-Pack-Part-2_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,85 +112,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Equipment-Default-Pack_0
+      name: Equipment-Default-Pack-Part-2_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 676
-        width: 486
-        height: 156
+        x: 184
+        y: 643
+        width: 170
+        height: 277
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48489fa5912a47510800000000000000
-      internalID: 1546038801879106692
+      spriteID: 56945b434678444f0800000000000000
+      internalID: -845401965588035227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment-Default-Pack_1
+      name: Equipment-Default-Pack-Part-2_1
       rect:
         serializedVersion: 2
-        x: 661
-        y: 648
-        width: 212
-        height: 171
+        x: 674
+        y: 643
+        width: 170
+        height: 277
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dd1d361d72fbf890800000000000000
-      internalID: -7423072941732192816
+      spriteID: 0c2e36ae993267e10800000000000000
+      internalID: 2194981012359078592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Equipment-Default-Pack_2
+      name: Equipment-Default-Pack-Part-2_2
       rect:
         serializedVersion: 2
-        x: 188
-        y: 117
-        width: 210
-        height: 302
+        x: 244
+        y: 216
+        width: 60
+        height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2bf2d5cfd6e68360800000000000000
-      internalID: 7171673305405127471
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Equipment-Default-Pack_3
-      rect:
-        serializedVersion: 2
-        x: 639
-        y: 124
-        width: 205
-        height: 290
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f5ad9a748c16f28a0800000000000000
-      internalID: -6327731438608590241
+      spriteID: 55be5f31b8162a150800000000000000
+      internalID: 5882371313262521173
       vertices: []
       indices: 
       edges: []
