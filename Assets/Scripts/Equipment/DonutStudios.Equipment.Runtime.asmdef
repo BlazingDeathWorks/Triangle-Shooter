@@ -1,3 +1,16 @@
 {
-	"name": "DonutStudios.Equipment.Runtime"
+    "name": "DonutStudios.Equipment.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b704045f60db6944499462a6a397e198"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

@@ -10,4 +10,11 @@ public static class MathUtil
         if (number < min) number = max;
         return number;
     }
+
+    public static int WrapInt(int number, int min, int max)
+    {
+        if (number > max) number = min;
+        if (number < min) number = max;
+        return number;
+    }
 }
