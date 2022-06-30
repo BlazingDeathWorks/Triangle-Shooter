@@ -5,18 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public GameObject mainmenu;
-    // Start is called before the first frame update
+    public static SceneController Instance { get; private set; }
 
-    public void StartGame()
+    private void Awake()
     {
-        SceneManager.LoadScene(sceneBuildIndex: 1);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            return;
+        }
+        Destroy(gameObject);
     }
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void Quit()
     {
         Application.Quit();
-    }
-    public void Settings() {
-        mainmenu.SetActive(false);
     }
 }
