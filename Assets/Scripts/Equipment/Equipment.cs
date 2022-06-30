@@ -4,9 +4,10 @@ using UnityEngine;
 
 internal abstract class Equipment : MonoBehaviour
 {
+    protected const string PLAYER = "Player";
     protected abstract string SceneReferenceKey { get; }
 
-    private void Awake()
+    protected virtual void Start()
     {
         transform.parent = SceneReferenceManager.GetReference(SceneReferenceKey).transform;
     }

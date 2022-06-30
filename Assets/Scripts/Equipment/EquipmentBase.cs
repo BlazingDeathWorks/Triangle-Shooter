@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-internal class EquipmentBase : MonoBehaviour
+internal abstract class EquipmentBase : Equipment
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected sealed override string SceneReferenceKey => "Equipment Base";
+    protected abstract Type Type { get; }
+    protected abstract float BonusFactor { get; }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Start()
     {
-        
+        base.Start();
+        ((IUpgradableVariants)SceneReferenceManager.GetReference(PLAYER).GetComponentInChildren(Type)).BonusFactor = BonusFactor;
     }
 }

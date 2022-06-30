@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6904244727389527547}
   - component: {fileID: 6904244727389527546}
+  - component: {fileID: -4639359394593177555}
   m_Layer: 0
   m_Name: L Rocket
   m_TagString: Untagged
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4639359394593177555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6904244727389527544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996ef17d46e4cc141bf8835da19fa808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneReferenceKey: Equipment L Branch
