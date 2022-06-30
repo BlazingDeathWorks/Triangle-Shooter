@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class Equipment : MonoBehaviour
+internal abstract class Equipment : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected abstract string SceneReferenceKey { get; }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        transform.parent = SceneReferenceManager.GetReference(SceneReferenceKey).transform;
     }
 }

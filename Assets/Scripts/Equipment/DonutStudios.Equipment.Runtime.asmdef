@@ -2,7 +2,8 @@
     "name": "DonutStudios.Equipment.Runtime",
     "rootNamespace": "",
     "references": [
-        "GUID:b704045f60db6944499462a6a397e198"
+        "GUID:b704045f60db6944499462a6a397e198",
+        "GUID:8fe0f6fd5e8c08b4f9a6dc8650881100"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
