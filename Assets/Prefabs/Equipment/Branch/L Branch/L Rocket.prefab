@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneReferenceKey: Equipment L Branch
+  _launcher: {fileID: 0}
   _firePoint: {x: -0.22, y: 0.495}
-  _rocketPrefab: {fileID: 3463641691447493668, guid: 1d0f822d4758468408dbed8064c84fdd, type: 3}
   _fireRate: 5
 --- !u!114 &3749164365787255057
 MonoBehaviour:

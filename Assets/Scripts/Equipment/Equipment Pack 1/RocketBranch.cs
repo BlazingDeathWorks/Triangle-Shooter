@@ -4,10 +4,11 @@ using UnityEngine;
 
 internal class RocketBranch : EquipmentBranch
 {
-    [SerializeField] private RocketLauncher _launcher;
     [SerializeField] private Vector2 _firePoint;
     [SerializeField] private float _fireRate = 30;
     private RocketHead _rocketHeadInstance;
+    private RocketLauncher _launcher;
+    private PlayerRotation _playerRotation;
     private ScaleTween _scaleTween;
     private Transform _transform;
     private float _timeSinceLastFire;
@@ -16,6 +17,13 @@ internal class RocketBranch : EquipmentBranch
     {
         _transform = transform;
         _scaleTween = GetComponent<ScaleTween>();
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+        _playerRotation = SceneReferenceManager.GetReference(PLAYER).GetComponent<PlayerRotation>();
+        _launcher = SceneReferenceManager.GetReference("Rocket Launcher").GetComponent<RocketLauncher>();
         _launcher.DeployRocket(_transform, _firePoint);
         _rocketHeadInstance = _launcher.GetInstance();
     }
@@ -26,7 +34,7 @@ internal class RocketBranch : EquipmentBranch
         if (_timeSinceLastFire >= _fireRate)
         {
             _timeSinceLastFire = 0;
-            //Shoot
+            _rocketHeadInstance.ReleaseRocket(_playerRotation);
             _scaleTween.ScaleObject();
             StartCoroutine(ReDeploy());
         }
@@ -36,5 +44,6 @@ internal class RocketBranch : EquipmentBranch
     {
         yield return new WaitForSeconds(2f);
         _launcher.DeployRocket(_transform, _firePoint);
+        _rocketHeadInstance = _launcher.GetInstance();
     }
 }

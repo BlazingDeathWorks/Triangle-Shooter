@@ -16,6 +16,7 @@ internal class RocketLauncher : MonoBehaviour, IObjectPooler<RocketHead>
         instance.gameObject.SetActive(true);
         instance.transform.parent = _parent;
         instance.transform.localPosition = _pos;
+        instance.transform.localEulerAngles = Vector3.zero;
         _currentInstance = instance;
     }
 
