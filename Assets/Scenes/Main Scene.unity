@@ -743,6 +743,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6581313753978139072, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6581313753978139072, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 720212504}
@@ -754,6 +758,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Player Max Health Upgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: _powerData
+      value: 
+      objectReference: {fileID: 11400000, guid: 451ac8aa7101eeb4f80dc7baea5abeb8, type: 2}
     - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: _upgradable
       value: 
@@ -952,6 +960,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705092249}
   m_CullTransparentMesh: 1
+--- !u!114 &720212504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 32815ae705b553941b12701f37429751, type: 3}
+    m_FontSize: 3
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 120
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'POWER UP NAME
+
+    description'
 --- !u!1001 &741671775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1282,7 +1326,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1117712697
 GameObject:
@@ -1439,9 +1483,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6581313753978139072, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6581313753978139072, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 720212504}
+      objectReference: {fileID: 0}
     - target: {fileID: 6581313753978139072, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: set_text
@@ -1810,7 +1858,6 @@ RectTransform:
   - {fileID: 1938414857}
   - {fileID: 1615420510}
   - {fileID: 1970010500}
-  - {fileID: 720212503}
   m_Father: {fileID: 673243598}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1943,10 +1990,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block Health Tab
       objectReference: {fileID: 0}
-    - target: {fileID: 6581313752657833884, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6581313752657833887, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2031,26 +2074,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6581313753793194872, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8abc3aa8a42fd874c8193a842229d09a, type: 3}
-    - target: {fileID: 6581313753978139072, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 720212504}
-    - target: {fileID: 6581313753978139072, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_text
-      objectReference: {fileID: 0}
-    - target: {fileID: 6581313753978139072, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Block Health Upgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
-      propertyPath: _powerData
-      value: 
-      objectReference: {fileID: 11400000, guid: 025dc85d6396f8a4791067e9967a895c, type: 2}
     - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: _upgradable
       value: 
@@ -2337,7 +2360,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1854135208
 PrefabInstance:
@@ -2455,6 +2478,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6581313753978139072, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6581313753978139072, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 720212504}
@@ -2462,6 +2489,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Block Dimension Upgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: _powerData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f478dda456a67f4b9c8ca387b9c86c8, type: 2}
     - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: _upgradable
       value: 
@@ -2774,7 +2805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 768490627635292917, guid: 79b09412c32b12c47bb05c3fb09576a3, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 768490627635292917, guid: 79b09412c32b12c47bb05c3fb09576a3, type: 3}
       propertyPath: m_LocalPosition.x

@@ -7,17 +7,16 @@ internal class Power : MonoBehaviour
 {
     [SerializeField] private PowerData _powerData;
     [SerializeField] private GameObject _upgradable;
-    [SerializeField] private Button _button;
-    [SerializeField] private Image _image;
-    [SerializeField] private Text _nameText;
+    private Button _button;
+    private Image _image;
     private IUpgradableVariants _upgradableVariants;
 
     private void Awake()
     {
-        if (_powerData == null || _upgradable == null || _image == null || _nameText == null || _button == null) return;
+        _button = GetComponentInChildren<Button>();
+        _image = GetComponentInChildren<Image>();
 
         _image.sprite = _powerData.Icon;
-        _nameText.text = _powerData.Name;
 
         _upgradableVariants = _upgradable.gameObject.GetComponent<IUpgradableVariants>();
 
