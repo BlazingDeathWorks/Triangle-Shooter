@@ -4,6 +4,7 @@ using UnityEngine;
 
 internal class PlayerFireRateUpgradable : MonoBehaviour, IUpgradable, IUpgradableVariants
 {
+    public float BonusFactor { get; set; } = 0;
     public float TimeBetweenBullets => _timeBetweenBullets;
     public float TimeSinceLastShot => _timeSinceLastShot;
     [SerializeField] private float _timeBetweenBulletsMinimum = 0.1f;
@@ -20,7 +21,7 @@ internal class PlayerFireRateUpgradable : MonoBehaviour, IUpgradable, IUpgradabl
 
     public void Init(PowerData data)
     {
-        _percentFactor = Random.Range(1, 4) / 10.0f;
+        _percentFactor = Random.Range(1, 4) / 10.0f + BonusFactor;
         data.Description = $"{_percentFactor}";
     }
 

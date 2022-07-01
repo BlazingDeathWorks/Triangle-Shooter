@@ -1,0 +1,16 @@
+{
+    "name": "DonutStudios.GameManager.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:45f7af7fe51beed478d312184a92a334"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,22 @@
+{
+    "name": "DonutStudios.Equipment.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b704045f60db6944499462a6a397e198",
+        "GUID:8fe0f6fd5e8c08b4f9a6dc8650881100",
+        "GUID:276522e06f62c174f95a69b6044f4518",
+        "GUID:b829c0e992af20340a715a1dfafb391f",
+        "GUID:45f7af7fe51beed478d312184a92a334",
+        "GUID:65bddf3d860bdde4aba8af75d337818c",
+        "GUID:005dfea251bf03e4e82c547dd520ab9b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

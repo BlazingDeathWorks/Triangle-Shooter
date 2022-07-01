@@ -6,6 +6,7 @@ using UnityEngine.UI;
 //Upgrade to fully heal player health
 public class PlayerHealthSystem : MonoBehaviour, IUpgradable, IUpgradableVariants
 {
+    public float BonusFactor { get; set; } = 0;
     [SerializeField] private GameObject _player;
     [SerializeField] private PlayerMaxHealthUpgradable _playerMaxHealthUpgradable;
     [SerializeField] private ActionChannel _playerDiedEventHandler;
@@ -56,7 +57,7 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable, IUpgradableVariant
 
     public void Init(PowerData data)
     {
-        _percentFactor = Random.Range(1, 11) / 10.0f;
+        _percentFactor = Random.Range(1, 11) / 10.0f + BonusFactor;
         data.Description = $"{_percentFactor}";
     }
 }

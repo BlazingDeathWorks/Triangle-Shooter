@@ -60,6 +60,18 @@ TagManager:
   - name: Player
     uniqueID: 704953315
     locked: 0
+  - name: Generator
+    uniqueID: 3219286143
+    locked: 0
+  - name: Base
+    uniqueID: 2974024041
+    locked: 0
+  - name: L Branch
+    uniqueID: 3114296241
+    locked: 0
+  - name: R Branch
+    uniqueID: 3553939683
+    locked: 0
   - name: Bullet
     uniqueID: 983572559
     locked: 0

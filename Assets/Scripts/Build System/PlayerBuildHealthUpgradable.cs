@@ -5,6 +5,7 @@ using UnityEngine;
 internal class PlayerBuildHealthUpgradable : MonoBehaviour, IUpgradable, IUpgradableVariants
 {
     public static int MaxHealth { get; private set; } = 1;
+    public float BonusFactor { get; set; } = 0;
     [SerializeField] private ActionChannel _blockMaxHealthUpgradedEventHandler;
     private float _percentFactor = 0;
 
@@ -16,7 +17,7 @@ internal class PlayerBuildHealthUpgradable : MonoBehaviour, IUpgradable, IUpgrad
 
     public void Init(PowerData data)
     {
-        _percentFactor = Random.Range(1, 11) / 10.0f;
+        _percentFactor = Random.Range(1, 11) / 10.0f + BonusFactor;
         data.Description = $"{_percentFactor}";
     }
 }

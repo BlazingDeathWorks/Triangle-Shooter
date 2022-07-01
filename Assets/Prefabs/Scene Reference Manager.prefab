@@ -47,7 +47,17 @@ MonoBehaviour:
   - Player
   - Enemy Variants Manager
   - Build Grid Box Manager
+  - Equipment Base
+  - Equipment Generator
+  - Equipment L Branch
+  - Equipment R Branch
+  - Rocket Launcher
   _values:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

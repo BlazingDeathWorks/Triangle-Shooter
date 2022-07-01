@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IUpgradableVariants
 {
+    public float BonusFactor { get; set; }
     public void Init(PowerData data);
 }
