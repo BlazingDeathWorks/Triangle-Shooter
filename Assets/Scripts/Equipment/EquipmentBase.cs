@@ -9,7 +9,7 @@ internal abstract class EquipmentBase : Equipment
     protected abstract Type Type { get; }
     protected abstract float BonusFactor { get; }
 
-    protected override void Start()
+    protected sealed override void Start()
     {
         base.Start();
         ((IUpgradableVariants)SceneReferenceManager.GetReference(PLAYER).GetComponentInChildren(Type)).BonusFactor = BonusFactor;

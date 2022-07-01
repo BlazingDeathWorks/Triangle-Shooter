@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class PlayerMovementController : MonoBehaviour, IUpgradable, IUpgradableVariants
+public class PlayerMovementController : MonoBehaviour, IUpgradable, IUpgradableVariants
 {
     public float BonusFactor { get; set; } = 0;
     [SerializeField] private ActionChannel_Bool _buildActivatedEventHandler;
@@ -102,5 +102,10 @@ internal class PlayerMovementController : MonoBehaviour, IUpgradable, IUpgradabl
     {
         _percentFactor = Random.Range(1, 11) / 10.0f + BonusFactor;
         data.Description = $"{_percentFactor}";
+    }
+
+    public void AddToSpeed(float value)
+    {
+        _speed += value;
     }
 }
