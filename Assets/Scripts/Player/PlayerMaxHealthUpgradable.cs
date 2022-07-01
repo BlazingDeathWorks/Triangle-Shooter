@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerMaxHealthUpgradable : MonoBehaviour, IUpgradable, IUpgradableVariants
 {
     public float BonusFactor { get; set; } = 0;
-    public float MaxHealth { get; private set; } = 3;
+    public float MaxHealth { get; private set; } = 1000;
+    
     [SerializeField] private PlayerHealthSystem _playerHealthSystem;
     private float _percentFactor = 0;
 

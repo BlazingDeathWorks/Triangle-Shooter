@@ -6,5 +6,5 @@ using UnityEngine;
 internal class EnemyVariantData
 {
     public Color Color;
-    public EnemyCollision EnemyCollision;
+    public EnemyPoolManager EnemyPoolManager;
 }
