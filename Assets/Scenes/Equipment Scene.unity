@@ -1355,6 +1355,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1010405738}
+        m_TargetAssemblyTypeName: EquipmentManager, DonutStudios.Equipment.Runtime
+        m_MethodName: SubscribeModels
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2094198944}
         m_TargetAssemblyTypeName: SceneController, DonutStudios.UI.Runtime
         m_MethodName: NextScene
@@ -1417,6 +1429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbefc4ece672ce8478bd5ee3a764eb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameStartedEventHandler: {fileID: 11400000, guid: e87b3edce26330645beb1bad03178602, type: 2}
   _modelManagers:
   - {fileID: 2123166126}
   - {fileID: 289716785}

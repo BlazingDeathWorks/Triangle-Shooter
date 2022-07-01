@@ -10,5 +10,6 @@ internal abstract class Equipment : MonoBehaviour
     protected virtual void Start()
     {
         transform.parent = SceneReferenceManager.GetReference(SceneReferenceKey).transform;
+        transform.localPosition = Vector2.zero;
     }
 }
