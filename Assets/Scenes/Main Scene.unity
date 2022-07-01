@@ -1512,7 +1512,7 @@ PrefabInstance:
     - target: {fileID: 6581313753978139072, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 720212504}
+      objectReference: {fileID: 0}
     - target: {fileID: 6581313753978139072, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: set_text
