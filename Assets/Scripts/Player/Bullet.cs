@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class Bullet : MonoBehaviour, IObjectPoolable<Bullet>
+public class Bullet : MonoBehaviour, IObjectPoolable<Bullet>
 {
     public Vector2 Direction { private get; set; }
     public IObjectPooler<Bullet> ParentObjectPooler { get; set; }
@@ -17,7 +17,6 @@ internal class Bullet : MonoBehaviour, IObjectPoolable<Bullet>
     {
         _instance = GetComponent<Bullet>();
         _rb = GetComponent<Rigidbody2D>();
-
     }
 
     private void Update()

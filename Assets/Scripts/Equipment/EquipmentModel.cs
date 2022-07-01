@@ -4,7 +4,6 @@ using UnityEngine;
 
 internal class EquipmentModel : MonoBehaviour
 {
-    //Change type GameObject to Equipment Base class later...
     public Equipment EquipmentPrefab => _equipmentPrefab;
     public Sprite ModelDisplay => _modelDisplay;
     [SerializeField] private Equipment _equipmentPrefab;
