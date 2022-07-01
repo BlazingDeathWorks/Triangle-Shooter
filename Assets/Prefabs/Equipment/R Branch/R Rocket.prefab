@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3017831544291062153}
   - component: {fileID: 3017831544291062154}
   - component: {fileID: 2103637994856038583}
+  - component: {fileID: 7654756799782724502}
   m_Layer: 0
   m_Name: R Rocket
   m_TagString: Untagged
@@ -96,3 +97,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneReferenceKey: Equipment R Branch
+--- !u!114 &7654756799782724502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3017831544291062152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7d4a4963dfb064a868c117e8f41953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _to: {x: 1.5, y: 1.5, z: 1.5}
+  _scaleTime: 0.1

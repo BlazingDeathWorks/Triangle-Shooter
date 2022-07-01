@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6904244727389527547}
   - component: {fileID: 6904244727389527546}
   - component: {fileID: -4639359394593177555}
+  - component: {fileID: 3749164365787255057}
   m_Layer: 0
   m_Name: L Rocket
   m_TagString: Untagged
@@ -96,3 +97,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneReferenceKey: Equipment L Branch
+--- !u!114 &3749164365787255057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6904244727389527544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7d4a4963dfb064a868c117e8f41953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _to: {x: 1.5, y: 1.5, z: 1.5}
+  _scaleTime: 0.1
