@@ -10,7 +10,12 @@ internal class EquipmentManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            return;
+        }
+        Destroy(gameObject);
     }
 
     public void SubscribeModels()

@@ -18,6 +18,11 @@ public class SceneReferenceManager : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        _sceneReferences.Clear();
+    }
+
     public static GameObject GetReference(string key)
     {
         if (!_sceneReferences.ContainsKey(key)) return null;

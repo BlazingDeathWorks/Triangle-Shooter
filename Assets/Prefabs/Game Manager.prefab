@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameStartedEventHandler: {fileID: 11400000, guid: e87b3edce26330645beb1bad03178602, type: 2}
+  _playerDiedEventHandler: {fileID: 11400000, guid: 98571fc48e700994f9dfe376d09dafbe, type: 2}
+  _gameOverTab: {fileID: 0}

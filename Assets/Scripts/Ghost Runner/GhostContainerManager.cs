@@ -17,6 +17,11 @@ public class GhostContainerManager : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        s_containerDictionary.Clear();
+    }
+
     public static Transform GetValue(string key)
     {
         if (!s_containerDictionary.ContainsKey(key)) return null;
