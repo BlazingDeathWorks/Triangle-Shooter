@@ -11,6 +11,7 @@ internal class RocketHead : MonoBehaviour, IObjectPoolable<RocketHead>
     private Transform _transform;
     private ScaleTween _scaleTween;
     private Rigidbody2D _rb;
+    private BoxCollider2D _boxCollider;
     private Vector2 _direction;
     private float _time = 0;
     private bool _canReleaseRocket = false;
@@ -19,7 +20,9 @@ internal class RocketHead : MonoBehaviour, IObjectPoolable<RocketHead>
     {
         _transform = transform;
         _rb = GetComponent<Rigidbody2D>();
+        _boxCollider = GetComponent<BoxCollider2D>();
         _scaleTween = GetComponent<ScaleTween>();
+        _boxCollider.enabled = false;
     }
 
     private void OnEnable()
@@ -44,6 +47,7 @@ internal class RocketHead : MonoBehaviour, IObjectPoolable<RocketHead>
 
     public void OnReturn()
     {
+        _boxCollider.enabled = false;
         _canReleaseRocket = false;
         gameObject.SetActive(false);
     }
@@ -55,6 +59,7 @@ internal class RocketHead : MonoBehaviour, IObjectPoolable<RocketHead>
 
     public void ReleaseRocket(PlayerRotation playerRotation)
     {
+        _boxCollider.enabled = true;
         _canReleaseRocket = true;
         _direction = playerRotation.Direction;
         _transform.parent = null;
