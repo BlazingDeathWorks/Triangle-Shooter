@@ -51,7 +51,8 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable, IUpgradableVariant
 
     public void OnUpgrade()
     {
-        _currentHealth += Mathf.Round(_percentFactor * _currentHealth);
+        _currentHealth += Mathf.Round(_percentFactor * _playerMaxHealthUpgradable.MaxHealth);
+        _currentHealth = Mathf.Clamp(_currentHealth, 1, _playerMaxHealthUpgradable.MaxHealth);
         UpdateHealth();
     }
 
