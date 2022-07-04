@@ -12,21 +12,31 @@ public class LevelSystem : MonoBehaviour
     [SerializeField] private ActionChannel_Bool _shopActivatedEventHandler;
     [SerializeField] private GameObject _shopTab;
     [SerializeField] private InputButton _shopInput;
+
     private void Awake()
     {
         expText.value = xp/limit;
         giveXp.AddAction(UpdateXp);
+        _shopActivatedEventHandler?.AddAction(OnShopActivated);
     }
+
     void UpdateXp() {
+        xp++;
         expText.value = xp / limit;
-        if (xp < limit) { xp++; }
-        else {
+        if (xp >= limit)
+        {
             limit += 20;
             xp = 0;
             _shopActivatedEventHandler?.CallAction(!_shopTab.activeSelf);
             Time.timeScale = 0;
-            _shopTab.SetActive(true); 
+            _shopTab.SetActive(true);
         }
+    }
+
+    private void OnShopActivated(bool gonnaBeActive)
+    {
+        if (gonnaBeActive) return;
+        expText.value = xp / limit;
     }
 
 }

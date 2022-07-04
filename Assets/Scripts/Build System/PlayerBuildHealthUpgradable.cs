@@ -2,22 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class PlayerBuildHealthUpgradable : MonoBehaviour, IUpgradable, IUpgradableVariants
+internal class PlayerBuildHealthUpgradable : MonoBehaviour, IUpgradable
 {
     public static int MaxHealth { get; private set; } = 1;
-    public float BonusFactor { get; set; } = 0;
     [SerializeField] private ActionChannel _blockMaxHealthUpgradedEventHandler;
-    private float _percentFactor = 0;
 
     public void OnUpgrade()
     {
-        MaxHealth += (int)Mathf.Round(_percentFactor * MaxHealth);
+        MaxHealth += 2;
         _blockMaxHealthUpgradedEventHandler.CallAction();
-    }
-
-    public void Init(PowerData data)
-    {
-        _percentFactor = Random.Range(1, 11) / 10.0f + BonusFactor;
-        data.Description = $"{_percentFactor}";
     }
 }

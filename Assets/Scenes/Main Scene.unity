@@ -866,6 +866,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 995629714a68f4845a280464180411ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &278654856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278654857}
+  - component: {fileID: 278654859}
+  - component: {fileID: 278654858}
+  m_Layer: 5
+  m_Name: Description Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &278654857
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278654856}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1617682650}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -258.7}
+  m_SizeDelta: {x: 2717.1, y: 637.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &278654858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278654856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.90588236, g: 0.11372549, b: 0.21176471, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 32815ae705b553941b12701f37429751, type: 3}
+    m_FontSize: 120
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 120
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &278654859
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278654856}
+  m_CullTransparentMesh: 1
 --- !u!4 &295333299 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4513796913559361331, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
@@ -1105,6 +1184,10 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 451ac8aa7101eeb4f80dc7baea5abeb8, type: 2}
     - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: _upgradable
+      value: 
+      objectReference: {fileID: 4513796914729437311}
+    - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: _upgradableObject
       value: 
       objectReference: {fileID: 4513796914729437311}
     m_RemovedComponents: []
@@ -1473,6 +1556,10 @@ PrefabInstance:
       propertyPath: _upgradable
       value: 
       objectReference: {fileID: 4513796914729437319}
+    - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: _upgradableObject
+      value: 
+      objectReference: {fileID: 4513796914729437319}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
 --- !u!224 &721623876 stripped
@@ -1771,6 +1858,10 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 0985ead3517b46d40b63d3e7acc06e52, type: 2}
     - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: _upgradable
+      value: 
+      objectReference: {fileID: 4513796914729437320}
+    - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: _upgradableObject
       value: 
       objectReference: {fileID: 4513796914729437320}
     m_RemovedComponents: []
@@ -2323,6 +2414,10 @@ PrefabInstance:
       propertyPath: _upgradable
       value: 
       objectReference: {fileID: 4513796914729437310}
+    - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: _upgradableObject
+      value: 
+      objectReference: {fileID: 4513796914729437310}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
 --- !u!224 &1390391092 stripped
@@ -2463,6 +2558,10 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b7b27bad4f6a0de4888e025114730d72, type: 2}
     - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: _upgradable
+      value: 
+      objectReference: {fileID: 4513796914729437318}
+    - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: _upgradableObject
       value: 
       objectReference: {fileID: 4513796914729437318}
     m_RemovedComponents: []
@@ -2702,6 +2801,10 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 48648693ca7e9b04e8ed4b8794f54589, type: 2}
     - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: _upgradable
+      value: 
+      objectReference: {fileID: 4513796914729437317}
+    - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: _upgradableObject
       value: 
       objectReference: {fileID: 4513796914729437317}
     m_RemovedComponents: []
@@ -3025,6 +3128,7 @@ RectTransform:
   - {fileID: 1938414857}
   - {fileID: 1615420510}
   - {fileID: 1970010500}
+  - {fileID: 278654857}
   m_Father: {fileID: 673243598}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3045,6 +3149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac44d13cc7807714a9e64b300730d076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shopActivatedEventHandler: {fileID: 11400000, guid: 71e82fd862a9a1b498351f3cabdf38c8, type: 2}
   _powers:
   - {fileID: 1354803386}
   - {fileID: 1692898251}
@@ -3054,6 +3159,7 @@ MonoBehaviour:
   - {fileID: 721623877}
   - {fileID: 1393953752}
   - {fileID: 1528739032}
+  _descriptionText: {fileID: 278654858}
   _availableSlots: 3
 --- !u!1 &1644279826
 GameObject:
@@ -3247,6 +3353,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
       propertyPath: _upgradable
+      value: 
+      objectReference: {fileID: 4513796914729437316}
+    - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: _upgradableObject
       value: 
       objectReference: {fileID: 4513796914729437316}
     m_RemovedComponents: []
@@ -3668,6 +3778,10 @@ PrefabInstance:
       propertyPath: _upgradable
       value: 
       objectReference: {fileID: 361187079}
+    - target: {fileID: 7655604224898350989, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
+      propertyPath: _upgradableObject
+      value: 
+      objectReference: {fileID: 361187079}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285b5b76eb6d86844b19e30c94fe8ff6, type: 3}
 --- !u!224 &1854135209 stripped
@@ -3842,7 +3956,7 @@ GameObject:
   - component: {fileID: 1970010502}
   - component: {fileID: 1970010501}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Choose Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3911,7 +4025,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1970010502}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1617682651}
+        m_TargetAssemblyTypeName: ShopController, DonutStudios.Upgrades.Runtime
+        m_MethodName: SelectPower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1970010502
 MonoBehaviour:
   m_ObjectHideFlags: 0

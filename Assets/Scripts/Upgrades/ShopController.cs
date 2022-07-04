@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 internal class ShopController : MonoBehaviour
 {
+    [SerializeField] private ActionChannel_Bool _shopActivatedEventHandler;
     [SerializeField] private Power[] _powers;
+    [SerializeField] private Text _descriptionText;
     [SerializeField] private int _availableSlots = 3;
+    private List<GameObject> _activePowers = new List<GameObject>();
+    private Power _currentPower;
 
     private void Awake()
     {
@@ -28,7 +33,38 @@ internal class ShopController : MonoBehaviour
             } while (usedNumbers.Contains(randomNum));
 
             usedNumbers.Add(randomNum);
-            _powers[randomNum].gameObject.SetActive(true);
+            GameObject power = _powers[randomNum].gameObject;
+            power.SetActive(true);
+            _activePowers.Add(power);
         }
+    }
+
+    private void ClearActivePowers()
+    {
+        foreach (GameObject power in _activePowers)
+        {
+            power.SetActive(false);
+        }
+        _activePowers.Clear();
+    }
+
+    public void UpdatePower(Power power)
+    {
+        _descriptionText.text = $"{power.PowerData.Name}\n\n";
+        _descriptionText.text += power.PowerData.Description;
+        _currentPower = power;
+    }
+
+    public void SelectPower()
+    {
+        if (_currentPower == null) return;
+
+        _descriptionText.text = "";
+        _currentPower.Upgrade();
+        _shopActivatedEventHandler?.CallAction(!gameObject.activeSelf);
+        Time.timeScale = 1;
+        _currentPower = null;
+        ClearActivePowers();
+        gameObject.SetActive(false);
     }
 }

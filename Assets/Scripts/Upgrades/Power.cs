@@ -5,29 +5,36 @@ using UnityEngine.UI;
 
 internal class Power : MonoBehaviour
 {
+    public PowerData PowerData => _powerData;
     [SerializeField] private PowerData _powerData;
-    [SerializeField] private GameObject _upgradable;
+    [SerializeField] private GameObject _upgradableObject;
     private Button _button;
     private Image _image;
+    private IUpgradable _upgradable;
     private IUpgradableVariants _upgradableVariants;
+    private ShopController _shopController;
 
     private void Awake()
     {
+        //INIT
+        _shopController = GetComponentInParent<ShopController>();
         _button = GetComponentInChildren<Button>();
         _image = GetComponentInChildren<Image>();
+        _upgradable = _upgradableObject.GetComponent<IUpgradable>();
+        _upgradableVariants = _upgradableObject.gameObject.GetComponent<IUpgradableVariants>();
 
         _image.sprite = _powerData.Icon;
-
-        _upgradableVariants = _upgradable.gameObject.GetComponent<IUpgradableVariants>();
-
-        IUpgradable upgradable;
-        if (!_upgradable.TryGetComponent<IUpgradable>(out upgradable)) return;
-        _button.onClick.AddListener(upgradable.OnUpgrade);
+        _button.onClick.AddListener(() => _shopController.UpdatePower(this));
     }
 
     private void OnEnable()
     {
         if (_upgradableVariants == null) return;
         _upgradableVariants.Init(_powerData);
+    }
+
+    public void Upgrade()
+    {
+        _upgradable.OnUpgrade();
     }
 }
