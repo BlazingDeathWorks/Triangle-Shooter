@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65fcb82a0950c5f4483fa10eacfa5fe7, type: 3}
   m_Name: Player Ammo Upgrade Data
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: b52130bb79a23344aa8c335cecb91eb0, type: 3}
+  Icon: {fileID: 21300000, guid: 52f92ac162556a6478d72e2734f035fc, type: 3}
   Name: Player Ammo
   Description: 

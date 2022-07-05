@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65fcb82a0950c5f4483fa10eacfa5fe7, type: 3}
   m_Name: Reload Speed Upgrade Data
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 5a04ea4785ab130458c45ae657c3af40, type: 3}
+  Icon: {fileID: 21300000, guid: 139a260501a28f84cabc6a66e10d2e40, type: 3}
   Name: Reload Speed
-  Description: 
+  Description: 0.2
