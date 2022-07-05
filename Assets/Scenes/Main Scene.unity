@@ -3506,6 +3506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f2f023450986f42ab28af81571a42e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _leveledUpEventHandler: {fileID: 11400000, guid: a3415a39f80f4d2448c05263cd42fb2f, type: 2}
   _camera: {fileID: 859296082}
   _lineRenderer: {fileID: 76331327}
 --- !u!68 &1754905716

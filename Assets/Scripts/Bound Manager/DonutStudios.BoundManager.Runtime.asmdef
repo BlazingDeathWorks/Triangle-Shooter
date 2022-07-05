@@ -2,7 +2,8 @@
     "name": "DonutStudios.BoundManager.Runtime",
     "rootNamespace": "",
     "references": [
-        "GUID:392bb61b63520954d9cf09aa7efd14c1"
+        "GUID:392bb61b63520954d9cf09aa7efd14c1",
+        "GUID:45f7af7fe51beed478d312184a92a334"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

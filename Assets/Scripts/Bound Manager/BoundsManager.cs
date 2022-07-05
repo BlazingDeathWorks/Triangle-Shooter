@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class BoundsManager : MonoBehaviour
 {
+    [SerializeField] private ActionChannel _leveledUpEventHandler;
     [SerializeField] Camera _camera = null;
     [SerializeField] LineRenderer _lineRenderer = null;
     private static Transform[] _corners = new Transform[2];
@@ -12,11 +13,14 @@ public class BoundsManager : MonoBehaviour
     private EdgeCollider2D _edgeCollider = null;
     private Vector2[] _boundPoints;
     private Vector3 _originalTopCornerPos;
+    private const int LEVELS_TO_UPGRADE = 3;
+    private int _levelsUntilUpgrade = 3;
 
     private void Awake()
     {
-        Timer.TimeFinishedEventHandler += DoubleTopCornerBounds;
+        _levelsUntilUpgrade = LEVELS_TO_UPGRADE;
         _edgeCollider = GetComponent<EdgeCollider2D>();
+        _leveledUpEventHandler?.AddAction(UpgradeBounds);
         SetCorners();
         SetCornerPositions();
         SetBoundPoints();
@@ -70,6 +74,13 @@ public class BoundsManager : MonoBehaviour
         _corners[0].position += _originalTopCornerPos;
         _corners[0].position = new Vector3((float)Math.Round(_corners[0].position.x, 8), (float)Math.Round(_corners[0].position.y, 8));
         SetBoundPoints();
+    }
+
+    private void UpgradeBounds()
+    {
+        if (--_levelsUntilUpgrade > 0) return;
+        _levelsUntilUpgrade = LEVELS_TO_UPGRADE;
+        DoubleTopCornerBounds();
     }
 
     public static Vector3 GetCornerPosition(int index)
