@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 internal class GameManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ internal class GameManager : MonoBehaviour
         _gameOverTab.SetActive(false);
         _gameStartedEventHandler?.CallAction();
         _playerDiedEventHandler?.AddAction(() => StartCoroutine(GameOver()));
+        Debug.Log(_gameOverTab.GetComponentInChildren<Text>().text);
     }
 
     private IEnumerator GameOver()
