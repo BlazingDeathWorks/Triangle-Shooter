@@ -19,7 +19,7 @@ public class PlayerMaxHealthUpgradable : MonoBehaviour, IUpgradable, IUpgradable
 
     public void Init(PowerData data)
     {
-        _percentFactor = Random.Range(1, 11) / 10.0f + BonusFactor;
-        data.Description = $"{_percentFactor}";
+        _percentFactor = Random.Range(1, 6) / 10.0f + BonusFactor;
+        data.Description = $"Increases max health by {_percentFactor * 100}% of the current max health";
     }
 }

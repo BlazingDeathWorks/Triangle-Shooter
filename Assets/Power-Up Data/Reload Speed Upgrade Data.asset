@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 139a260501a28f84cabc6a66e10d2e40, type: 3}
   Name: Reload Speed
-  Description: 0.2
+  Description: Increases reload speed by <10-30>% of the current reload speed

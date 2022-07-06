@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 830487da2c96969488b03d17d71d1d1f, type: 3}
   Name: Player Fire Rate
-  Description: 
+  Description: Increases fire rate by <10-30>% of the current fire rate

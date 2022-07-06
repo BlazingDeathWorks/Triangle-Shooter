@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59e71b04f3c0204ab57b931124b3e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeBetweenBulletsMinimum: 0.05
+  _timeBetweenBulletsMinimum: 0.01
   _timeBetweenBullets: 0.2
 --- !u!1 &2202071734711861261
 GameObject:

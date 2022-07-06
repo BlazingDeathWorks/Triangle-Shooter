@@ -22,7 +22,7 @@ internal class PlayerFireRateUpgradable : MonoBehaviour, IUpgradable, IUpgradabl
     public void Init(PowerData data)
     {
         _percentFactor = Random.Range(1, 4) / 10.0f + BonusFactor;
-        data.Description = $"{_percentFactor}";
+        data.Description = $"Increases fire rate by {_percentFactor * 100}% of the current fire rate";
     }
 
     public void OnUpgrade()

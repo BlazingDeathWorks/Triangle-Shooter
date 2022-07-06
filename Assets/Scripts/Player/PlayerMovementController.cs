@@ -100,8 +100,8 @@ public class PlayerMovementController : MonoBehaviour, IUpgradable, IUpgradableV
 
     public void Init(PowerData data)
     {
-        _percentFactor = Random.Range(1, 11) / 10.0f + BonusFactor;
-        data.Description = $"{_percentFactor}";
+        _percentFactor = Random.Range(1, 4) / 10.0f + BonusFactor;
+        data.Description = $"Increases speed by {_percentFactor * 100}% of the current speed";
     }
 
     public void AddToSpeed(float value)

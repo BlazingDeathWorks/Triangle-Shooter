@@ -21,7 +21,7 @@ internal class PlayerReloadUpgradable : MonoBehaviour, IUpgradable, IUpgradableV
     public void Init(PowerData data)
     {
         _percentFactor = Random.Range(1, 4) / 10.0f + BonusFactor;
-        data.Description = $"{_percentFactor}";
+        data.Description = $"Increases reload speed by {_percentFactor * 100}% of the current reload speed";
     }
 
     public void OnUpgrade()

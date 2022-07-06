@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 983572559
-  m_SortingLayer: 6
+  m_SortingLayer: 10
   m_SortingOrder: 50
   m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
   m_Color: {r: 0.99215686, g: 1, b: 0.9882353, a: 1}
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 1046285189245072974, guid: f829191bf2802914faafb08e278037e2, type: 3}
-  _ghostRunnerBoolEventHandler: {fileID: 0}
+  _ghostRunnerBoolEventHandler: {fileID: 11400000, guid: 80e52b114d3d3e84a9d6ade4af9e49a0, type: 2}
   _useEventHandler: 0
   _ghostContainerKey: Bullet Ghost Container
   _timeBetweenGhost: 0.015

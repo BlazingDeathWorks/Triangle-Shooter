@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: e59a98b6fdb301d45af77b470ed433b9, type: 3}
   Name: Player Speed
-  Description: 0.4
+  Description: Increases speed by <10-30>% of the current speed

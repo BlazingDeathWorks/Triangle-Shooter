@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 8152c1647f21dae43a63ab4e49ac8647, type: 3}
   Name: Block Dimension
-  Description: 
+  Description: Expands the building grid on each side
