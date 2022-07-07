@@ -22,6 +22,8 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable, IUpgradableVariant
     {
         if (_playerMaxHealthUpgradable == null || _player == null || _lensTween == null) return;
 
+        _currentHealth = _playerMaxHealthUpgradable.MaxHealth;
+
         OnUpgrade();
     }
 
