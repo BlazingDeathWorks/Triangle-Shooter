@@ -6,7 +6,7 @@ internal class BuildingBlock : MonoBehaviour
 {
     [SerializeField] private ActionChannel _blockMaxHealthUpgradedEventHandler;
     private NormalPoolableObject _normalPoolableObject;
-    private int _health = 1;
+    private int _health = 2;
 
     private void Awake()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 internal class PlayerBuildHealthUpgradable : MonoBehaviour, IUpgradable
 {
-    public static int MaxHealth { get; private set; } = 1;
+    public static int MaxHealth { get; private set; } = 2;
     [SerializeField] private ActionChannel _blockMaxHealthUpgradedEventHandler;
 
     public void OnUpgrade()
