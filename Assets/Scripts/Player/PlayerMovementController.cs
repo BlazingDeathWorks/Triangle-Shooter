@@ -36,8 +36,14 @@ public class PlayerMovementController : MonoBehaviour, IUpgradable, IUpgradableV
         _directions = new GridMovementDirection[] { up, down, left, right };
         _stateMachine = new GridMovementDirectionStateMachine();
 
-        _playerGhostRunnerBoolEventHandler.AddAction(() => Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0);
+        _playerGhostRunnerBoolEventHandler.AddAction(IsMoving);
         _buildActivatedEventHandler.AddAction(OnBuildActivated);
+    }
+
+    private void OnDestroy()
+    {
+        _buildActivatedEventHandler?.RemoveAction(OnBuildActivated);
+        _playerGhostRunnerBoolEventHandler?.RemoveAction(IsMoving);
     }
 
     private void Update()
@@ -72,6 +78,8 @@ public class PlayerMovementController : MonoBehaviour, IUpgradable, IUpgradableV
         if (_rb == null) return;
         _rb.velocity = (_stateMachine.CurrentGridMoveDir != null ? _stateMachine.CurrentGridMoveDir.ToVector() : Vector2.zero) * _speed;
     }
+
+    private bool IsMoving() => Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0;
 
     private void SetDirection()
     {

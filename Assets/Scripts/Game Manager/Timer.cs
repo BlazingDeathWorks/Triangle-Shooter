@@ -31,6 +31,11 @@ internal class Timer : MonoBehaviour
         _text.text = (int)Time.timeSinceLevelLoad / 60 + ":" + ((int)Time.timeSinceLevelLoad % 60) / 10 + ((int)Time.timeSinceLevelLoad % 60) % 10;
     }
 
+    private void OnDestroy()
+    {
+        _playerDiedEventHandler?.RemoveAction(StopTimer);
+    }
+
     private void StopTimer()
     {
         _canInrement = false;

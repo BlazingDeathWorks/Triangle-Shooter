@@ -23,10 +23,6 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable, IUpgradableVariant
         if (_playerMaxHealthUpgradable == null || _player == null || _lensTween == null) return;
 
         OnUpgrade();
-
-        _playerCollidedEventHandler?.AddAction(() => _lensTween.DistortLens());
-        _playerDiedEventHandler?.AddAction(() => Destroy(_player.gameObject));
-        _playerDiedEventHandler?.AddAction(() => Instantiate(_particleSystem, transform.position, Quaternion.identity));
     }
 
     public void UpdateHealth()
@@ -41,10 +37,13 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable, IUpgradableVariant
 
         _currentHealth--;
         UpdateHealth();
+        _lensTween.DistortLens();
         _playerCollidedEventHandler?.CallAction();
 
         if (_currentHealth <= 0)
         {
+            Destroy(_player.gameObject);
+            Instantiate(_particleSystem, transform.position, Quaternion.identity);
             _playerDiedEventHandler?.CallAction();
         }
     }

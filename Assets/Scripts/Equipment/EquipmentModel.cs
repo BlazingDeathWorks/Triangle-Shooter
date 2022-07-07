@@ -9,9 +9,13 @@ internal class EquipmentModel : MonoBehaviour
     [SerializeField] private Equipment _equipmentPrefab;
     [SerializeField] private Sprite _modelDisplay;
 
+    private void Start()
+    {
+        EquipmentManager.Instance.GameStartedEventHandler?.RemoveAction(InstantiateEquipmentPart);
+    }
+
     public void InstantiateEquipmentPart()
     {
         Instantiate(_equipmentPrefab, Vector2.zero, Quaternion.identity);
-        EquipmentManager.Instance.GameStartedEventHandler.RemoveAction(InstantiateEquipmentPart);
     }
 }

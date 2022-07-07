@@ -20,6 +20,11 @@ internal class KillCounter : MonoBehaviour
         _enemyDiedEventHandler?.AddAction(CountKill);
     }
 
+    private void OnDestroy()
+    {
+        _enemyDiedEventHandler?.RemoveAction(CountKill);
+    }
+
     private void CountKill()
     {
         KillCount++;

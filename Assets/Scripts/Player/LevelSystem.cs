@@ -22,6 +22,12 @@ public class LevelSystem : MonoBehaviour
         _shopActivatedEventHandler?.AddAction(OnShopActivated);
     }
 
+    private void OnDestroy()
+    {
+        _shopActivatedEventHandler?.RemoveAction(OnShopActivated);
+        giveXp?.RemoveAction(UpdateXp);
+    }
+
     void UpdateXp() {
         xp++;
         expText.value = xp / limit;

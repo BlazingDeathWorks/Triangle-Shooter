@@ -33,6 +33,11 @@ public class PlayerBuildSystem : MonoBehaviour, IUpgradable
         }
     }
 
+    private void OnDestroy()
+    {
+        _shopActivatedEventHandler?.RemoveAction(OnShopActivated);
+    }
+
     private void OnShopActivated(bool gonnaBeActive)
     {
         if (gonnaBeActive)

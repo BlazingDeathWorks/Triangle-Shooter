@@ -53,6 +53,11 @@ internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>, IUp
         }
     }
 
+    private void OnDestroy()
+    {
+        _buildActivatedEventHandler?.RemoveAction(OnBuildActivated);
+    }
+
     private void OnBuildActivated(bool isActive)
     {
         if (isActive)

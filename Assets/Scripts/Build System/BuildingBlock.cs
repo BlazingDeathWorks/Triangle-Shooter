@@ -27,6 +27,11 @@ internal class BuildingBlock : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        _blockMaxHealthUpgradedEventHandler?.RemoveAction(UpdateHealth);
+    }
+
     private void UpdateHealth()
     {
         _health = PlayerBuildHealthUpgradable.MaxHealth;

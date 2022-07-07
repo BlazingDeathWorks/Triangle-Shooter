@@ -20,8 +20,15 @@ internal sealed class GameManager : MonoBehaviour
         _path = Application.persistentDataPath + FILE_NAME;
         _gameOverTab.SetActive(false);
         _gameStartedEventHandler?.CallAction();
-        _playerDiedEventHandler?.AddAction(() => StartCoroutine(GameOver()));
+        _playerDiedEventHandler?.AddAction(StartGameOver);
     }
+
+    private void OnDestroy()
+    {
+        _playerDiedEventHandler?.RemoveAction(StartGameOver);
+    }
+
+    private void StartGameOver() => StartCoroutine(GameOver());
 
     private IEnumerator GameOver()
     {

@@ -27,6 +27,11 @@ public class BoundsManager : MonoBehaviour
         _originalTopCornerPos = _corners[0].position;
     }
 
+    private void OnDestroy()
+    {
+        _leveledUpEventHandler?.RemoveAction(UpgradeBounds);
+    }
+
     private void SetCorners()
     {
         int i = 0;
