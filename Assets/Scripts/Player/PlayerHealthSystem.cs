@@ -15,7 +15,7 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable, IUpgradableVariant
     [SerializeField] private Slider _slider;
     [SerializeField] private LensTween _lensTween;
 
-    private float _currentHealth = 1000;
+    private float _currentHealth = 3;
     private float _percentFactor;
 
     private void Awake()
