@@ -8,7 +8,8 @@ internal sealed class GameManager : MonoBehaviour
     [SerializeField] private ActionChannel _gameStartedEventHandler;
     [SerializeField] private ActionChannel _playerDiedEventHandler;
     [SerializeField] private GameObject _gameOverTab;
-    private Text _bestScoreText;
+    [SerializeField] private Text _bestScoreText;
+    [SerializeField] private Text _scoreText;
     private const string FILE_NAME = "/Best Score.bin";
     private string _path;
 
@@ -18,7 +19,6 @@ internal sealed class GameManager : MonoBehaviour
         _gameOverTab.SetActive(false);
         _gameStartedEventHandler?.CallAction();
         _playerDiedEventHandler?.AddAction(() => StartCoroutine(GameOver()));
-        _bestScoreText = _gameOverTab.GetComponentInChildren<Text>();
     }
 
     private IEnumerator GameOver()
