@@ -1,9 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using System.IO;
 
 internal sealed class GameManager : MonoBehaviour
 {
@@ -75,12 +73,12 @@ internal sealed class GameManager : MonoBehaviour
         _bestScoreText.text = $"BEST SCORE: {highScore.Score}";
     }
 
-    private void ClearBestScore()
+    /*private void ClearBestScore()
     {
         ScoreBoard highScore = BinarySaveSystem.LoadSystem<ScoreBoard>(_path);
         highScore.Score = 0;
         BinarySaveSystem.SaveSystem(highScore, _path);
-    }
+    }*/
 }
 
 [Serializable]
