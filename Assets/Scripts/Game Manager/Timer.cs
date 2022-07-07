@@ -1,14 +1,27 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+internal class Timer : MonoBehaviour
 {
+    public static Timer Instance { get; private set; }
+    public Text Text => _text;
     [SerializeField] private ActionChannel _playerDiedEventHandler;
     [SerializeField] Text _text;
     private bool _canInrement = true;
 
     private void Awake()
     {
+        //Singleton
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
         _playerDiedEventHandler?.AddAction(StopTimer);
     }
 
