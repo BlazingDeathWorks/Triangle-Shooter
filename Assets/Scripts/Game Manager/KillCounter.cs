@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class KillCounter : MonoBehaviour
+internal class KillCounter : ScoreFactor
 {
     public static KillCounter Instance { get; private set; }
-    [SerializeField] private ActionChannel _enemyDiedEventHandler;
     public int KillCount { get; private set; }
+    protected override int ScoreMultiply => 5;
+    [SerializeField] private ActionChannel _enemyDiedEventHandler;
 
     private void Awake()
     {
@@ -28,5 +29,10 @@ internal class KillCounter : MonoBehaviour
     private void CountKill()
     {
         KillCount++;
+    }
+
+    public override int CalculateScore()
+    {
+        return KillCount * ScoreMultiply;
     }
 }

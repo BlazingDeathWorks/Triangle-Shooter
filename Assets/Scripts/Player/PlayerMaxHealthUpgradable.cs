@@ -7,14 +7,21 @@ public class PlayerMaxHealthUpgradable : MonoBehaviour, IUpgradable, IUpgradable
 {
     public float BonusFactor { get; set; } = 0;
     public float MaxHealth { get; private set; } = 3;
-    
+
+    [SerializeField] private ActionChannel_Float _maxHealthUpgradedEventHandler;
     [SerializeField] private PlayerHealthSystem _playerHealthSystem;
-    private float _percentFactor = 0;
+    private float _percentFactor = 1;
+
+    private void Start()
+    {
+        _maxHealthUpgradedEventHandler?.CallAction(MaxHealth);
+    }
 
     public void OnUpgrade()
     {
-        MaxHealth += Mathf.Round(_percentFactor * MaxHealth);
+        MaxHealth += Mathf.Ceil(_percentFactor * MaxHealth);
         _playerHealthSystem?.UpdateHealth();
+        _maxHealthUpgradedEventHandler?.CallAction(MaxHealth);
     }
 
     public void Init(PowerData data)

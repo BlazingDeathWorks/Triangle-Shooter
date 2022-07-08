@@ -450,6 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e83ca42769b364ebf970160f74d609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHealthUpgradedEventHandler: {fileID: 11400000, guid: 9f65a1db79f7ed342b2c54973762899a, type: 2}
   _playerHealthSystem: {fileID: 4979575125442290468}
 --- !u!1 &5579398449194765831
 GameObject:

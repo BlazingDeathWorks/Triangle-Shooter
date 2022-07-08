@@ -11,7 +11,6 @@ internal sealed class GameManager : MonoBehaviour
     [SerializeField] private Text _bestScoreText;
     [SerializeField] private Text _scoreText;
     private const string FILE_NAME = "/Best Score.bin";
-    private const int SCORE_MULTIPLY = 5;
     private string _path;
     private int _currentScore;
 
@@ -45,17 +44,7 @@ internal sealed class GameManager : MonoBehaviour
 
     private int ReturnScore()
     {
-        //times will always be of a length of 2
-        string[] times = Timer.Instance.Text.text.Split(':');
-        try
-        {
-            int seconds = ((int.Parse(times[0]) * 60) + int.Parse(times[1])) * SCORE_MULTIPLY;
-            _currentScore = seconds + (KillCounter.Instance.KillCount * SCORE_MULTIPLY);
-        }
-        catch (Exception e)
-        {
-            Debug.LogError(e.Message);
-        }
+        _currentScore = Timer.Instance.CalculateScore() + KillCounter.Instance.CalculateScore() + MaxHealthScoreCalculator.Instance.CalculateScore();
         return _currentScore;
     }
 
