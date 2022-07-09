@@ -6,6 +6,7 @@ using UnityEngine;
 internal class RocketHead : MonoBehaviour, IObjectPoolable<RocketHead>
 {
     public IObjectPooler<RocketHead> ParentObjectPooler { get; set; }
+    [SerializeField] private ActionChannel _rocketShotEventHandler;
     [SerializeField] private float _speed = 5;
     [SerializeField] private float _lifetime = 3;
     private Transform _transform;
@@ -59,6 +60,7 @@ internal class RocketHead : MonoBehaviour, IObjectPoolable<RocketHead>
 
     public void ReleaseRocket(PlayerRotation playerRotation)
     {
+        _rocketShotEventHandler?.CallAction();
         _boxCollider.enabled = true;
         _canReleaseRocket = true;
         _direction = playerRotation.Direction;

@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 8486835194998617480}
   - component: {fileID: 840336201}
   - component: {fileID: 4529711847346978974}
+  - component: {fileID: -8275917081501310845}
   m_Layer: 9
-  m_Name: Normal Enemy
+  m_Name: Normal Enemy 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,3 +162,17 @@ MonoBehaviour:
   _deathParticle: {fileID: -8337701026882291611, guid: 386f50f83878c2749973ce1b571dcd31, type: 3}
   _collisionDistance: 0.7
   _enemieDeath: {fileID: 11400000, guid: 9f78a2a1a5df80e4e86b710798b42869, type: 2}
+--- !u!114 &-8275917081501310845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421247959084342936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e954932ae821f458fcc62cb677c04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: {fileID: 11400000, guid: 9f78a2a1a5df80e4e86b710798b42869, type: 2}
+  _clip: {fileID: 8300000, guid: 0ab838e5d8ea42e4bb0c321945064b5d, type: 3}

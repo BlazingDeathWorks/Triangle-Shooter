@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9161337520585352003}
   - component: {fileID: 6666823788762016001}
   - component: {fileID: 7302255800699835655}
+  - component: {fileID: -4121046125471185487}
   m_Layer: 10
   m_Name: Rocket Head
   m_TagString: Bullet
@@ -145,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ccd506a7deae124a95cc28d6dceef7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rocketShotEventHandler: {fileID: 11400000, guid: 527dbb853d12e0c449a046c250bf121e, type: 2}
   _speed: 13
   _lifetime: 3
 --- !u!114 &7302255800699835655
@@ -161,3 +163,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _to: {x: 0.6, y: 0.6, z: 0.6}
   _scaleTime: 0.1
+--- !u!114 &-4121046125471185487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092065963606499317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e954932ae821f458fcc62cb677c04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _channel: {fileID: 11400000, guid: 527dbb853d12e0c449a046c250bf121e, type: 2}
+  _clip: {fileID: 8300000, guid: 8e6cda8ac913682408d95c0f9c7c00e8, type: 3}

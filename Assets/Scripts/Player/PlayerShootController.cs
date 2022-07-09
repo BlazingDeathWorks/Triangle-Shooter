@@ -7,6 +7,7 @@ internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>, IUp
     public Bullet Prefab => _bullet;
     public Queue<Bullet> Pool { get; } = new Queue<Bullet>();
 
+    [SerializeField] private ActionChannel _playerShotEventHandler;
     [SerializeField] private ActionChannel_Bool _buildActivatedEventHandler;
     [SerializeField] private Transform _bulletSpawnPoint = null;
     [SerializeField] private Bullet _bullet = null;
@@ -44,6 +45,7 @@ internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>, IUp
         {
             if (_fireRateUpgradable.TimeSinceLastShot >= _fireRateUpgradable.TimeBetweenBullets && _currentAmmoCount > 0)
             {
+                _playerShotEventHandler?.CallAction();
                 _fireRateUpgradable.ResetLastShotTime();
                 _reloadUpgradable.ResetReloadTime();
                 _currentAmmoCount--;

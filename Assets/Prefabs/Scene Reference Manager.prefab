@@ -52,7 +52,9 @@ MonoBehaviour:
   - Equipment L Branch
   - Equipment R Branch
   - Rocket Launcher
+  - Camera
   _values:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
