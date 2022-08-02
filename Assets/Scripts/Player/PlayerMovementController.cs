@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementController : MonoBehaviour, IUpgradable, IUpgradableVariants
+public class PlayerMovementController : GeneratorBonusApplier, IUpgradable, IUpgradableVariants
 {
     public float BonusFactor { get; set; } = 0;
     [SerializeField] private ActionChannel_Bool _buildActivatedEventHandler;
     [SerializeField] private FuncChannel_Bool _playerGhostRunnerBoolEventHandler;
     [SerializeField] private float _maxSpeed = 10;
+    [SerializeField] private float _speedBonus = 1.5f;
     [SerializeField] private float _speed = 1;
     [SerializeField] private float _destinationWaitTime = 0.4f;
     [SerializeField] private Rigidbody2D _rb;
@@ -112,8 +113,8 @@ public class PlayerMovementController : MonoBehaviour, IUpgradable, IUpgradableV
         data.Description = $"Increases speed by {_percentFactor * 100}% of the current speed";
     }
 
-    public void AddToSpeed(float value)
+    public override void AddBonus()
     {
-        _speed += value;
+        _speed += _speedBonus;
     }
 }
