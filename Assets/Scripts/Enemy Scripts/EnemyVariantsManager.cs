@@ -16,8 +16,14 @@ internal class EnemyVariantsManager : MonoBehaviour
         UpdateVariantDatas(1);
     }
 
+    private void OnDestroy()
+    {
+        _leveledUpEventHandler?.RemoveAction(UpdateVariantDatas);
+    }
+
     private void UpdateVariantDatas(int level)
     {
+        if (_index >= _variantDatas.Length || level - 1 >= _variantLevelDatas.Length) return;
         for (int i = 0; i < _variantLevelDatas[level - 1]; i++)
         {
             _pickableVariants.Add(_variantDatas[_index]);
