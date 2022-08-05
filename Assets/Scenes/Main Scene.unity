@@ -4635,6 +4635,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1172144955962890607, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
+      propertyPath: _variantLevelDatas.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1172144955962890607, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
       propertyPath: _variantDatas.Array.data[0].EnemyPoolManager
       value: 
       objectReference: {fileID: 1781321954}

@@ -6,10 +6,15 @@ public class EnemyDeathParticle : MonoBehaviour, IObjectPoolable<EnemyDeathParti
 {
     public IObjectPooler<EnemyDeathParticle> ParentObjectPooler { get; set; }
     private EnemyDeathParticle _instance;
+    private ParticleSystem.MainModule _mainModule;
+    private ParticleSystem.ColorOverLifetimeModule _colorOverLifeModule;
 
     private void Awake()
     {
         _instance = GetComponent<EnemyDeathParticle>();
+        ParticleSystem particleSystem = _instance.GetComponent<ParticleSystem>();
+        _mainModule = particleSystem.main;
+        _colorOverLifeModule = particleSystem.colorOverLifetime;
     }
 
     IEnumerator Start()
@@ -26,5 +31,15 @@ public class EnemyDeathParticle : MonoBehaviour, IObjectPoolable<EnemyDeathParti
     public EnemyDeathParticle ReturnComponent()
     {
         return _instance;
+    }
+
+    public ParticleSystem.MainModule ReturnMainModule()
+    {
+        return _mainModule;
+    }
+
+    public ParticleSystem.ColorOverLifetimeModule ReturnColorOverLifeModule()
+    {
+        return _colorOverLifeModule;
     }
 }

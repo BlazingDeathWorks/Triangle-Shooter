@@ -12,16 +12,21 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
     [SerializeField] private float _collisionDistance = 0.1f;
     [SerializeField] private ActionChannel _enemieDeath;
     private PlayerHealthSystem _playerHealthSystem;
+    private SpriteRenderer _sr;
     private Transform _transform;
     private Transform _player;
     const string PLAYER = "Player";
     const string BULLET = "Bullet";
     private EnemyCollision _instance;
+    private Gradient _particleGradient;
 
     private void Awake()
     {
         _instance = GetComponent<EnemyCollision>();
+        _sr = GetComponent<SpriteRenderer>();
         _transform = transform;
+        _particleGradient = new Gradient();
+        _particleGradient.SetKeys(new GradientColorKey[] { new GradientColorKey(_sr.color, 0), new GradientColorKey(Color.white, 1) }, new GradientAlphaKey[] { new GradientAlphaKey(1, 0), new GradientAlphaKey(0, 1) });
     }
 
     private void Start()
@@ -61,6 +66,14 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
 
     public void OnPooled(EnemyDeathParticle instance)
     {
+        //Change particle start color
+        ParticleSystem.MainModule mainModule = instance.ReturnMainModule();
+        mainModule.startColor = _sr.color;
+
+        //Change particle color over lifetime
+        ParticleSystem.ColorOverLifetimeModule colorOverLifeModule = instance.ReturnColorOverLifeModule();
+        colorOverLifeModule.color = _particleGradient;
+
         instance.gameObject.SetActive(true);
         instance.transform.position = _transform.position;
     }
