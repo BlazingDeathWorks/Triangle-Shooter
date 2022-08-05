@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BoundsManager : MonoBehaviour
 {
-    [SerializeField] private ActionChannel _leveledUpEventHandler;
+    [SerializeField] private ActionChannel_Int _leveledUpEventHandler;
     [SerializeField] Camera _camera = null;
     [SerializeField] LineRenderer _lineRenderer = null;
     private static Transform[] _corners = new Transform[2];
@@ -81,7 +81,7 @@ public class BoundsManager : MonoBehaviour
         SetBoundPoints();
     }
 
-    private void UpgradeBounds()
+    private void UpgradeBounds(int level)
     {
         if (--_levelsUntilUpgrade > 0) return;
         _levelsUntilUpgrade = LEVELS_TO_UPGRADE;

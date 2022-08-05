@@ -43,8 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7e3b5a2b440a0c4cb8eaa6042678202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _leveledUpEventHandler: {fileID: 11400000, guid: a3415a39f80f4d2448c05263cd42fb2f, type: 2}
   _variantDatas:
   - Color: {r: 0.90588236, g: 0.11372549, b: 0.21176471, a: 1}
     EnemyPoolManager: {fileID: 0}
   - Color: {r: 1, g: 0.8941177, b: 0, a: 1}
     EnemyPoolManager: {fileID: 0}
+  _variantLevelDatas: 010000000000000001000000

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LevelSystem : MonoBehaviour
 {
-    [SerializeField] private ActionChannel _leveledUpEventHandler;
+    [SerializeField] private ActionChannel_Int _leveledUpEventHandler;
     [SerializeField] Slider expText = null;
     [SerializeField] float xp = 0;
     [SerializeField] float limit = 10;
@@ -37,7 +37,7 @@ public class LevelSystem : MonoBehaviour
             limit += 20;
             xp = 0;
             _shopActivatedEventHandler?.CallAction(!_shopTab.activeSelf);
-            _leveledUpEventHandler?.CallAction();
+            _leveledUpEventHandler?.CallAction(_level);
             Time.timeScale = 0;
             _shopTab.SetActive(true);
         }
