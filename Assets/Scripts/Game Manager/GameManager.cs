@@ -20,6 +20,7 @@ internal sealed class GameManager : MonoBehaviour
         _gameOverTab.SetActive(false);
         _gameStartedEventHandler?.CallAction();
         _playerDiedEventHandler?.AddAction(StartGameOver);
+        //ClearBestScore();
     }
 
     private void OnDestroy()
@@ -44,7 +45,7 @@ internal sealed class GameManager : MonoBehaviour
 
     private int ReturnScore()
     {
-        _currentScore = Timer.Instance.CalculateScore() + KillCounter.Instance.CalculateScore() + MaxHealthScoreCalculator.Instance.CalculateScore();
+        _currentScore = Timer.Instance.CalculateScore() + KillCounter.Instance.CalculateScore();
         return _currentScore;
     }
 

@@ -37,6 +37,7 @@ internal class MaxHealthScoreCalculator : ScoreFactor
 
     public override int CalculateScore()
     {
-        return (int)(STARTING_BONUS / _maxHealth);
+        //return (int)(STARTING_BONUS / _maxHealth);
+        return (int)(STARTING_BONUS / 3);
     }
 }
