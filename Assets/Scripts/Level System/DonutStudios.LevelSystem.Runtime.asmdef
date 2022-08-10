@@ -1,0 +1,17 @@
+{
+    "name": "DonutStudios.LevelSystem.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:45f7af7fe51beed478d312184a92a334",
+        "GUID:811e3c0f2459a684fad97c3fededec3c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
