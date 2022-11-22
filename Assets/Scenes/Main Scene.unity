@@ -4852,7 +4852,8 @@ PrefabInstance:
       propertyPath: _gridContainer
       value: 
       objectReference: {fileID: 1690420328}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5996586336633811110, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 14f1abe72f66e5a47a757928ae0ae753, type: 3}
 --- !u!1 &4513796914729437310 stripped
 GameObject:
