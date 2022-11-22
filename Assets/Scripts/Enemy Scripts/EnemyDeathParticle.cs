@@ -17,7 +17,12 @@ public class EnemyDeathParticle : MonoBehaviour, IObjectPoolable<EnemyDeathParti
         _colorOverLifeModule = particleSystem.colorOverLifetime;
     }
 
-    IEnumerator Start()
+    private void OnEnable()
+    {
+        StartCoroutine(DeactivateParticle());
+    }
+
+    private IEnumerator DeactivateParticle()
     {
         yield return new WaitForSecondsRealtime(1.5f);
         ObjectPool.Return(this);
