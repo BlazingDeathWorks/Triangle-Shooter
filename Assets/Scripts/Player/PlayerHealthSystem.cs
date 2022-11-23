@@ -18,7 +18,7 @@ public class PlayerHealthSystem : MonoBehaviour, IUpgradable, IUpgradableVariant
     private float _currentHealth = 3;
     private float _percentFactor;
 
-    private void Awake()
+    private void Start()
     {
         if (_playerMaxHealthUpgradable == null || _player == null || _lensTween == null) return;
 

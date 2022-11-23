@@ -4,25 +4,19 @@ using UnityEngine;
 
 internal class EquipmentManager : MonoBehaviour
 {
-    public static EquipmentManager Instance { get; private set; }
-    public ActionChannel GameStartedEventHandler;
+    private ActionChannel _gameStartedEventHandler;
     [SerializeField] private EquipmentModelManager[] _modelManagers;
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            return;
-        }
-        Destroy(gameObject);
+        _gameStartedEventHandler.ClearAll();
     }
 
     public void SubscribeModels()
     {
         foreach (EquipmentModelManager manager in _modelManagers)
         {
-            GameStartedEventHandler?.AddAction(manager.CurrentModel.InstantiateEquipmentPart);
+            _gameStartedEventHandler?.AddAction(manager.CurrentModel.InstantiateEquipmentPart);
         }
     }
 }

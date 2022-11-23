@@ -25,5 +25,9 @@ public class ActionChannel : ScriptableObject
     {
         return func.GetInvocationList().Length;
     }
+    public void ClearAll()
+    {
+        func = null;
+    }
 }
 
