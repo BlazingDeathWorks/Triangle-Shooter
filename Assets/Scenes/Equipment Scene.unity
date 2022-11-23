@@ -1731,7 +1731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbefc4ece672ce8478bd5ee3a764eb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameStartedEventHandler: {fileID: 11400000, guid: e87b3edce26330645beb1bad03178602, type: 2}
+  _gameStartedEventHandler: {fileID: 11400000, guid: e87b3edce26330645beb1bad03178602, type: 2}
   _modelManagers:
   - {fileID: 2123166126}
   - {fileID: 289716785}

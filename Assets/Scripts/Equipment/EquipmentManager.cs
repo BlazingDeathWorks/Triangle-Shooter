@@ -4,6 +4,7 @@ using UnityEngine;
 
 internal class EquipmentManager : MonoBehaviour
 {
+    [SerializeField]
     private ActionChannel _gameStartedEventHandler;
     [SerializeField] private EquipmentModelManager[] _modelManagers;
 
