@@ -3,9 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class HealthBase : EquipmentBase
+internal class HealthBase : EquipmentBase<PlayerHealthSystem>
 {
-    protected override Type Type => typeof(PlayerHealthSystem);
-
     protected override float BonusFactor => 0.3f;
 }

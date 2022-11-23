@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal abstract class EquipmentGenerator<T> : Equipment where T : GeneratorBonusApplier
+internal abstract class EquipmentGenerator<T> : Equipment where T : IBonusApplicable
 {
     protected sealed override string SceneReferenceKey => "Equipment Generator";
 

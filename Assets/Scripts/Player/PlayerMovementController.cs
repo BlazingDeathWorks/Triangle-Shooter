@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementController : GeneratorBonusApplier, IUpgradable, IUpgradableVariants
+public class PlayerMovementController : MonoBehaviour, IBonusApplicable, IUpgradable, IUpgradableVariants
 {
     public float BonusFactor { get; set; } = 0;
     [SerializeField] private ActionChannel_Bool _buildActivatedEventHandler;
@@ -113,7 +113,7 @@ public class PlayerMovementController : GeneratorBonusApplier, IUpgradable, IUpg
         data.Description = $"Increases speed by {_percentFactor * 100}% of the current speed";
     }
 
-    public override void AddBonus()
+    public void AddBonus()
     {
         _speed += _speedBonus;
     }
