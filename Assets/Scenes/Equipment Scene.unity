@@ -1218,6 +1218,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903608764}
   m_CullTransparentMesh: 1
+--- !u!1 &904745137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 904745138}
+  - component: {fileID: 904745139}
+  m_Layer: 0
+  m_Name: Ammo Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &904745138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904745137}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 216, y: 216, z: 216}
+  m_Children: []
+  m_Father: {fileID: 1099516290}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &904745139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904745137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56ca431a80e417409f6016cc22037af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _equipmentPrefab: {fileID: -9148228339135217977, guid: 6e5d2275b93ed9f42842fa5714e98832, type: 3}
+  _modelDisplay: {fileID: 7277363576761278176, guid: ae6653c101b2cab4880e2a20f66dc83d, type: 3}
 --- !u!1 &915416695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,6 +1528,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915986335}
   m_CullTransparentMesh: 1
+--- !u!1 &998540046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 998540047}
+  - component: {fileID: 998540048}
+  m_Layer: 0
+  m_Name: Block Health Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &998540047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998540046}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 216, y: 216, z: 216}
+  m_Children: []
+  m_Father: {fileID: 1099516290}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &998540048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998540046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56ca431a80e417409f6016cc22037af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _equipmentPrefab: {fileID: 9034900583482895909, guid: d5d6550bad4a9fc4baa836f51ee07ca9, type: 3}
+  _modelDisplay: {fileID: -928237982244036800, guid: ae6653c101b2cab4880e2a20f66dc83d, type: 3}
 --- !u!1 &1010405733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,6 +1873,10 @@ RectTransform:
   m_LocalScale: {x: 216, y: 216, z: 1}
   m_Children:
   - {fileID: 218003538}
+  - {fileID: 1598143821}
+  - {fileID: 904745138}
+  - {fileID: 998540047}
+  - {fileID: 1862904442}
   m_Father: {fileID: 448976363}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2459,6 +2553,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1598143820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1598143821}
+  - component: {fileID: 1598143822}
+  m_Layer: 0
+  m_Name: Fire Rate Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1598143821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598143820}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 216, y: 216, z: 216}
+  m_Children: []
+  m_Father: {fileID: 1099516290}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1598143822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598143820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56ca431a80e417409f6016cc22037af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _equipmentPrefab: {fileID: -3194369338956339518, guid: 6f75592fbd26f594390214e1c36d7c32, type: 3}
+  _modelDisplay: {fileID: -9218913059026718938, guid: ae6653c101b2cab4880e2a20f66dc83d, type: 3}
 --- !u!1 &1609141642
 GameObject:
   m_ObjectHideFlags: 0
@@ -2665,6 +2804,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719442613}
   m_CullTransparentMesh: 1
+--- !u!1 &1862904441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1862904442}
+  - component: {fileID: 1862904443}
+  m_Layer: 0
+  m_Name: Player Health Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1862904442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862904441}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 216, y: 216, z: 216}
+  m_Children: []
+  m_Father: {fileID: 1099516290}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1862904443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862904441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56ca431a80e417409f6016cc22037af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _equipmentPrefab: {fileID: -4789365995449138511, guid: 0ee7265be2c48ac4887fc6bab4919272, type: 3}
+  _modelDisplay: {fileID: -8148223425281515461, guid: ae6653c101b2cab4880e2a20f66dc83d, type: 3}
 --- !u!1 &1882129705
 GameObject:
   m_ObjectHideFlags: 0

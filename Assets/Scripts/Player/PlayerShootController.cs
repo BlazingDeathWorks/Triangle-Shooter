@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>, IUpgradable
+public class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>, IUpgradable, IBonusApplicable
 {
     public Bullet Prefab => _bullet;
     public Queue<Bullet> Pool { get; } = new Queue<Bullet>();
@@ -16,6 +16,7 @@ internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>, IUp
     [SerializeField] private PlayerRotation _playerRotation;
     [SerializeField] private PlayerReloadUpgradable _reloadUpgradable;
     [SerializeField] private int _ammoPerRound = 3;
+    [SerializeField] private int _ammoPerRoundBonus = 3;
     private int _currentAmmoCount = 3;
 
 
@@ -82,5 +83,10 @@ internal class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>, IUp
     {
         _ammoPerRound *= 2;
         _currentAmmoCount = _ammoPerRound;
+    }
+
+    public void AddBonus()
+    {
+        _ammoPerRound += _ammoPerRoundBonus;
     }
 }

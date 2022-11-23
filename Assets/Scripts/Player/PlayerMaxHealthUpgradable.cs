@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Upgrade to increase max health of player
-public class PlayerMaxHealthUpgradable : MonoBehaviour, IUpgradable, IUpgradableVariants
+public class PlayerMaxHealthUpgradable : MonoBehaviour, IUpgradable, IUpgradableVariants, IBonusApplicable
 {
     public float BonusFactor { get; set; } = 0;
     public float MaxHealth { get; private set; } = 3;
 
     [SerializeField] private ActionChannel_Float _maxHealthUpgradedEventHandler;
     [SerializeField] private PlayerHealthSystem _playerHealthSystem;
+    [SerializeField] private float _maxHealthBonus = 3;
     private float _percentFactor = 1;
 
     private void Start()
@@ -28,5 +29,10 @@ public class PlayerMaxHealthUpgradable : MonoBehaviour, IUpgradable, IUpgradable
     {
         _percentFactor = Random.Range(1, 6) / 10.0f + BonusFactor;
         data.Description = $"Increases max health by {_percentFactor * 100}% of the current max health";
+    }
+
+    public void AddBonus()
+    {
+        MaxHealth += _maxHealthBonus;
     }
 }

@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class PlayerFireRateUpgradable : MonoBehaviour, IUpgradable, IUpgradableVariants
+public class PlayerFireRateUpgradable : MonoBehaviour, IUpgradable, IUpgradableVariants, IBonusApplicable
 {
     public float BonusFactor { get; set; } = 0;
     public float TimeBetweenBullets => _timeBetweenBullets;
     public float TimeSinceLastShot => _timeSinceLastShot;
     [SerializeField] private float _timeBetweenBulletsMinimum = 0.1f;
     [SerializeField] private float _timeBetweenBullets = 0.2f;
+    [SerializeField] private float _timeBetweenBulletsBonus = 0.03f;
     private float _timeSinceLastShot;
     private float _originalTimeBetweenBullets = 0.2f;
     private float _percentFactor = 0;
@@ -44,5 +45,10 @@ internal class PlayerFireRateUpgradable : MonoBehaviour, IUpgradable, IUpgradabl
     public void RefreshFireRate()
     {
         _timeSinceLastShot = _timeBetweenBullets;
+    }
+
+    public void AddBonus()
+    {
+        _timeBetweenBullets -= _timeBetweenBulletsBonus;
     }
 }
