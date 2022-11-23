@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 704a0e90b685eb04ab599b1bc42e829f, type: 3}
   Name: Block Health
-  Description: Increases block health by +2
+  Description: Increases block health by +4
