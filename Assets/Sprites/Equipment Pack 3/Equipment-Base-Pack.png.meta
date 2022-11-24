@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: aaa83c75d0f174444bf33b7fc4aaa5b2
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4995864859202123001
+    second: Equipment-Base-Pack_0
+  - first:
+      213: 3813759068577624519
+    second: Equipment-Base-Pack_1
+  - first:
+      213: 6136462479707889515
+    second: Equipment-Base-Pack_2
+  - first:
+      213: -8958723199828930980
+    second: Equipment-Base-Pack_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +113,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Equipment-Base-Pack_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 691
+        width: 469
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f47996ce90e45540800000000000000
+      internalID: 4995864859202123001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Equipment-Base-Pack_1
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 682
+        width: 469
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c17e7daaa13de430800000000000000
+      internalID: 3813759068577624519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Equipment-Base-Pack_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 191
+        width: 469
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f5088ec18192550800000000000000
+      internalID: 6136462479707889515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Equipment-Base-Pack_3
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 191
+        width: 469
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e452117b83ca380800000000000000
+      internalID: -8958723199828930980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
