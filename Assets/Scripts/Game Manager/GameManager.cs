@@ -33,6 +33,7 @@ internal sealed class GameManager : MonoBehaviour
     private IEnumerator GameOver()
     {
         yield return new WaitForSecondsRealtime(2f);
+        Time.timeScale = 1;
         UpdateScoreText();
         LoadBestScore();
         _gameOverTab.SetActive(true);

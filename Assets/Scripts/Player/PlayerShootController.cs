@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>, IUpgradable, IBonusApplicable
+public class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>, IUpgradable, IUpgradableVariants, IBonusApplicable
 {
     public Bullet Prefab => _bullet;
     public Queue<Bullet> Pool { get; } = new Queue<Bullet>();
+    public object BonusFactor { get; set; } = 0;
 
     [SerializeField] private ActionChannel _playerShotEventHandler;
     [SerializeField] private ActionChannel_Bool _buildActivatedEventHandler;
@@ -72,6 +73,11 @@ public class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>, IUpgr
         enabled = true;
     }
 
+    public void Init(PowerData data)
+    {
+        data.Description = $"Increases max ammo by two times the current max ammo [Bonus = {(int)BonusFactor}]";
+    }
+
     public void OnPooled(Bullet instance)
     {
         instance.gameObject.SetActive(true);
@@ -81,7 +87,7 @@ public class PlayerShootController : MonoBehaviour, IObjectPooler<Bullet>, IUpgr
 
     public void OnUpgrade()
     {
-        _ammoPerRound *= 2;
+        _ammoPerRound = (_ammoPerRound + (int)BonusFactor) * 2;
         _currentAmmoCount = _ammoPerRound;
     }
 
