@@ -716,7 +716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56ca431a80e417409f6016cc22037af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentPrefab: {fileID: 0}
+  _equipmentPrefab: {fileID: 7494630251594011835, guid: 2442a076ac7213740b0d09f343f1ca00, type: 3}
   _modelDisplay: {fileID: 6136462479707889515, guid: aaa83c75d0f174444bf33b7fc4aaa5b2, type: 3}
 --- !u!1001 &534330113
 PrefabInstance:
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56ca431a80e417409f6016cc22037af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equipmentPrefab: {fileID: 0}
+  _equipmentPrefab: {fileID: 7656147703729331119, guid: a77f87ff636eca64aacba283a6d99bb6, type: 3}
   _modelDisplay: {fileID: -8958723199828930980, guid: aaa83c75d0f174444bf33b7fc4aaa5b2, type: 3}
 --- !u!1 &889585688
 GameObject:

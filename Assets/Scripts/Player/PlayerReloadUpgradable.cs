@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class PlayerReloadUpgradable : MonoBehaviour, IUpgradable, IUpgradableVariants
+public class PlayerReloadUpgradable : MonoBehaviour, IUpgradable, IUpgradableVariants
 {
     public object BonusFactor { get; set; } = 0f;
     public float ReloadSpeed => _reloadSpeed;
