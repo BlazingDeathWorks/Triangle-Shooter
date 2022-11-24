@@ -4,7 +4,7 @@ using UnityEngine;
 
 internal class PlayerReloadUpgradable : MonoBehaviour, IUpgradable, IUpgradableVariants
 {
-    public float BonusFactor { get; set; } = 0;
+    public object BonusFactor { get; set; } = 0f;
     public float ReloadSpeed => _reloadSpeed;
     public float TimeSinceReloadStart => _timeSinceReloadStart;
     [SerializeField] private float _reloadSpeedMinimum = 0.1f;
@@ -20,7 +20,7 @@ internal class PlayerReloadUpgradable : MonoBehaviour, IUpgradable, IUpgradableV
 
     public void Init(PowerData data)
     {
-        _percentFactor = Random.Range(1, 4) / 10.0f + BonusFactor;
+        _percentFactor = Random.Range(1, 4) / 10.0f + (float)BonusFactor;
         data.Description = $"Increases reload speed by {_percentFactor * 100}% of the current reload speed";
     }
 

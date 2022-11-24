@@ -21,7 +21,7 @@ internal class Power : MonoBehaviour
         _button = GetComponentInChildren<Button>();
         _image = GetComponentInChildren<Image>();
         _upgradable = _upgradableObject.GetComponent<IUpgradable>();
-        _upgradableVariants = _upgradableObject.gameObject.GetComponent<IUpgradableVariants>();
+        _upgradableVariants = _upgradableObject.GetComponent<IUpgradableVariants>();
 
         _image.sprite = _powerData.Icon;
         _button.onClick.AddListener(() => _shopController.UpdatePower(this));

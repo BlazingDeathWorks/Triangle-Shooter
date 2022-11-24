@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//How to improve: Make a validator (Odin) that checks T to be either float or int
 public interface IUpgradableVariants
 {
-    public float BonusFactor { get; set; }
+    public object BonusFactor { get; set; }
     public void Init(PowerData data);
 }

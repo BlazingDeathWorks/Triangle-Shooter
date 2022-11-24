@@ -5,5 +5,5 @@ using UnityEngine;
 
 internal class HealthBase : EquipmentBase<PlayerHealthSystem>
 {
-    protected override float BonusFactor => 0.3f;
+    protected override object BonusFactor => 0.3f;
 }

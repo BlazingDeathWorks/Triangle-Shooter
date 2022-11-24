@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour, IBonusApplicable, IUpgradable, IUpgradableVariants
 {
-    public float BonusFactor { get; set; } = 0;
+    public object BonusFactor { get; set; } = 0f;
     [SerializeField] private ActionChannel_Bool _buildActivatedEventHandler;
     [SerializeField] private FuncChannel_Bool _playerGhostRunnerBoolEventHandler;
     [SerializeField] private float _maxSpeed = 10;
@@ -109,7 +109,7 @@ public class PlayerMovementController : MonoBehaviour, IBonusApplicable, IUpgrad
 
     public void Init(PowerData data)
     {
-        _percentFactor = Random.Range(1, 4) / 10.0f + BonusFactor;
+        _percentFactor = Random.Range(1, 4) / 10.0f + (float)BonusFactor;
         data.Description = $"Increases speed by {_percentFactor * 100}% of the current speed";
     }
 
