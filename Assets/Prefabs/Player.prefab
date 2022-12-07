@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeBetweenBulletsMinimum: 0.01
   _timeBetweenBullets: 0.2
+  _timeBetweenBulletsBonus: 0.03
 --- !u!1 &2202071734711861261
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +159,7 @@ MonoBehaviour:
   _playerRotation: {fileID: 6833509286256497244}
   _reloadUpgradable: {fileID: 4235173385645458590}
   _ammoPerRound: 3
+  _ammoPerRoundBonus: 3
 --- !u!114 &5779883675302012799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +337,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8dee874d676b2b4dade30221c205ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerDiedEventHandler: {fileID: 11400000, guid: 98571fc48e700994f9dfe376d09dafbe, type: 2}
   _leveledUpEventHandler: {fileID: 11400000, guid: a3415a39f80f4d2448c05263cd42fb2f, type: 2}
+  _levelText: {fileID: 0}
   expText: {fileID: 0}
   xp: 0
   limit: 10
@@ -468,6 +472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealthUpgradedEventHandler: {fileID: 11400000, guid: 9f65a1db79f7ed342b2c54973762899a, type: 2}
   _playerHealthSystem: {fileID: 4979575125442290468}
+  _maxHealthBonus: 3
 --- !u!1 &5579398449194765831
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blockMaxHealthUpgradedEventHandler: {fileID: 11400000, guid: cf106e40f5f76774bbd4d7f5b4e93352, type: 2}
+  _maxHealthBonus: 2
 --- !u!1 &7024161969472896297
 GameObject:
   m_ObjectHideFlags: 0

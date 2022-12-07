@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class LevelSystem : MonoBehaviour
 {
+    [SerializeField] private ActionChannel _playerDiedEventHandler;
     [SerializeField] private ActionChannel_Int _leveledUpEventHandler;
+    [SerializeField] private Text _levelText;
     [SerializeField] Slider expText = null;
     [SerializeField] float xp = 0;
     [SerializeField] float limit = 10;
@@ -20,11 +22,13 @@ public class LevelSystem : MonoBehaviour
         expText.value = xp/limit;
         giveXp.AddAction(UpdateXp);
         _shopActivatedEventHandler?.AddAction(OnShopActivated);
+        _playerDiedEventHandler?.AddAction(UpdateLevelText);
     }
 
     private void OnDestroy()
     {
         _shopActivatedEventHandler?.RemoveAction(OnShopActivated);
+        _playerDiedEventHandler?.RemoveAction(UpdateLevelText);
         giveXp?.RemoveAction(UpdateXp);
     }
 
@@ -41,6 +45,13 @@ public class LevelSystem : MonoBehaviour
             Time.timeScale = 0;
             _shopTab.SetActive(true);
         }
+    }
+
+    private void UpdateLevelText()
+    {
+        if (_levelText == null) return;
+
+        _levelText.text = $"LEVEL: {_level}";
     }
 
     private void OnShopActivated(bool gonnaBeActive)
