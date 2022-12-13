@@ -5,22 +5,26 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 internal class RocketHead : MonoBehaviour, IObjectPoolable<RocketHead>
 {
-    public IObjectPooler<RocketHead> ParentObjectPooler { get; set; }
     [SerializeField] private ActionChannel _rocketShotEventHandler;
+    //Same
+    public IObjectPooler<RocketHead> ParentObjectPooler { get; set; }
     [SerializeField] private float _speed = 5;
     [SerializeField] private float _lifetime = 3;
+    private float _time = 0;
+    private Rigidbody2D _rb;
+    private bool _canReleaseRocket = false;
+    //Same
     private Transform _transform;
     private ScaleTween _scaleTween;
-    private Rigidbody2D _rb;
     private BoxCollider2D _boxCollider;
     private Vector2 _direction;
-    private float _time = 0;
-    private bool _canReleaseRocket = false;
 
     private void Awake()
     {
-        _transform = transform;
+        //same
         _rb = GetComponent<Rigidbody2D>();
+        //same
+        _transform = transform;
         _boxCollider = GetComponent<BoxCollider2D>();
         _scaleTween = GetComponent<ScaleTween>();
         _boxCollider.enabled = false;
@@ -31,6 +35,7 @@ internal class RocketHead : MonoBehaviour, IObjectPoolable<RocketHead>
         _scaleTween.ScaleObject();
     }
 
+    //same
     private void Update()
     {
         if (!_canReleaseRocket) return;
@@ -40,6 +45,7 @@ internal class RocketHead : MonoBehaviour, IObjectPoolable<RocketHead>
         _time = 0;
         ObjectPool.Return(this);
     }
+    //same
 
     private void FixedUpdate()
     {
