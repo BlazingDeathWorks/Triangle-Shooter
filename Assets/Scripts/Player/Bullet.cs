@@ -6,7 +6,7 @@ public class Bullet : BulletBase<Bullet>
 {
     public Vector2 Direction { private get; set; }
 
-    private void FixedUpdate()
+    protected override void FixedUpdateVirtual()
     {
         Rb.velocity = Direction.normalized * Speed;
     }

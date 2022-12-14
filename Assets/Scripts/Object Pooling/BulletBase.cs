@@ -8,9 +8,9 @@ public abstract class BulletBase<T> : MonoBehaviour, IObjectPoolable<T> where T 
 
     [SerializeField] protected bool ReleaseBullet = false;
     [SerializeField] protected float Speed = 5;
-    protected Rigidbody2D Rb;
+    protected Rigidbody2D Rb { get; set; }
     [SerializeField] private float _lifetime = 3;
-    private float _time = 0;
+    private float _time;
     private T _instance;
 
     private void Update()
@@ -23,10 +23,21 @@ public abstract class BulletBase<T> : MonoBehaviour, IObjectPoolable<T> where T 
         ObjectPool.Return(this);
     }
 
+    private void FixedUpdate()
+    {
+        if (!ReleaseBullet) return;
+        FixedUpdateVirtual();
+    }
+
     protected virtual void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
         _instance = GetComponent<T>();
+    }
+
+    protected virtual void FixedUpdateVirtual()
+    {
+
     }
 
     protected virtual void OnReturnAbstract()
