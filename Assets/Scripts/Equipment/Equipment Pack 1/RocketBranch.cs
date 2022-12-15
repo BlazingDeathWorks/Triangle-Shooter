@@ -34,7 +34,7 @@ internal class RocketBranch : EquipmentBranch
         if (_timeSinceLastFire >= _fireRate)
         {
             _timeSinceLastFire = 0;
-            _rocketHeadInstance.ReleaseRocket(_playerRotation);
+            _rocketHeadInstance.ReleaseEquipmentBullet(_playerRotation);
             _scaleTween.ScaleObject();
             StartCoroutine(ReDeploy());
         }

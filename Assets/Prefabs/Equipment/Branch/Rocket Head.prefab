@@ -146,9 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ccd506a7deae124a95cc28d6dceef7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rocketShotEventHandler: {fileID: 11400000, guid: 527dbb853d12e0c449a046c250bf121e, type: 2}
-  _speed: 13
+  ReleaseBullet: 0
+  Speed: 13
   _lifetime: 3
+  BulletShotEventHandler: {fileID: 11400000, guid: 527dbb853d12e0c449a046c250bf121e, type: 2}
 --- !u!114 &7302255800699835655
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -40,14 +40,14 @@ public abstract class BulletBase<T> : MonoBehaviour, IObjectPoolable<T> where T 
 
     }
 
-    protected virtual void OnReturnAbstract()
+    protected virtual void OnReturnVirtual()
     {
         gameObject.SetActive(false);
     }
 
     public void OnReturn()
     {
-        OnReturnAbstract();
+        OnReturnVirtual();
     }
 
     public T ReturnComponent()
