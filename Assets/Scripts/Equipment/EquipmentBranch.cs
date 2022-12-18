@@ -7,9 +7,10 @@ internal abstract class EquipmentBranch<T> : Equipment where T : EquipmentBullet
     [SerializeField] private string _sceneReferenceKey;
     protected override string SceneReferenceKey => _sceneReferenceKey;
 
-    [SerializeField] private Vector2 _firePoint = new Vector2(0.22f, 0.495f);
+    [SerializeField] private Vector2[] _firePoints;
+    [SerializeField] [Tooltip("-1: Shoots to the right\n1: Shoots to the left")] private int[] _offsetFactor;
     [SerializeField] private float _fireRate = 5;
-    private EquipmentBullet<T> _bulletInstance;
+    private List<EquipmentBullet<T>> _bulletInstances = new List<EquipmentBullet<T>>();
     private EquipmentLauncher<T> _launcher;
     private PlayerRotation _playerRotation;
     private float _timeSinceLastFire;
@@ -29,8 +30,7 @@ internal abstract class EquipmentBranch<T> : Equipment where T : EquipmentBullet
         base.Start();
         _playerRotation = SceneReferenceManager.GetReference(PLAYER).GetComponent<PlayerRotation>();
         _launcher = SceneReferenceManager.GetReference("Rocket Launcher").GetComponent<EquipmentLauncher<T>>();
-        _launcher.DeployRocket(_transform, _firePoint);
-        _bulletInstance = _launcher.GetInstance();
+        Deploy();
     }
 
     private void Update()
@@ -39,7 +39,16 @@ internal abstract class EquipmentBranch<T> : Equipment where T : EquipmentBullet
         if (_timeSinceLastFire >= _fireRate)
         {
             _timeSinceLastFire = 0;
-            _bulletInstance.ReleaseEquipmentBullet(_playerRotation);
+            for (int i = 0; i < _bulletInstances.Count; i++)
+            {
+                if (i <= _offsetFactor.Length - 1)
+                {
+                    _bulletInstances[i].ReleaseEquipmentBulletPerpendicular(_playerRotation, _offsetFactor[i]);
+                    continue;
+                }
+                _bulletInstances[i].ReleaseEquipmentBullet(_playerRotation);
+            }
+            _bulletInstances.Clear();
             _scaleTween.ScaleObject();
             StartCoroutine(ReDeploy());
         }
@@ -48,7 +57,15 @@ internal abstract class EquipmentBranch<T> : Equipment where T : EquipmentBullet
     private IEnumerator ReDeploy()
     {
         yield return new WaitForSeconds(_redeployTime);
-        _launcher.DeployRocket(_transform, _firePoint);
-        _bulletInstance = _launcher.GetInstance();
+        Deploy();
+    }
+
+    private void Deploy()
+    {
+        for (int i = 0; i < _firePoints.Length; i++)
+        {
+            _launcher.DeployRocket(_transform, _firePoints[i]);
+            _bulletInstances.Add(_launcher.GetInstance());
+        }
     }
 }

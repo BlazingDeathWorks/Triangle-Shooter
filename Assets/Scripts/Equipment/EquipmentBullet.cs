@@ -36,6 +36,16 @@ public abstract class EquipmentBullet<T> : BulletBase<T> where T : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void ReleaseEquipmentBulletPerpendicular(PlayerRotation playerRotation, int offsetFactor)
+    {
+        BulletShotEventHandler?.CallAction();
+        _boxCollider.enabled = true;
+        ReleaseBullet = true;
+        _direction = Vector2.Perpendicular(playerRotation.Direction) * offsetFactor;
+        _transform.parent = null;
+        _transform.localEulerAngles = new Vector3(0, 0, playerRotation.Angle - 90);
+    }
+
     public void ReleaseEquipmentBullet(PlayerRotation playerRotation)
     {
         BulletShotEventHandler?.CallAction();
