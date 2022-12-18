@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EquipmentLauncher<T> : MonoBehaviour, IObjectPooler<T> where T : MonoBehaviour, IObjectPoolable<T>
+public abstract class EquipmentLauncher<T> : MonoBehaviour, IObjectPooler<T> where T : EquipmentBullet<T>
 {
     public T Prefab => _prefab;
     public Queue<T> Pool { get; } = new Queue<T>();
@@ -27,7 +27,7 @@ public abstract class EquipmentLauncher<T> : MonoBehaviour, IObjectPooler<T> whe
         ObjectPool.Pool(this);
     }
 
-    public T GetInstance()
+    public EquipmentBullet<T> GetInstance()
     {
         return _currentInstance;
     }
