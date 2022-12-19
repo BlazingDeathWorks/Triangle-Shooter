@@ -42,7 +42,7 @@ internal abstract class EquipmentBranch<T> : Equipment where T : EquipmentBullet
             _timeSinceLastFire = 0;
             for (int i = 0; i < _bulletInstances.Count; i++)
             {
-                if (i <= _offsetFactor.Length - 1)
+                if (i <= _offsetFactor.Length - 1 && _offsetFactor[i] != 0)
                 {
                     _bulletInstances[i].ReleaseEquipmentBulletPerpendicular(_playerRotation, _offsetFactor[i]);
                     continue;

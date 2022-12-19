@@ -8,6 +8,7 @@ internal class EquipmentModelManager : MonoBehaviour
     [SerializeField] private SpriteRenderer _equipmentSprite;
     private SpriteRenderer _sr;
     private List<EquipmentModel> _equipmentModels = new List<EquipmentModel>();
+    private Vector2 _originalModelPos;
     private int _index = 0;
 
     private void Awake()
@@ -21,23 +22,28 @@ internal class EquipmentModelManager : MonoBehaviour
         }
 
         CurrentModel = _equipmentModels[_index];
+        _originalModelPos = _equipmentSprite.transform.localPosition;
+    }
+
+    private void InitializeModel()
+    {
+        CurrentModel = _equipmentModels[_index];
+        _equipmentSprite.transform.localPosition =  _originalModelPos + _equipmentModels[_index].Offset;
+        _equipmentSprite.sprite = CurrentModel.ModelDisplay;
+        _sr.sprite = CurrentModel.ModelDisplay;
     }
 
     public void MoveForward()
     {
         _index = MathUtil.WrapInt(++_index, 0, _equipmentModels.Count - 1);
 
-        CurrentModel = _equipmentModels[_index];
-        _equipmentSprite.sprite = CurrentModel.ModelDisplay;
-        _sr.sprite = CurrentModel.ModelDisplay;
+        InitializeModel();
     }
 
     public void MoveBackwards()
     {
         _index = MathUtil.WrapInt(--_index, 0, _equipmentModels.Count - 1);
 
-        CurrentModel = _equipmentModels[_index];
-        _equipmentSprite.sprite = CurrentModel.ModelDisplay;
-        _sr.sprite = CurrentModel.ModelDisplay;
+        InitializeModel();
     }
 }

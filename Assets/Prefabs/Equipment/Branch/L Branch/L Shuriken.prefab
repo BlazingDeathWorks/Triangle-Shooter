@@ -113,6 +113,7 @@ MonoBehaviour:
   _sceneReferenceKey: Equipment L Branch
   _launcherName: Shuriken Launcher
   _firePoints:
-  - {x: -0.22, y: 0.495}
-  _offsetFactor: 
+  - {x: -0.072, y: 0.367}
+  - {x: -0.3926, y: 0.121}
+  _offsetFactor: 0000000001000000
   _fireRate: 10
