@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3214172375450460914
+--- !u!1 &9127660973551712147
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4194120864488809395}
-  - component: {fileID: 307031922729088800}
+  - component: {fileID: 9127660973551712149}
+  - component: {fileID: 8864516193061671820}
   m_Layer: 0
-  m_Name: Scene Reference Manager
+  m_Name: Shuriken Launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4194120864488809395
+--- !u!4 &9127660973551712149
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3214172375450460914}
+  m_GameObject: {fileID: 9127660973551712147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,37 +31,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &307031922729088800
+--- !u!114 &8864516193061671820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3214172375450460914}
+  m_GameObject: {fileID: 9127660973551712147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d4344e0a3830694ca02503f7d0402db, type: 3}
+  m_Script: {fileID: 11500000, guid: 149da95d285062c42a9092e34278d486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _keys:
-  - Player
-  - Enemy Variants Manager
-  - Build Grid Box Manager
-  - Equipment Base
-  - Equipment Generator
-  - Equipment L Branch
-  - Equipment R Branch
-  - Rocket Launcher
-  - Camera
-  - Shuriken Launcher
-  _values:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _prefab: {fileID: -5088093073276108087, guid: d0adcf5718700e6459385d8dcae51b93, type: 3}

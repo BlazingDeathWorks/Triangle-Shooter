@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3017831544291062153}
   - component: {fileID: 3017831544291062154}
-  - component: {fileID: 2103637994856038583}
   - component: {fileID: 7654756799782724502}
+  - component: {fileID: -1494484011243901927}
   m_Layer: 0
-  m_Name: R Rocket
+  m_Name: R Shuriken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,35 +73,17 @@ SpriteRenderer:
   m_SortingLayerID: -741027613
   m_SortingLayer: 9
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2194981012359078592, guid: 5f805a96ce1efbb4e98ab13e8be457a1, type: 3}
+  m_Sprite: {fileID: 972038997335048161, guid: bf0bc9935ab4e454f8efae3d6bb5e46b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.80078125, y: 1.1328125}
+  m_Size: {x: 1.0664062, y: 1.0039062}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2103637994856038583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3017831544291062152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 996ef17d46e4cc141bf8835da19fa808, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sceneReferenceKey: Equipment R Branch
-  _launcherName: Rocket Launcher
-  _firePoints:
-  - {x: 0.22, y: 0.495}
-  _offsetFactor: 
-  _fireRate: 5
 --- !u!114 &7654756799782724502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,3 +98,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _to: {x: 1.5, y: 1.5, z: 1.5}
   _scaleTime: 0.1
+--- !u!114 &-1494484011243901927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3017831544291062152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a1f68382d44f44fb87582172d46f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneReferenceKey: Equipment R Branch
+  _launcherName: Shuriken Launcher
+  _firePoints:
+  - {x: 0.22, y: 0.495}
+  _offsetFactor: 
+  _fireRate: 10

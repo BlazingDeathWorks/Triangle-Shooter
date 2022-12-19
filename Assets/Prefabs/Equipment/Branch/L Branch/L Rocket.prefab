@@ -97,8 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneReferenceKey: Equipment L Branch
+  _launcherName: Rocket Launcher
   _firePoints:
   - {x: -0.22, y: 0.495}
+  _offsetFactor: 
   _fireRate: 5
 --- !u!114 &3749164365787255057
 MonoBehaviour:

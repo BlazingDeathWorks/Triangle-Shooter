@@ -7,6 +7,7 @@ internal abstract class EquipmentBranch<T> : Equipment where T : EquipmentBullet
     [SerializeField] private string _sceneReferenceKey;
     protected override string SceneReferenceKey => _sceneReferenceKey;
 
+    [SerializeField] private string _launcherName;
     [SerializeField] private Vector2[] _firePoints;
     [SerializeField] [Tooltip("-1: Shoots to the right\n1: Shoots to the left")] private int[] _offsetFactor;
     [SerializeField] private float _fireRate = 5;
@@ -29,7 +30,7 @@ internal abstract class EquipmentBranch<T> : Equipment where T : EquipmentBullet
     {
         base.Start();
         _playerRotation = SceneReferenceManager.GetReference(PLAYER).GetComponent<PlayerRotation>();
-        _launcher = SceneReferenceManager.GetReference("Rocket Launcher").GetComponent<EquipmentLauncher<T>>();
+        _launcher = SceneReferenceManager.GetReference(_launcherName).GetComponent<EquipmentLauncher<T>>();
         Deploy();
     }
 

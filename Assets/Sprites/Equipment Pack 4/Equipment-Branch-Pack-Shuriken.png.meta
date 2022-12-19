@@ -1,7 +1,22 @@
 fileFormatVersion: 2
-guid: e42b2b70602aea740bbb90d3753a8a08
+guid: bf0bc9935ab4e454f8efae3d6bb5e46b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4045557860804615543
+    second: Equipment-Branch-Pack-Shuriken_0
+  - first:
+      213: 972038997335048161
+    second: Equipment-Branch-Pack-Shuriken_1
+  - first:
+      213: -5492010712436660436
+    second: Equipment-Branch-Pack-Shuriken_2
+  - first:
+      213: 6910974451671291475
+    second: Equipment-Branch-Pack-Shuriken_3
+  - first:
+      213: 2626381615567688834
+    second: Equipment-Branch-Pack-Shuriken_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +116,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Equipment-Branch-Pack-Shuriken_0
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 879
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d5c8ba075b42830800000000000000
+      internalID: 4045557860804615543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Equipment-Branch-Pack-Shuriken_1
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 622
+        width: 241
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ef7bf761506d7d00800000000000000
+      internalID: 972038997335048161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Equipment-Branch-Pack-Shuriken_2
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 622
+        width: 240
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27a29eda5578c3b0800000000000000
+      internalID: -5492010712436660436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Equipment-Branch-Pack-Shuriken_3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 143
+        width: 273
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 356daabd5a6b8ef50800000000000000
+      internalID: 6910974451671291475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Equipment-Branch-Pack-Shuriken_4
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 143
+        width: 274
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28457880a28c27420800000000000000
+      internalID: 2626381615567688834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

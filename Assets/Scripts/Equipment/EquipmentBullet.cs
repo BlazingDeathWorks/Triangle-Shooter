@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EquipmentBullet<T> : BulletBase<T> where T : MonoBehaviour, IObjectPoolable<T>
+internal abstract class EquipmentBullet<T> : BulletBase<T> where T : MonoBehaviour, IObjectPoolable<T>
 {
     [SerializeField] protected ActionChannel BulletShotEventHandler;
     private Transform _transform;
     private Vector2 _direction;
     private ScaleTween _scaleTween;
-    private BoxCollider2D _boxCollider;
+    private Collider2D _collider;
 
     private void OnEnable()
     {
@@ -20,8 +20,8 @@ public abstract class EquipmentBullet<T> : BulletBase<T> where T : MonoBehaviour
         base.Awake();
         _transform = transform;
         _scaleTween = GetComponent<ScaleTween>();
-        _boxCollider = GetComponent<BoxCollider2D>();
-        _boxCollider.enabled = false;
+        _collider = GetComponent<Collider2D>();
+        _collider.enabled = false;
     }
 
     protected override void FixedUpdateVirtual()
@@ -31,7 +31,7 @@ public abstract class EquipmentBullet<T> : BulletBase<T> where T : MonoBehaviour
 
     protected override void OnReturnVirtual()
     {
-        _boxCollider.enabled = false;
+        _collider.enabled = false;
         ReleaseBullet = false;
         gameObject.SetActive(false);
     }
@@ -39,7 +39,7 @@ public abstract class EquipmentBullet<T> : BulletBase<T> where T : MonoBehaviour
     public void ReleaseEquipmentBulletPerpendicular(PlayerRotation playerRotation, int offsetFactor)
     {
         BulletShotEventHandler?.CallAction();
-        _boxCollider.enabled = true;
+        _collider.enabled = true;
         ReleaseBullet = true;
         _direction = Vector2.Perpendicular(playerRotation.Direction) * offsetFactor;
         _transform.parent = null;
@@ -49,7 +49,7 @@ public abstract class EquipmentBullet<T> : BulletBase<T> where T : MonoBehaviour
     public void ReleaseEquipmentBullet(PlayerRotation playerRotation)
     {
         BulletShotEventHandler?.CallAction();
-        _boxCollider.enabled = true;
+        _collider.enabled = true;
         ReleaseBullet = true;
         _direction = playerRotation.Direction;
         _transform.parent = null;
