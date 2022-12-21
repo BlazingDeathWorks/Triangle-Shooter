@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6904244727389527546}
   - component: {fileID: 3749164365787255057}
   - component: {fileID: 653579982752744429}
+  - component: {fileID: 5843452914478725640}
   m_Layer: 0
   m_Name: L Shuriken
   m_TagString: Untagged
@@ -117,3 +118,16 @@ MonoBehaviour:
   - {x: -0.3926, y: 0.121}
   _offsetFactor: 0000000001000000
   _fireRate: 10
+--- !u!114 &5843452914478725640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6904244727389527544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e7e0522e517174692886bc5c30f656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _offset: {x: -0.13, y: 0}

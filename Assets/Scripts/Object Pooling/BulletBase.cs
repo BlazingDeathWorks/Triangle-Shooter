@@ -13,7 +13,7 @@ public abstract class BulletBase<T> : MonoBehaviour, IObjectPoolable<T> where T 
     private float _time;
     private T _instance;
 
-    private void Update()
+    protected virtual void Update()
     {
         if (!ReleaseBullet) return;
 

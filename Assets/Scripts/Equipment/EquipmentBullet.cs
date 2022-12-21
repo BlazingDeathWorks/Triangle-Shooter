@@ -5,7 +5,7 @@ using UnityEngine;
 internal abstract class EquipmentBullet<T> : BulletBase<T> where T : MonoBehaviour, IObjectPoolable<T>
 {
     [SerializeField] protected ActionChannel BulletShotEventHandler;
-    private Transform _transform;
+    protected Transform Transform { get; private set; }
     private Vector2 _direction;
     private ScaleTween _scaleTween;
     private Collider2D _collider;
@@ -18,7 +18,7 @@ internal abstract class EquipmentBullet<T> : BulletBase<T> where T : MonoBehavio
     protected override void Awake()
     {
         base.Awake();
-        _transform = transform;
+        Transform = transform;
         _scaleTween = GetComponent<ScaleTween>();
         _collider = GetComponent<Collider2D>();
         _collider.enabled = false;
@@ -42,8 +42,8 @@ internal abstract class EquipmentBullet<T> : BulletBase<T> where T : MonoBehavio
         _collider.enabled = true;
         ReleaseBullet = true;
         _direction = Vector2.Perpendicular(playerRotation.Direction) * offsetFactor;
-        _transform.parent = null;
-        _transform.localEulerAngles = new Vector3(0, 0, playerRotation.Angle - 90);
+        Transform.parent = null;
+        Transform.localEulerAngles = new Vector3(0, 0, playerRotation.Angle - 90);
     }
 
     public void ReleaseEquipmentBullet(PlayerRotation playerRotation)
@@ -52,7 +52,7 @@ internal abstract class EquipmentBullet<T> : BulletBase<T> where T : MonoBehavio
         _collider.enabled = true;
         ReleaseBullet = true;
         _direction = playerRotation.Direction;
-        _transform.parent = null;
-        _transform.localEulerAngles = new Vector3(0, 0, playerRotation.Angle - 90);
+        Transform.parent = null;
+        Transform.localEulerAngles = new Vector3(0, 0, playerRotation.Angle - 90);
     }
 }

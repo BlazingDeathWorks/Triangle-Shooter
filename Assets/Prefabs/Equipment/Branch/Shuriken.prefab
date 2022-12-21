@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -4121046125471185487}
   - component: {fileID: -5088093073276108087}
   - component: {fileID: 8007276050450002006}
+  - component: {fileID: -5505006375316084765}
   m_Layer: 10
   m_Name: Shuriken
   m_TagString: Bullet
@@ -149,9 +150,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReleaseBullet: 0
-  Speed: 14.5
+  Speed: 10
   _lifetime: 15
   BulletShotEventHandler: {fileID: 11400000, guid: af0076d431f765e43ae7e405143764d0, type: 2}
+  _reverseTime: 0.1
 --- !u!58 &8007276050450002006
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -168,3 +170,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.20312499
+--- !u!114 &-5505006375316084765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092065963606499317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823e1fb11a2a5d74a90b94b0324aa7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 8

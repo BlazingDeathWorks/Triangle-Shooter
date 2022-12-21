@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class SpinTri : MonoBehaviour
 {
-    private GameObject tri; 
-    void Start()
-    {
-        tri = gameObject;
-    }
-
+    [SerializeField] private float _speed = 1;
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, 1));
+        transform.Rotate(new Vector3(0, 0, _speed));
     }
 }
