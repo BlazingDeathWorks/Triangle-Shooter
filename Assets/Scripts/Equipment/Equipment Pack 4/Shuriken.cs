@@ -5,7 +5,7 @@ using UnityEngine;
 internal class Shuriken : EquipmentBullet<Shuriken>
 {
     [SerializeField] private float _reverseTime;
-    private float _time;
+    private float _timeSinceLastReverse;
     private bool _first = false;
 
     protected override void Awake()
@@ -16,10 +16,10 @@ internal class Shuriken : EquipmentBullet<Shuriken>
     protected override void Update()
     {
         base.Update();
-        _time += Time.deltaTime;
-        if (_time >= _reverseTime)
+        _timeSinceLastReverse += Time.deltaTime;
+        if (_timeSinceLastReverse >= _reverseTime)
         {
-            _time = 0;
+            _timeSinceLastReverse = 0;
             Speed = -Speed;
             if (_first) return;
             _first = true;
