@@ -49,4 +49,10 @@ MonoBehaviour:
     EnemyPoolManager: {fileID: 0}
   - Color: {r: 1, g: 0.8941177, b: 0, a: 1}
     EnemyPoolManager: {fileID: 0}
-  _variantLevelDatas: 01000000000000000000000001000000
+  - Color: {r: 1, g: 0.61960787, b: 0, a: 1}
+    EnemyPoolManager: {fileID: 0}
+  - Color: {r: 0.34901962, g: 0.28627452, b: 1, a: 1}
+    EnemyPoolManager: {fileID: 0}
+  - Color: {r: 0.7490196, g: 0.098039225, b: 1, a: 1}
+    EnemyPoolManager: {fileID: 0}
+  _variantLevelDatas: 01000000000000000000000000000000010000000100000000000000010000000000000001000000

@@ -11,6 +11,8 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
     [SerializeField] private EnemyDeathParticle _deathParticle = null;
     [SerializeField] private float _collisionDistance = 0.1f;
     [SerializeField] private ActionChannel _enemieDeath;
+    [SerializeField] private int _maxHealth = 1;
+    private int _health;
     private PlayerHealthSystem _playerHealthSystem;
     private SpriteRenderer _sr;
     private Transform _transform;
@@ -19,9 +21,10 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
     const string BULLET = "Bullet";
     private EnemyCollision _instance;
     private Gradient _particleGradient;
-
+    
     private void Awake()
     {
+        _health = _maxHealth;
         _instance = GetComponent<EnemyCollision>();
         _sr = GetComponent<SpriteRenderer>();
         _transform = transform;
@@ -53,6 +56,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
     {
         if (collision.gameObject.CompareTag(BULLET))
         {
+            if (--_health > 0) return;
             ObjectPool.Pool(this);
             ObjectPool.Return(this);
             _enemieDeath.CallAction();
@@ -61,6 +65,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
 
     public void OnReturn()
     {
+        _health = _maxHealth;
         gameObject.SetActive(false);
     }
 

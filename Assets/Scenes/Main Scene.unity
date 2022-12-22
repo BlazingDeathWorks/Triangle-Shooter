@@ -335,6 +335,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21664602}
   m_CullTransparentMesh: 1
+--- !u!1 &59836742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 59836744}
+  - component: {fileID: 59836743}
+  m_Layer: 0
+  m_Name: Tiny Enemy Pool Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &59836743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59836742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f4d815cb76bbd47842796e28e2606f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 4529711847346978974, guid: a0e75d005b7381547b812bdbdd4ba6e1, type: 3}
+--- !u!4 &59836744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59836742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &76331325
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +691,50 @@ MonoBehaviour:
   m_AmplitudeGain: 0
   m_FrequencyGain: 25
   mNoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!1 &191959612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 191959614}
+  - component: {fileID: 191959613}
+  m_Layer: 0
+  m_Name: Tank Enemy Pool Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &191959613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191959612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f4d815cb76bbd47842796e28e2606f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 4529711847346978974, guid: 6a31c24b0d83d684a8d6ff2b66e7db70, type: 3}
+--- !u!4 &191959614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191959612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &193313092
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,7 +2419,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1005469974
 GameObject:
@@ -2530,7 +2618,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1193534600 stripped
 GameObject:
@@ -3917,7 +4005,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1854135208
 PrefabInstance:
@@ -4352,6 +4440,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970010499}
   m_CullTransparentMesh: 1
+--- !u!1 &1980329804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1980329806}
+  - component: {fileID: 1980329805}
+  m_Layer: 0
+  m_Name: Ultra Tank Enemy Pool Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1980329805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980329804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f4d815cb76bbd47842796e28e2606f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 4529711847346978974, guid: b874062064e0dca43878ac126edf9f65, type: 3}
+--- !u!4 &1980329806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980329804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2004682993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4615,7 +4747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 768490627635292917, guid: 79b09412c32b12c47bb05c3fb09576a3, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 768490627635292917, guid: 79b09412c32b12c47bb05c3fb09576a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4727,6 +4859,18 @@ PrefabInstance:
       propertyPath: _variantDatas.Array.data[1].EnemyPoolManager
       value: 
       objectReference: {fileID: 1005469975}
+    - target: {fileID: 1172144955962890607, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
+      propertyPath: _variantDatas.Array.data[2].EnemyPoolManager
+      value: 
+      objectReference: {fileID: 59836743}
+    - target: {fileID: 1172144955962890607, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
+      propertyPath: _variantDatas.Array.data[3].EnemyPoolManager
+      value: 
+      objectReference: {fileID: 191959613}
+    - target: {fileID: 1172144955962890607, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
+      propertyPath: _variantDatas.Array.data[4].EnemyPoolManager
+      value: 
+      objectReference: {fileID: 1980329805}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35fea6b025a0fc747a23b8ecd887fd26, type: 3}
 --- !u!1001 &1801412418390671411
@@ -4867,7 +5011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9127660973551712149, guid: fcbaebe4e48051a4ea5c3bb54a76aa14, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 9127660973551712149, guid: fcbaebe4e48051a4ea5c3bb54a76aa14, type: 3}
       propertyPath: m_LocalPosition.x
