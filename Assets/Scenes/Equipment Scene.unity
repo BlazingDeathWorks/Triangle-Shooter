@@ -1060,7 +1060,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Global Volume
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9032679682321773032, guid: 4788c64fe14fa22479777102fedcad4d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4788c64fe14fa22479777102fedcad4d, type: 3}
 --- !u!1 &553555238
 GameObject:
