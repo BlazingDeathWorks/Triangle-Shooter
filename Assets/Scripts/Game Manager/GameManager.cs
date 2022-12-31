@@ -16,7 +16,6 @@ internal sealed class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        LeaderboardManager.Test();
         _path = Application.persistentDataPath + FILE_NAME;
         _gameOverTab.SetActive(false);
         _gameStartedEventHandler?.CallAction();
