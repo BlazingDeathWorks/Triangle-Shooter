@@ -38,7 +38,7 @@ public class LevelSystem : MonoBehaviour
         if (xp >= limit)
         {
             _level++;
-            limit += 10;
+            limit += Mathf.RoundToInt(limit * 0.2f);
             xp = 0;
             _shopActivatedEventHandler?.CallAction(!_shopTab.activeSelf);
             _leveledUpEventHandler?.CallAction(_level);
