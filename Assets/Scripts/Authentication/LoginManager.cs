@@ -40,6 +40,18 @@ internal class LoginManager : MonoBehaviour
             string token = response.SessionToken;
 
             // Start game session here
+            LootLockerSDKManager.StartWhiteLabelSession((response) =>
+            {
+                if (!response.success)
+                {
+                    //Fix this so we cut out everything except for the actual message
+                    _errorText.text = response.Error;
+                    return;
+                }
+
+                Debug.Log("session started successfully");
+                SceneController.Instance.NextScene();
+            });
         });
     }
 }
