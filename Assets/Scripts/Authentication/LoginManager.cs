@@ -30,7 +30,6 @@ public class LoginManager : MonoBehaviour
                 return;
             }
 
-            Debug.Log("user created successfully");
             Login();
         });
     }
@@ -58,7 +57,14 @@ public class LoginManager : MonoBehaviour
                     return;
                 }
 
-                Debug.Log("session started successfully");
+                LootLockerSDKManager.GetPlayerName((response) =>
+                {
+                    if (!response.success) return;
+                    if (string.IsNullOrEmpty(response.name))
+                    {
+                        LootLockerSDKManager.SetPlayerName(_username.text, (response) => { });
+                    }
+                });
                 PlayerPrefs.SetInt(PlayerIdKey, response.player_id);
                 LoggedIn?.Invoke();
                 SceneController.Instance.NextScene();

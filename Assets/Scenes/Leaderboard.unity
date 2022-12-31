@@ -656,6 +656,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c388b70a0463af43a19e6fc282c87c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loginException: 0
+  _count: 3
+  _leaderboardItems:
+  - _usernameText: {fileID: 1326151637}
+    _scoreText: {fileID: 2014797901}
+  - _usernameText: {fileID: 1524792737}
+    _scoreText: {fileID: 683399698}
+  - _usernameText: {fileID: 2132788918}
+    _scoreText: {fileID: 1122688358}
 --- !u!1001 &562917621
 PrefabInstance:
   m_ObjectHideFlags: 0
