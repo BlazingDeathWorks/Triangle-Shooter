@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public static SceneController Instance { get; private set; }
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject settingMenu;
 
     private void Awake()
     {
@@ -15,6 +17,21 @@ public class SceneController : MonoBehaviour
             return;
         }
         Destroy(gameObject);
+    }
+
+    private void DisableAll() {
+        mainMenu.SetActive(false);
+        settingMenu.SetActive(false);
+    }
+
+    public void OptionMenu() {
+        DisableAll();
+        settingMenu.SetActive(true);
+    }
+
+    public void MainMenu() {
+        DisableAll();
+        mainMenu.SetActive(true);
     }
 
     public void NextScene()
