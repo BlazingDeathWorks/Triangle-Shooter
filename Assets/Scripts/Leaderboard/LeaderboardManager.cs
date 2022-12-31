@@ -5,12 +5,26 @@ using LootLocker.Requests;
 
 public class LeaderboardManager : MonoBehaviour
 {
-    private static int s_leaderboardId => 10158;
-    private static int s_playerId => PlayerPrefs.GetInt(LoginManager.PlayerIdKey);
+    [SerializeField] private int _count = 3;
+    private static string s_leaderboardId => "10158";
+    private static string s_playerId => PlayerPrefs.GetInt(LoginManager.PlayerIdKey).ToString();
+
+    private void Awake()
+    {
+        LootLockerSDKManager.GetScoreList(s_leaderboardId, _count, 0, (response) =>
+        {
+            if (response.statusCode == 200)
+            {
+                Debug.Log("Successfully Loaded Score List");
+
+                return;
+            }
+        });
+    }
 
     public static void SubmitScore(int score)
     {
-        LootLockerSDKManager.SubmitScore(s_playerId.ToString(), score, s_leaderboardId.ToString(), (response) =>
+        LootLockerSDKManager.SubmitScore(s_playerId, score, s_leaderboardId, (response) =>
         {
             if (response.statusCode == 200)
             {
