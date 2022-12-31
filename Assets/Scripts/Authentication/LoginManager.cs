@@ -9,6 +9,13 @@ internal class LoginManager : MonoBehaviour
     [SerializeField] private InputField _username;
     [SerializeField] private InputField _password;
     [SerializeField] private Text _errorText;
+    private const string PLAYER_ID_KEY = "PlayerID";
+
+    [ContextMenu("Clear Player ID")]
+    private void ClearPlayerID()
+    {
+        PlayerPrefs.DeleteKey(PLAYER_ID_KEY);
+    }
 
     public void SignUp()
     {
@@ -50,6 +57,7 @@ internal class LoginManager : MonoBehaviour
                 }
 
                 Debug.Log("session started successfully");
+                PlayerPrefs.SetInt(PLAYER_ID_KEY, response.player_id);
                 SceneController.Instance.NextScene();
             });
         });
