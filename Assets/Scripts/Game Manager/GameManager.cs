@@ -16,11 +16,11 @@ internal sealed class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        LeaderboardManager.Test();
         _path = Application.persistentDataPath + FILE_NAME;
         _gameOverTab.SetActive(false);
         _gameStartedEventHandler?.CallAction();
         _playerDiedEventHandler?.AddAction(StartGameOver);
-        //ClearBestScore();
     }
 
     private void OnDestroy()
@@ -71,12 +71,14 @@ internal sealed class GameManager : MonoBehaviour
         _bestScoreText.text = $"BEST SCORE: {highScore.Score}";
     }
 
-    /*private void ClearBestScore()
+    [ContextMenu("Clear Highscore")]
+    private void ClearBestScore()
     {
+        _path = Application.persistentDataPath + FILE_NAME;
         ScoreBoard highScore = BinarySaveSystem.LoadSystem<ScoreBoard>(_path);
         highScore.Score = 0;
         BinarySaveSystem.SaveSystem(highScore, _path);
-    }*/
+    }
 }
 
 [Serializable]

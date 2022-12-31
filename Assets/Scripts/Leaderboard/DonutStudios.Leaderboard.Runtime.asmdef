@@ -1,10 +1,9 @@
 {
-    "name": "DonutStudios.GameManager.Runtime",
+    "name": "DonutStudios.Leaderboard.Runtime",
     "rootNamespace": "",
     "references": [
-        "GUID:45f7af7fe51beed478d312184a92a334",
-        "GUID:e97ddbb02d329f34ab7db2ae9558d92c",
-        "GUID:6a01d5621a098d2469e0a58b0cab4757"
+        "GUID:dffdc6d84e1ec4e4f867437aa21264d5",
+        "GUID:c0f004574fdbf304d8827886b69178d6"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

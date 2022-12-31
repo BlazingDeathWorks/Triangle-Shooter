@@ -4,17 +4,17 @@ using UnityEngine;
 using LootLocker.Requests;
 using UnityEngine.UI;
 
-internal class LoginManager : MonoBehaviour
+public class LoginManager : MonoBehaviour
 {
+    public static string PlayerIdKey { get; private set; } = "PlayerID";
     [SerializeField] private InputField _username;
     [SerializeField] private InputField _password;
     [SerializeField] private Text _errorText;
-    private const string PLAYER_ID_KEY = "PlayerID";
 
     [ContextMenu("Clear Player ID")]
     private void ClearPlayerID()
     {
-        PlayerPrefs.DeleteKey(PLAYER_ID_KEY);
+        PlayerPrefs.DeleteKey(PlayerIdKey);
     }
 
     public void SignUp()
@@ -57,7 +57,7 @@ internal class LoginManager : MonoBehaviour
                 }
 
                 Debug.Log("session started successfully");
-                PlayerPrefs.SetInt(PLAYER_ID_KEY, response.player_id);
+                PlayerPrefs.SetInt(PlayerIdKey, response.player_id);
                 SceneController.Instance.NextScene();
             });
         });
