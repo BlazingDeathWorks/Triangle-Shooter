@@ -65,6 +65,7 @@ internal sealed class GameManager : MonoBehaviour
         {
             highScore.Score = _currentScore;
             BinarySaveSystem.SaveSystem(highScore, _path);
+            LeaderboardManager.SubmitScore(highScore.Score);
         }
 
         _bestScoreText.text = $"BEST SCORE: {highScore.Score}";
