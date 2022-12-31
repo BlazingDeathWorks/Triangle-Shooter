@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using LootLocker.Requests;
 using UnityEngine.UI;
+using System;
 
 public class LoginManager : MonoBehaviour
 {
+    public static Action LoggedIn { get; set; }
     public static string PlayerIdKey { get; private set; } = "PlayerID";
     [SerializeField] private InputField _username;
     [SerializeField] private InputField _password;
@@ -58,6 +60,7 @@ public class LoginManager : MonoBehaviour
 
                 Debug.Log("session started successfully");
                 PlayerPrefs.SetInt(PlayerIdKey, response.player_id);
+                LoggedIn?.Invoke();
                 SceneController.Instance.NextScene();
             });
         });

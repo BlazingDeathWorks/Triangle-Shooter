@@ -10,13 +10,10 @@ internal sealed class GameManager : MonoBehaviour
     [SerializeField] private GameObject _gameOverTab;
     [SerializeField] private Text _bestScoreText;
     [SerializeField] private Text _scoreText;
-    private const string FILE_NAME = "/Best Score.bin";
-    private string _path;
     private int _currentScore;
 
     private void Awake()
     {
-        _path = Application.persistentDataPath + FILE_NAME;
         _gameOverTab.SetActive(false);
         _gameStartedEventHandler?.CallAction();
         _playerDiedEventHandler?.AddAction(StartGameOver);
@@ -51,43 +48,15 @@ internal sealed class GameManager : MonoBehaviour
 
     private void LoadBestScore()
     {
-        ScoreBoard highScore = BinarySaveSystem.LoadSystem<ScoreBoard>(_path);
+        int highScore = LeaderboardManager.GetHighscore();
 
-        //Should do basically the same thing as if current score was greater
-        if (highScore == null)
+        if (highScore < _currentScore)
         {
-            highScore = new ScoreBoard(_currentScore);
-            BinarySaveSystem.SaveSystem(highScore, _path);
+            LeaderboardManager.SubmitScore(_currentScore);
+            _bestScoreText.text = $"BEST SCORE: {_currentScore}";
+            return;
         }
 
-        //Update Best Score with Current Score to system: highScore == null || highScore.Score < currentScore
-        if (highScore.Score < _currentScore)
-        {
-            highScore.Score = _currentScore;
-            BinarySaveSystem.SaveSystem(highScore, _path);
-            LeaderboardManager.SubmitScore(highScore.Score);
-        }
-
-        _bestScoreText.text = $"BEST SCORE: {highScore.Score}";
-    }
-
-    [ContextMenu("Clear Highscore")]
-    private void ClearBestScore()
-    {
-        _path = Application.persistentDataPath + FILE_NAME;
-        ScoreBoard highScore = BinarySaveSystem.LoadSystem<ScoreBoard>(_path);
-        highScore.Score = 0;
-        BinarySaveSystem.SaveSystem(highScore, _path);
-    }
-}
-
-[Serializable]
-public class ScoreBoard
-{
-    public int Score;
-
-    public ScoreBoard(int score)
-    {
-        Score = score;
+        _bestScoreText.text = $"BEST SCORE: {highScore}";
     }
 }
