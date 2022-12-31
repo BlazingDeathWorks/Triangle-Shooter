@@ -13,6 +13,14 @@ public class SettingMenu : MonoBehaviour
 
     [SerializeField] private GameObject applyButton;
 
+    private void Start()
+    {
+        AudioListener.volume = PlayerPrefs.GetFloat("volume");
+        volumeSilder.value = PlayerPrefs.GetFloat("volume");
+        volumeTextValue.text = volumeSilder.value.ToString("0.0");
+
+    }
+
     public void SetVolume() {
         AudioListener.volume = volumeSilder.value;
         volumeTextValue.text = volumeSilder.value.ToString("0.0");
