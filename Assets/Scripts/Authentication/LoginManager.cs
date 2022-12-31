@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using LootLocker.Requests;
 using UnityEngine.UI;
+using System;
 
-internal class LoginManager : MonoBehaviour
+public class LoginManager : MonoBehaviour
 {
+    public static Action LoggedIn { get; set; }
+    public static string PlayerIdKey { get; private set; } = "PlayerID";
     [SerializeField] private InputField _username;
     [SerializeField] private InputField _password;
     [SerializeField] private Text _errorText;
+
+    [ContextMenu("Clear Player ID")]
+    private void ClearPlayerID()
+    {
+        PlayerPrefs.DeleteKey(PlayerIdKey);
+    }
 
     public void SignUp()
     {
@@ -21,7 +30,6 @@ internal class LoginManager : MonoBehaviour
                 return;
             }
 
-            Debug.Log("user created successfully");
             Login();
         });
     }
@@ -49,7 +57,16 @@ internal class LoginManager : MonoBehaviour
                     return;
                 }
 
-                Debug.Log("session started successfully");
+                LootLockerSDKManager.GetPlayerName((response) =>
+                {
+                    if (!response.success) return;
+                    if (string.IsNullOrEmpty(response.name))
+                    {
+                        LootLockerSDKManager.SetPlayerName(_username.text, (response) => { });
+                    }
+                });
+                PlayerPrefs.SetInt(PlayerIdKey, response.player_id);
+                LoggedIn?.Invoke();
                 SceneController.Instance.NextScene();
             });
         });
