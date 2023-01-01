@@ -56,6 +56,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
     {
         if (collision.gameObject.CompareTag(BULLET))
         {
+            //Write code here (delete afterwards)
             if (--_health > 0) return;
             ObjectPool.Pool(this);
             ObjectPool.Return(this);
