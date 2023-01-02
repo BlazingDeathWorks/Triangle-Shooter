@@ -19,6 +19,16 @@ public class LoginManager : MonoBehaviour
         PlayerPrefs.DeleteKey(PlayerIdKey);
     }
 
+    private string DisplayErrorMessage(string error)
+    {
+        if (string.IsNullOrEmpty(error)) return "Error logging in\nTry restarting";
+
+        const string MESSAGE = "message";
+        int startingIndex = error.IndexOf(MESSAGE) + MESSAGE.Length + 3;
+        int endingIndex = error.Substring(startingIndex).IndexOf("\"");
+        return char.ToUpper(error[startingIndex]).ToString() + error.Substring(startingIndex + 1, endingIndex - 1);
+    }
+
     public void SignUp()
     {
         LootLockerSDKManager.WhiteLabelSignUp(_username?.text, _password?.text, (response) =>
@@ -26,7 +36,7 @@ public class LoginManager : MonoBehaviour
             if (!response.success)
             {
                 //Fix this so we cut out everything except for the actual message
-                _errorText.text = response.Error;
+                _errorText.text = DisplayErrorMessage(response.Error);
                 return;
             }
 
@@ -41,7 +51,7 @@ public class LoginManager : MonoBehaviour
             if (!response.success)
             {
                 //Fix this so we cut out everything except for the actual message
-                _errorText.text = response.Error;
+                _errorText.text = DisplayErrorMessage(response.Error);
                 return;
             }
 
@@ -53,7 +63,7 @@ public class LoginManager : MonoBehaviour
                 if (!response.success)
                 {
                     //Fix this so we cut out everything except for the actual message
-                    _errorText.text = response.Error;
+                    _errorText.text = DisplayErrorMessage(response.Error);
                     return;
                 }
 
