@@ -1093,7 +1093,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Error Messages Here
+  m_Text: 
 --- !u!222 &1081423421
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1270,6 +1270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loginException: 1
   _count: 3
+  _leaderboardItems: []
 --- !u!4 &1393669297
 Transform:
   m_ObjectHideFlags: 0
