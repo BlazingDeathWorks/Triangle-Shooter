@@ -5,24 +5,25 @@ using UnityEngine;
 internal class EnemyAI : MonoBehaviour
 {
     [SerializeField] private float _speed =5f;
-    private Transform _transform;
+    private Rigidbody2D _rb;
     private Transform _player;
     const string PLAYER = "Player";
-
     void Awake() 
     {
-        _transform = transform;
+        _rb = gameObject.GetComponent<Rigidbody2D>();
         _player = GameObject.FindGameObjectWithTag(PLAYER)?.GetComponent<Transform>();
     }
 
     void Update() 
     {
         if (_player == null) return;
-        _transform.position = Vector2.MoveTowards(_transform.position, _player.position, _speed * Time.deltaTime);
-        var dir = SceneReferenceManager.GetReference(PLAYER).transform.position - transform.position;
+
+        var dir = _player.position - transform.position;
+       
+        //_rb.velocity = dir*_speed*Time.deltaTime;
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        _rb.AddForce(dir*_speed*Time.deltaTime);
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
     }
-
 }
