@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
     [SerializeField] private float _collisionDistance = 0.1f;
     [SerializeField] private ActionChannel _enemieDeath;
     [SerializeField] private int _maxHealth = 1;
+    [SerializeField] private float _flashTime = 0.1f;
     private int _health;
     private PlayerHealthSystem _playerHealthSystem;
     private SpriteRenderer _sr;
@@ -20,6 +22,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
     const string PLAYER = "Player";
     const string BULLET = "Bullet";
     private EnemyCollision _instance;
+    private Color _originalSpriteColor;
     private Gradient _particleGradient;
     
     private void Awake()
@@ -27,6 +30,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
         _health = _maxHealth;
         _instance = GetComponent<EnemyCollision>();
         _sr = GetComponent<SpriteRenderer>();
+        _originalSpriteColor = _sr.color;
         _transform = transform;
         _particleGradient = new Gradient();
         _particleGradient.SetKeys(new GradientColorKey[] { new GradientColorKey(_sr.color, 0), new GradientColorKey(Color.white, 1) }, new GradientAlphaKey[] { new GradientAlphaKey(1, 0), new GradientAlphaKey(0, 1) });
@@ -56,7 +60,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
     {
         if (collision.gameObject.CompareTag(BULLET))
         {
-            //Write code here (delete afterwards)
+            StartCoroutine(Flash());
             if (--_health > 0) return;
             ObjectPool.Pool(this);
             ObjectPool.Return(this);
@@ -64,9 +68,17 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
         }
     }
 
+    private IEnumerator Flash()
+    {
+        _sr.color = Color.white;
+        yield return new WaitForSecondsRealtime(_flashTime);
+        _sr.color = _originalSpriteColor;
+    }
+
     public void OnReturn()
     {
         _health = _maxHealth;
+        _sr.color = _originalSpriteColor;
         gameObject.SetActive(false);
     }
 
