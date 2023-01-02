@@ -1909,8 +1909,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e954932ae821f458fcc62cb677c04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _channel: {fileID: 11400000, guid: e87b3edce26330645beb1bad03178602, type: 2}
-  _clip: {fileID: 8300000, guid: 60d501c01bebd5d4e95c041936c39b8f, type: 3}
+  _channel: {fileID: 11400000, guid: da9dc42c988b3a94b9749bcb3e25c8aa, type: 2}
+  _clip: {fileID: 8300000, guid: 4a8738ac35c40e74fadf720963a6473e, type: 3}
 --- !u!1001 &811954490
 PrefabInstance:
   m_ObjectHideFlags: 0
