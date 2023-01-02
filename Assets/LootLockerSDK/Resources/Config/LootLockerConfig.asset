@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: LootLockerConfig
   m_EditorClassIdentifier: 
   apiKey: dev_215dbac23e074c75a9b99f06b2273b86
-  token: 4bb652f2f2cdd4ce7ae532817f6ec0bc8c9f32fa
+  token: 42056a80a2bd01a5b47aa4b647eb1d6b3fde6d66
   adminToken: 
   domainKey: es1pckl0
   gameID: 0
   game_version: 1.0.0.0
   deviceID: 
-  platform: 2
-  developmentMode: 0
+  platform: 0
+  developmentMode: 1
   url: https://api.lootlocker.io/game/v1
   adminUrl: https://api.lootlocker.io/admin
   playerUrl: https://api.lootlocker.io/player
