@@ -127,6 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _magnitudeLimit: 12
   _speed: 9
+  _rushRate: 4
+  _walkRate: 2
 --- !u!50 &840336201
 Rigidbody2D:
   serializedVersion: 4

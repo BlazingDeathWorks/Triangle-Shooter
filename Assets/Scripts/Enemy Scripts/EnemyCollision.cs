@@ -60,7 +60,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
     {
         if (collision.gameObject.CompareTag(BULLET))
         {
-            StartCoroutine(Flash());
+            StartCoroutine("Flash");
             if (--_health > 0) return;
             ObjectPool.Pool(this);
             ObjectPool.Return(this);
@@ -77,6 +77,7 @@ internal class EnemyCollision : MonoBehaviour, IObjectPooler<EnemyDeathParticle>
 
     public void OnReturn()
     {
+        StopCoroutine("Flash");
         _health = _maxHealth;
         _sr.color = _originalSpriteColor;
         gameObject.SetActive(false);
