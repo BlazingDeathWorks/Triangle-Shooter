@@ -13,12 +13,12 @@ public class SettingMenu : MonoBehaviour
 
     [SerializeField] private GameObject applyButton;
 
-    private void Start()
+    private void Awake()
     {
         AudioListener.volume = PlayerPrefs.GetFloat("volume");
         volumeSilder.value = PlayerPrefs.GetFloat("volume");
         volumeTextValue.text = volumeSilder.value.ToString("0.0");
-
+        gameObject.SetActive(false);
     }
 
     public void SetVolume() {
