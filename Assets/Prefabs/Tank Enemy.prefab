@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fb0cc20247ff24dbd01ba8d2c9c4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _magnitudeLimit: 5
   _speed: 3
 --- !u!50 &840336201
 Rigidbody2D:
@@ -163,6 +164,7 @@ MonoBehaviour:
   _collisionDistance: 0.7
   _enemieDeath: {fileID: 11400000, guid: 9f78a2a1a5df80e4e86b710798b42869, type: 2}
   _maxHealth: 5
+  _flashTime: 0.1
 --- !u!114 &-8275917081501310845
 MonoBehaviour:
   m_ObjectHideFlags: 0
